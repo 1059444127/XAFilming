@@ -1,0 +1,6 @@
+VSWIZARD 7.0
+Wizard=VsWizard.VsWizardEngine.10.0
+
+Param="WIZARD_NAME = UIHCPPTemplate"
+Param="RELATIVE_PATH = UIHCPPTemplate"
+Param="FALLBACK_LCID = 1033"

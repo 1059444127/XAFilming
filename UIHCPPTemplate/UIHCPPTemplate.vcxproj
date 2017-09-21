@@ -49,7 +49,10 @@
     <None Include="1033\Images\DottedVert.gif" />
     <None Include="1033\Images\spacer.gif" />
     <None Include="1033\NewStyles.css" />
-    <None Include="default.vcxproj" />
+    <None Include="copyfile.bat" />
+    <None Include="default.vcxproj">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="HTML\1033\default.htm">
       <DeploymentContent>true</DeploymentContent>
     </None>
