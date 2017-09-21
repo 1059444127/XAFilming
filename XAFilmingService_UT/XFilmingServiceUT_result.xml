@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="2" failures="0" disabled="0" errors="0" time="0.002" name="AllTests">
+  <testsuite name="UtilityTest" tests="2" failures="0" disabled="0" errors="0" time="0.002">
+    <testcase name="Split_Empty_SerializedString_Get_Empty_String_Vector" value_param="" type_param="" status="run" time="0" classname="UtilityTest" />
+    <testcase name="Split_String" value_param="" type_param="" status="run" time="0" classname="UtilityTest" />
+  </testsuite>
+</testsuites>

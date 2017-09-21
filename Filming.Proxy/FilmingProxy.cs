@@ -1,0 +1,44 @@
+﻿using System;
+using System.ComponentModel.Composition;
+using UIH.Mcsf.Pipeline.Data;
+using UIH.XA.Core;
+using UIH.XA.Filming.Interface;
+using UIH.XA.GlobalParameter;
+
+namespace UIH.XA.Filming.Proxy
+{
+    [Export(typeof(IFilming))]
+    public class FilmingProxy : IFilming
+    {
+        [Import] private ICommunicator _communicator;
+
+        public void Print(params string[] paths)
+        {
+            var serializedPaths = string.Join(CommunicationCommandID.ParameterListSeparator, paths);
+            this.LogDevInfo(string.Format("Print {0}", serializedPaths));
+ 
+            _communicator.AsyncSendCommand(CommunicationCommandID.COMMAND_ID_FILMING, CommunicationNode.Filming ,serializedPaths);
+            this.LogDevInfo(string.Format("Command [{0}] sent with message [{1}]",
+                CommunicationCommandID.COMMAND_ID_FILMING, serializedPaths));
+        }
+
+        public void Print(params DicomAttributeCollection[] dataHeaders)
+        {
+            this.LogDevInfo("Begin to print DataHeaders");
+            foreach (var dataHeader in dataHeaders)
+            {
+                // TODO-Print: 私有 Tag 添加任务信息
+                byte[] serializedObject;
+                if (!dataHeader.Serialize(out serializedObject))
+                {
+                    //TODO-Print: Log dataHeader index
+                    this.LogDevInfo("Fail to serialize dataHeader");
+                    continue;
+                }
+                this.LogDevInfo("Succeed to seriealize dataHeader");
+                _communicator.AsyncSendCommand(CommunicationCommandID.COMMAND_ID_FILMING_DATAHEADER, CommunicationNode.Filming, serializedObject);
+                this.LogDevInfo(string.Format("Command [{0}] sent with a serialized dataHeader", CommunicationCommandID.COMMAND_ID_FILMING_DATAHEADER));
+            }
+        }
+    }
+}
