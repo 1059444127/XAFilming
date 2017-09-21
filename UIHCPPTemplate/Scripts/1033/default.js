@@ -104,10 +104,10 @@ function AddConfig(proj, strProjectName)
 
 		config = proj.Object.Configurations('Release');
 
-		var CLTool = config.Tools('VCCLCompilerTool');
+		CLTool = config.Tools('VCCLCompilerTool');
 		// TODO: Add compiler settings
 
-		var LinkTool = config.Tools('VCLinkerTool');
+		LinkTool = config.Tools('VCLinkerTool');
 		// TODO: Add linker settings
 	}
 	catch(e)
