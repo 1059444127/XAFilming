@@ -31,7 +31,7 @@ function CreateCustomProject(strProjectName, strProjectPath)
 	{
 		var strProjTemplatePath = wizard.FindSymbol('PROJECT_TEMPLATE_PATH');
 		var strProjTemplate = '';
-		strProjTemplate = strProjTemplatePath + '\\default.vcxproj';
+		strProjTemplate = strProjTemplatePath + 'UIHCPPTemplate\\default.vcxproj';
 
 		var Solution = dte.Solution;
 		var strSolutionName = "";
