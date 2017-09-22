@@ -10,6 +10,7 @@
 #include "PrintDataHeaderCommandHandler.h"
 
 #include "XAFilmingService.h"
+#include "XAFilmingLogger.h"
 
 
 using namespace std;
