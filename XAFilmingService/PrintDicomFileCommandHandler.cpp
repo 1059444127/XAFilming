@@ -3,6 +3,7 @@
 #include "Utility.h"
 #include "FilmingUtility.h"
 #include <XAFilmingLogger.h>
+#include <XAFilmingMacro.h>
 
 using namespace StrUtil;
 
@@ -18,7 +19,7 @@ int MCSF_FILMING_NAMESPACE::PrintDicomFileCommandHandler::HandleCommand(const Co
 	string serializedPaths = pContext->sSerializeObject;
 
 	LOG_INFO_XA_FILMING << "Received Command [" << pContext->iCommandId << "] from [" << pContext->sSender 
-				<< "] with message [" << serializedPaths << "]" << "\n";
+				<< "] with message [" << serializedPaths << "]" << LOG_END;
 
 
 	vector<string> stringVector;

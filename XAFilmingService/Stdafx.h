@@ -6,6 +6,6 @@
 
 #include "McsfFilming/mcsf_filming_common.h"
 #include "CommunicationCommandID.h"
-#include "FilmingLogger.h"
+#include "XAFilmingLogger.h"
 
 using namespace std;

@@ -3,7 +3,7 @@
 #include "McsfFilming\mcsf_filming_libary_factory.h"
 
 #include "FilmingUtility.h"
-
+#include <XAFilmingMacro.h>
 
 
 MCSF_FILMING_BEGIN_NAMESPACE
@@ -32,25 +32,25 @@ MCSF_FILMING_BEGIN_NAMESPACE
 
 		if(!pIFilmingLibary->ConnectPrinter())
 		{
-			LOG_INFO_XA_FILMING << "Connect printer succeed" << "\n";
+			LOG_INFO_XA_FILMING << "Connect printer succeed" << LOG_END;
 		}
 		else
 		{
-			LOG_INFO_XA_FILMING << "Connect printer failed" << "\n";
+			LOG_INFO_XA_FILMING << "Connect printer failed" << LOG_END;
 		}
 
 		if(-1 == pIFilmingLibary->CreatePrintObject())
 		{
-			LOG_INFO_XA_FILMING << "CreatePrintObject failure" << "\n";
+			LOG_INFO_XA_FILMING << "CreatePrintObject failure" << LOG_END;
 		}
 
 		if(!pIFilmingLibary->DoPrint())
 		{
-			LOG_INFO_XA_FILMING << "Print succeed" << "\n";
+			LOG_INFO_XA_FILMING << "Print succeed" << LOG_END;
 		}
 		else
 		{
-			LOG_INFO_XA_FILMING << "Print failed" << "\n";
+			LOG_INFO_XA_FILMING << "Print failed" << LOG_END;
 		}
 
 		pIFilmingLibary->SetSetFilmBoxTimeOut(10);

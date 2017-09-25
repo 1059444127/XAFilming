@@ -11,6 +11,7 @@
 
 #include "XAFilmingService.h"
 #include "XAFilmingLogger.h"
+#include <XAFilmingMacro.h>
 
 
 using namespace std;
@@ -21,11 +22,11 @@ IMPLEMENT_CONTAINEE(XAFilmingService);
 
 void XAFilmingService::Startup()
 {
-	LOG_INFO_XA_FILMING << "Startup" << "\n";
+	LOG_INFO_XA_FILMING << "Startup" << LOG_END;
 
 	if (NULL == m_pCommProxy)
 	{
-		LOG_WARN_XA_FILMING << "the pProxy is null for the containee" << "\n";
+		LOG_WARN_XA_FILMING << "the pProxy is null for the containee" << LOG_END;
 		return;
 	}
 
@@ -39,17 +40,17 @@ void XAFilmingService::Startup()
 
 void XAFilmingService::DoWork()
 {
-	LOG_INFO_XA_FILMING << "DoWork" << "\n";
+	LOG_INFO_XA_FILMING << "DoWork" << LOG_END;
 
 	if(NULL == m_pCommProxy || m_pCommProxy->SendSystemEvent( "", static_cast<int>(SYSTEM_COMMAND_EVENT_ID_COMPONENT_READY), m_pCommProxy->GetName() ) )
 	{
-		LOG_ERROR_XA_FILMING << "The event send to System manager fail,Please restart the Filming Service" << "\n";
+		LOG_ERROR_XA_FILMING << "The event send to System manager fail,Please restart the Filming Service" << LOG_END;
 	}	
 }
 
 bool XAFilmingService::Shutdown(bool bReboot)
 {
-	LOG_INFO_XA_FILMING << "bReboot: "  <<  bReboot << "\n";
+	LOG_INFO_XA_FILMING << "bReboot: "  <<  bReboot << LOG_END;
 	return false;
 }
 
@@ -57,17 +58,17 @@ void XAFilmingService::SetCommunicationProxy(ICommunicationProxy* pProxy)
 {
 	if (NULL == pProxy)
 	{
-		LOG_WARN_XA_FILMING << "the pProxy is null for the containee" << "\n";
+		LOG_WARN_XA_FILMING << "the pProxy is null for the containee" << LOG_END;
 	}
 
 	m_pCommProxy = pProxy;
 
-	LOG_INFO_XA_FILMING << "End to SetCommunicationProxy" << "\n";
+	LOG_INFO_XA_FILMING << "End to SetCommunicationProxy" << LOG_END;
 }
 
 void XAFilmingService::SetCustomConfigFile(const std::string& sFilename)
 {
-	LOG_INFO_XA_FILMING << "CustomConfigFile: "  <<  sFilename << "\n";
+	LOG_INFO_XA_FILMING << "CustomConfigFile: "  <<  sFilename << LOG_END;
 }
 
 std::list<std::string> XAFilmingService::GetRunningTasks()
@@ -77,12 +78,12 @@ std::list<std::string> XAFilmingService::GetRunningTasks()
 
 void XAFilmingService::StartShutdown(bool bReboot)
 {
-	LOG_INFO_XA_FILMING << "bReboot: "  <<  bReboot << "\n";
+	LOG_INFO_XA_FILMING << "bReboot: "  <<  bReboot << LOG_END;
 }
 
 int XAFilmingService::GetTaskRemainingProgress(std::list<TaskProgress> & taskProgress)
 {
-	LOG_INFO_XA_FILMING << "taskProgress.Count = "  <<  taskProgress.size() << "\n";
+	LOG_INFO_XA_FILMING << "taskProgress.Count = "  <<  taskProgress.size() << LOG_END;
 	return 0;
 }
 

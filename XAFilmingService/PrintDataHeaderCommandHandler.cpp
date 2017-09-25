@@ -6,6 +6,7 @@
 
 #include "FilmingUtility.h"
 #include "XAFilmingLogger.h"
+#include <XAFilmingMacro.h>
 
 
 MCSF_FILMING_BEGIN_NAMESPACE
@@ -19,37 +20,37 @@ int PrintDataHeaderCommandHandler::HandleCommand(const CommandContext* pContext,
 	assert(nullptr != pContext);
 	assert(nullptr != pReplyObject);
 
-	LOG_INFO_XA_FILMING << "Received Command [" << pContext->iCommandId << "] from [" << pContext->sSender << "\n";
+	LOG_INFO_XA_FILMING << "Received Command [" << pContext->iCommandId << "] from [" << pContext->sSender << LOG_END;
 
 	string sSerializedDataHeader = pContext->sSerializeObject;
 
 	IDataHeaderElementMapPtr pHeaders(IDataHeaderElementMap::CreateDataHeader());
 	if (!pHeaders)
 	{
-		LOG_ERROR_XA_FILMING << "Unexpected Result: IDataHeaderElementMap::CreateDataHeader() failed!"<< "\n";
+		LOG_ERROR_XA_FILMING << "Unexpected Result: IDataHeaderElementMap::CreateDataHeader() failed!"<< LOG_END;
 		return -1;
 	}
 	if (!IDataHeaderElementMap::Deserialize(sSerializedDataHeader, pHeaders.get()))
 	{
-		LOG_ERROR_XA_FILMING << "Unexpected Result: DataHeader Deserialize() failed!"<< "\n";
+		LOG_ERROR_XA_FILMING << "Unexpected Result: DataHeader Deserialize() failed!"<< LOG_END;
 		return -1;
 	}
 	// create DICOM converter object
 	auto pConvertor = DICOMConvertorFactory::Instance()->CreateSimpleConvertor();
 	if (!pConvertor)
 	{
-		LOG_ERROR_XA_FILMING << "Unexpected Result: CreateSimpleConvertor() failed!"<< "\n";
+		LOG_ERROR_XA_FILMING << "Unexpected Result: CreateSimpleConvertor() failed!"<< LOG_END;
 		return -1;
 	}
 	// save IDataHeaderElementMap data to DICOM file
 	string dicomFilePath = CreateDicomFileName();
 	if (!pConvertor->SaveFile(pHeaders.get(), dicomFilePath)) 
 	{
-		LOG_ERROR_XA_FILMING << "Unexpected Result: SaveFile() failed!"<< "\n";
+		LOG_ERROR_XA_FILMING << "Unexpected Result: SaveFile() failed!"<< LOG_END;
 		return -1;
 	}
 
-	LOG_INFO_XA_FILMING << "Succeed to save DataHeader as a Dicom file : " << dicomFilePath<< "\n";
+	LOG_INFO_XA_FILMING << "Succeed to save DataHeader as a Dicom file : " << dicomFilePath<< LOG_END;
 
 	vector<string> dicomFilePaths;
 	dicomFilePaths.push_back(dicomFilePath);

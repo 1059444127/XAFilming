@@ -2,14 +2,15 @@
 #include "XAFilmingLogger.h"
 #include <McsfContainee/mcsf_containee_cmd_id.h>
 
+IMPLEMENT_CONTAINEE(XAFilmingJobDispatchContainee);
 
 void XAFilmingJobDispatchContainee::Startup()
 {
-	LOG_INFO_XA_FILMING << "Startup" << "\n";
+	LOG_INFO_XA_FILMING << "Startup" << LOG_END;
 
 	if (nullptr == m_pCommunicationProxy)
 	{
-		LOG_WARN_XA_FILMING << "the pProxy is null for the containee" << "\n";
+		LOG_WARN_XA_FILMING << "the pProxy is null for the containee" << LOG_END;
 		return;
 	}
 
@@ -17,12 +18,12 @@ void XAFilmingJobDispatchContainee::Startup()
 
 void XAFilmingJobDispatchContainee::DoWork()
 {
-	LOG_INFO_XA_FILMING << "DoWork" << "\n";
+	LOG_INFO_XA_FILMING << "DoWork" << LOG_END;
 
 	auto send_system_event_result = m_pCommunicationProxy->SendSystemEvent( "", static_cast<int>(SYSTEM_COMMAND_EVENT_ID_COMPONENT_READY), m_pCommunicationProxy->GetName() );
 	send_system_event_result ?
-			LOG_ERROR_XA_FILMING << "Fail to send componet_ready event to System manager,Please restart the containee" << "\n"
-		:	LOG_ERROR_XA_FILMING << "Succeed to send componet_ready event to System manager" << "\n";
+			LOG_ERROR_XA_FILMING << "Fail to send componet_ready event to System manager,Please restart the containee" << LOG_END
+		:	LOG_ERROR_XA_FILMING << "Succeed to send componet_ready event to System manager" << LOG_END;
 }
 
 bool XAFilmingJobDispatchContainee::Shutdown(bool bReboot)
@@ -33,7 +34,7 @@ bool XAFilmingJobDispatchContainee::Shutdown(bool bReboot)
 
 //void XAFilmingJobDispatchContainee::SetCommunicationProxy(MCSF_NAMESPACE_FOR_XA::ICommunicationProxy* pProxy)
 //{
-//	LOG_INFO_XA_FILMING << "SetCommunicationProxy" << "\n";
+//	LOG_INFO_XA_FILMING << "SetCommunicationProxy" << LOG_END;
 //	m_pCommunicationProxy = pProxy;
 //}
 
@@ -45,6 +46,6 @@ int XAFilmingJobDispatchContainee::GetEstimatedTimeToFinishJob(bool bReboot)
 
 XAFilmingJobDispatchContainee::~XAFilmingJobDispatchContainee()
 {
-	LOG_INFO_XA_FILMING << "Destructor" << "\n";
+	LOG_INFO_XA_FILMING << "Destructor" << LOG_END;
 }
 
