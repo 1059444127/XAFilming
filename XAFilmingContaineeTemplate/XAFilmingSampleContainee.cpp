@@ -69,7 +69,5 @@ int XAFilmingSampleContainee::GetTaskRemainingProgress(std::list<TaskProgress> &
 XAFilmingSampleContainee::~XAFilmingSampleContainee()
 {
 	LOG_INFO_XA_FILMING << "Destructor" << LOG_END;
-	//TODO: Delete m_pCommandHandler
-	//TODO: delete ptr macro
 }
 

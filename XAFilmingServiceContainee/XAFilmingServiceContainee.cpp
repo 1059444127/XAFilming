@@ -4,6 +4,8 @@
 #include "XAFilmingLogger.h"
 #include <McsfContainee/mcsf_containee_cmd_id.h>
 
+using namespace std;
+
 
 IMPLEMENT_CONTAINEE(XAFilmingServiceContainee);
 
@@ -66,5 +68,6 @@ int XAFilmingServiceContainee::GetTaskRemainingProgress(std::list<TaskProgress> 
 XAFilmingServiceContainee::~XAFilmingServiceContainee()
 {
 	LOG_INFO_XA_FILMING << "Destructor" << LOG_END;
+	SAFE_DELETE_ELEMENT(m_pCommandHandler);
 }
 

@@ -13,3 +13,15 @@
 
 #define EMPTY_STRING ""
 #define LOG_END "\n"
+
+
+#ifndef SAFE_DELETE_ELEMENT
+#define SAFE_DELETE_ELEMENT(ptr) {\
+if (ptr != nullptr)\
+{\
+delete ptr;\
+ptr = nullptr;\
+}\
+}
+#endif
+
