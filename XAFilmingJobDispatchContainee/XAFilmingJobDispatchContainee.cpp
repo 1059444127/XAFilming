@@ -2,6 +2,7 @@
 #include "XAFilmingLogger.h"
 #include <McsfContainee/mcsf_containee_cmd_id.h>
 
+
 IMPLEMENT_CONTAINEE(XAFilmingJobDispatchContainee);
 
 void XAFilmingJobDispatchContainee::Startup()
@@ -32,11 +33,11 @@ bool XAFilmingJobDispatchContainee::Shutdown(bool bReboot)
 	return true;
 }
 
-//void XAFilmingJobDispatchContainee::SetCommunicationProxy(MCSF_NAMESPACE_FOR_XA::ICommunicationProxy* pProxy)
-//{
-//	LOG_INFO_XA_FILMING << "SetCommunicationProxy" << LOG_END;
-//	m_pCommunicationProxy = pProxy;
-//}
+void XAFilmingJobDispatchContainee::SetCommunicationProxy(MCSF_NAMESPACE_FOR_XA::ICommunicationProxy* pProxy)
+{
+	LOG_INFO_XA_FILMING << "SetCommunicationProxy" << LOG_END;
+	m_pCommunicationProxy = pProxy;
+}
 
 int XAFilmingJobDispatchContainee::GetEstimatedTimeToFinishJob(bool bReboot)
 {
@@ -44,7 +45,28 @@ int XAFilmingJobDispatchContainee::GetEstimatedTimeToFinishJob(bool bReboot)
 	return 0;
 }
 
-XAFilmingJobDispatchContainee::~XAFilmingJobDispatchContainee()
+void XAFilmingJobDispatchContainee::SetCustomConfigFile(const std::string& sFilename)
+{
+	LOG_INFO_XA_FILMING << "CustomConfigFile: "  <<  sFilename << LOG_END;
+}
+
+std::list<std::string> XAFilmingJobDispatchContainee::GetRunningTasks()
+{
+	return std::list<std::string>();
+}
+
+void XAFilmingJobDispatchContainee::StartShutdown(bool bReboot)
+{
+	LOG_INFO_XA_FILMING << "bReboot: "  <<  bReboot << LOG_END;
+}
+
+int XAFilmingJobDispatchContainee::GetTaskRemainingProgress(std::list<TaskProgress> & taskProgress)
+{
+	LOG_INFO_XA_FILMING << "taskProgress.Count = "  <<  taskProgress.size() << LOG_END;
+	return 0;
+}
+
+	XAFilmingJobDispatchContainee::~XAFilmingJobDispatchContainee()
 {
 	LOG_INFO_XA_FILMING << "Destructor" << LOG_END;
 }

@@ -9,30 +9,35 @@ class IEventHandler;
 class ICommandHandler;
 class IBigDataHandler;
 
-class XAFilmingJobDispatchContainee : public ContaineeBase
+
+class XAFilmingJobDispatchContainee : public IContainee
 {
 public:
 
 
+	XAFilmingJobDispatchContainee(): m_pCommunicationProxy(nullptr)
+	{
+	}
+
 	/**
 	 * \brief Containee Startup
 	 */
-	void Startup() override;
+	void Startup() ;
 	/**
 	 * \brief Containee DoWork
 	 */
-	void DoWork() override;
+	void DoWork() ;
 	/**
 	 * \brief Containee Shutdown
 	 * \param bReboot if reboot or not
 	 * \return ?
 	 */
-	bool Shutdown(bool bReboot) override;
+	bool Shutdown(bool bReboot) ;
 	///**
 	// * \brief 
 	// * \param pProxy CommunicationProxy Created by Container
 	// */
-	//void SetCommunicationProxy(MCSF_NAMESPACE_FOR_XA::ICommunicationProxy* pProxy) override;
+	void SetCommunicationProxy(MCSF_NAMESPACE_FOR_XA::ICommunicationProxy* pProxy) ;
 	/**
 	 * \brief Estimate time to finish job for waiting system manager
 	 * \param bReboot if reboot or not
@@ -40,11 +45,15 @@ public:
 	 */
 	virtual int GetEstimatedTimeToFinishJob(bool bReboot);
 
+	virtual void SetCustomConfigFile(const std::string& sFilename);
+	virtual std::list<std::string> GetRunningTasks();
+	virtual void StartShutdown(bool bReboot);
+	virtual int GetTaskRemainingProgress(std::list<TaskProgress>& taskProgress);
 	virtual ~XAFilmingJobDispatchContainee();
 
 private:
 	XA_FILMING_DISALLOW_COPY_AND_ASSIGN(XAFilmingJobDispatchContainee)
+	MCSF_NAMESPACE_FOR_XA::ICommunicationProxy * m_pCommunicationProxy;
 };
 
 DECLARE_CONTAINEE(XAFilmingJobDispatchContainee);
-

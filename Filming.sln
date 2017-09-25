@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingService", "XAFilmingService\XAFilmingService.vcxproj", "{36476964-0868-44FA-B74E-27989D4B5331}"
+	ProjectSection(ProjectDependencies) = postProject
+		{240E72CF-3DB4-486B-9BB5-317C7FCC1D1E} = {240E72CF-3DB4-486B-9BB5-317C7FCC1D1E}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Filming.Proxy", "Filming.Proxy\Filming.Proxy.csproj", "{3F54636A-AFFE-4726-98B4-7A9236BF5B98}"
 EndProject
@@ -17,6 +20,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Locally Run", "Locally Run", "{BE0130F4-BFC6-4C27-B54A-7937580D6048}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingJobDispatchContainee", "XAFilmingJobDispatchContainee\XAFilmingJobDispatchContainee.vcxproj", "{32990BD2-0916-454A-BF86-C9D5A936E908}"
+	ProjectSection(ProjectDependencies) = postProject
+		{240E72CF-3DB4-486B-9BB5-317C7FCC1D1E} = {240E72CF-3DB4-486B-9BB5-317C7FCC1D1E}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingCommon", "XAFilmingCommon\XAFilmingCommon.vcxproj", "{DB4C8DFB-1369-4600-9720-A7F05FBBF877}"
 EndProject
