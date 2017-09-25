@@ -10,12 +10,12 @@ class ICommandHandler;
 class IBigDataHandler;
 
 
-class XAFilmingSampleContainee : public IContainee
+class XAFilmingServiceContainee : public IContainee
 {
 public:
 
 
-	XAFilmingSampleContainee(): m_pCommunicationProxy(nullptr)
+	XAFilmingServiceContainee(): m_pCommunicationProxy(nullptr)
 	{
 	}
 
@@ -49,11 +49,11 @@ public:
 	virtual std::list<std::string> GetRunningTasks();
 	virtual void StartShutdown(bool bReboot);
 	virtual int GetTaskRemainingProgress(std::list<TaskProgress>& taskProgress);
-	virtual ~XAFilmingSampleContainee();
+	virtual ~XAFilmingServiceContainee();
 
 private:
-	XA_FILMING_DISALLOW_COPY_AND_ASSIGN(XAFilmingSampleContainee)
+	XA_FILMING_DISALLOW_COPY_AND_ASSIGN(XAFilmingServiceContainee)
 	MCSF_NAMESPACE_FOR_XA::ICommunicationProxy * m_pCommunicationProxy;
 };
 
-DECLARE_CONTAINEE(XAFilmingSampleContainee);
+DECLARE_CONTAINEE(XAFilmingServiceContainee);
