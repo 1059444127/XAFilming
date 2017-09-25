@@ -34,6 +34,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Template", "Template", "{88
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingWrapper", "XAFilmingWrapper\XAFilmingWrapper.vcxproj", "{240E72CF-3DB4-486B-9BB5-317C7FCC1D1E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingContaineeTemplate", "XAFilmingContaineeTemplate\XAFilmingContaineeTemplate.vcxproj", "{1DAC3D69-A462-45D5-818B-E3175F401C6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -99,9 +101,11 @@ Global
 		{5E20A2BB-1E29-4A30-9E12-BEF16650DBFE}.Release|x64.ActiveCfg = Release|x64
 		{5E20A2BB-1E29-4A30-9E12-BEF16650DBFE}.Release|x64.Build.0 = Release|x64
 		{AA20A8BC-AFC4-4A4F-A0C6-60FF7C74327D}.Debug|Mixed Platforms.ActiveCfg = Debug|x64
+		{AA20A8BC-AFC4-4A4F-A0C6-60FF7C74327D}.Debug|Mixed Platforms.Build.0 = Debug|x64
 		{AA20A8BC-AFC4-4A4F-A0C6-60FF7C74327D}.Debug|x64.ActiveCfg = Debug|x64
 		{AA20A8BC-AFC4-4A4F-A0C6-60FF7C74327D}.Debug|x64.Build.0 = Debug|x64
 		{AA20A8BC-AFC4-4A4F-A0C6-60FF7C74327D}.Release|Mixed Platforms.ActiveCfg = Release|x64
+		{AA20A8BC-AFC4-4A4F-A0C6-60FF7C74327D}.Release|Mixed Platforms.Build.0 = Release|x64
 		{AA20A8BC-AFC4-4A4F-A0C6-60FF7C74327D}.Release|x64.ActiveCfg = Release|x64
 		{AA20A8BC-AFC4-4A4F-A0C6-60FF7C74327D}.Release|x64.Build.0 = Release|x64
 		{240E72CF-3DB4-486B-9BB5-317C7FCC1D1E}.Debug|Mixed Platforms.ActiveCfg = Debug|x64
@@ -112,6 +116,13 @@ Global
 		{240E72CF-3DB4-486B-9BB5-317C7FCC1D1E}.Release|Mixed Platforms.Build.0 = Release|x64
 		{240E72CF-3DB4-486B-9BB5-317C7FCC1D1E}.Release|x64.ActiveCfg = Release|x64
 		{240E72CF-3DB4-486B-9BB5-317C7FCC1D1E}.Release|x64.Build.0 = Release|x64
+		{1DAC3D69-A462-45D5-818B-E3175F401C6F}.Debug|Mixed Platforms.ActiveCfg = Debug|x64
+		{1DAC3D69-A462-45D5-818B-E3175F401C6F}.Debug|Mixed Platforms.Build.0 = Debug|x64
+		{1DAC3D69-A462-45D5-818B-E3175F401C6F}.Debug|x64.ActiveCfg = Debug|x64
+		{1DAC3D69-A462-45D5-818B-E3175F401C6F}.Release|Mixed Platforms.ActiveCfg = Release|x64
+		{1DAC3D69-A462-45D5-818B-E3175F401C6F}.Release|Mixed Platforms.Build.0 = Release|x64
+		{1DAC3D69-A462-45D5-818B-E3175F401C6F}.Release|x64.ActiveCfg = Release|x64
+		{1DAC3D69-A462-45D5-818B-E3175F401C6F}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -120,5 +131,6 @@ Global
 		{17404E18-404D-4E62-B4DC-00B6982F4041} = {BD2AAD13-062A-4B66-8966-553136454573}
 		{AA20A8BC-AFC4-4A4F-A0C6-60FF7C74327D} = {881A0057-0614-4C43-9C6E-59809B2B356A}
 		{5E20A2BB-1E29-4A30-9E12-BEF16650DBFE} = {881A0057-0614-4C43-9C6E-59809B2B356A}
+		{1DAC3D69-A462-45D5-818B-E3175F401C6F} = {881A0057-0614-4C43-9C6E-59809B2B356A}
 	EndGlobalSection
 EndGlobal
