@@ -10,3 +10,7 @@
 
 
 #define MCSF_NAMESPACE_FOR_XA       Mcsf
+
+#define EMPTY_STRING ""
+//TODO: Replace "\n" in solution
+#define LOG_END "\n"

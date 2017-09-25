@@ -11,9 +11,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="XAFilmingJobCommandHandler.h" />
     <ClInclude Include="XAFilmingJobDispatchContainee.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="XAFilmingJobCommandHandler.cpp" />
     <ClCompile Include="XAFilmingJobDispatchContainee.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

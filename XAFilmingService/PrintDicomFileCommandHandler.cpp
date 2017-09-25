@@ -2,6 +2,7 @@
 #include "PrintDicomFileCommandHandler.h"
 #include "Utility.h"
 #include "FilmingUtility.h"
+#include <XAFilmingLogger.h>
 
 using namespace StrUtil;
 
@@ -10,7 +11,7 @@ MCSF_FILMING_BEGIN_NAMESPACE
 
 int MCSF_FILMING_NAMESPACE::PrintDicomFileCommandHandler::HandleCommand(const CommandContext* pContext,std::string* pReplyObject)
 {
-	pReplyObject;
+	*pReplyObject = EMPTY_STRING;
 	assert(nullptr != pContext);
 	assert(nullptr != pReplyObject);
 

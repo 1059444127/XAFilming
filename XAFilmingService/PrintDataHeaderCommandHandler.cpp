@@ -5,6 +5,7 @@
 #include "McsfDicomConvertor/mcsf_dicom_convertor_factory.h"
 
 #include "FilmingUtility.h"
+#include "XAFilmingLogger.h"
 
 
 MCSF_FILMING_BEGIN_NAMESPACE
@@ -14,7 +15,7 @@ typedef boost::shared_ptr<IDataHeaderElementMap> IDataHeaderElementMapPtr;
 
 int PrintDataHeaderCommandHandler::HandleCommand(const CommandContext* pContext,std::string* pReplyObject)
 {
-	pReplyObject;
+	*pReplyObject = EMPTY_STRING;
 	assert(nullptr != pContext);
 	assert(nullptr != pReplyObject);
 
