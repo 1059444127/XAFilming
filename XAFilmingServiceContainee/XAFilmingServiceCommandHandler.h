@@ -6,9 +6,14 @@
 using namespace MCSF_NAMESPACE_FOR_XA;
 
 
-class XAFilmingServiceCommandHandler : ICommandHandler
+class XAFilmingServiceCommandHandler : public ICommandHandler
 {
 public:
+
+
+	XAFilmingServiceCommandHandler()
+	{
+	}
 
 	virtual int HandleCommand(const CommandContext* pContext, std::string* pReplyObject);
 

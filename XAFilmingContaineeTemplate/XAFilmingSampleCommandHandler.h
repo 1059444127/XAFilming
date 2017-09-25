@@ -6,7 +6,7 @@
 using namespace MCSF_NAMESPACE_FOR_XA;
 
 
-class XAFilmingSampleCommandHandler : ICommandHandler
+class XAFilmingSampleCommandHandler : public ICommandHandler
 {
 public:
 

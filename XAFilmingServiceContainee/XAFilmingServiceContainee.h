@@ -2,6 +2,7 @@
 
 #include "XAFilmingMacro.h"
 #include "McsfContainee\mcsf_containee_base.h"
+#include "XAFilmingServiceCommandHandler.h"
 using namespace MCSF_NAMESPACE_FOR_XA;
 
 class ICommunicationProxy;
@@ -17,6 +18,7 @@ public:
 
 	XAFilmingServiceContainee(): m_pCommunicationProxy(nullptr)
 	{
+		m_pCommandHandler = new XAFilmingServiceCommandHandler();
 	}
 
 	/**
@@ -52,6 +54,8 @@ public:
 	virtual ~XAFilmingServiceContainee();
 
 private:
+	MCSF_NAMESPACE_FOR_XA::ICommandHandler* m_pCommandHandler;
+
 	XA_FILMING_DISALLOW_COPY_AND_ASSIGN(XAFilmingServiceContainee)
 	MCSF_NAMESPACE_FOR_XA::ICommunicationProxy * m_pCommunicationProxy;
 };
