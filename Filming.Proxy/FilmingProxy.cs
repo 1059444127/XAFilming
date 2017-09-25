@@ -25,17 +25,18 @@ namespace UIH.XA.Filming.Proxy
         public void Print(params DicomAttributeCollection[] dataHeaders)
         {
             this.LogDevInfo("Begin to print DataHeaders");
+            int dataHeaderIndex = 0;
             foreach (var dataHeader in dataHeaders)
             {
                 // TODO-Print: 私有 Tag 添加任务信息
                 byte[] serializedObject;
                 if (!dataHeader.Serialize(out serializedObject))
                 {
-                    //TODO-Print: Log dataHeader index
-                    this.LogDevInfo("Fail to serialize dataHeader");
+                    this.LogDevInfo(string.Format("Fail to serialize dataHeader [{0}]", dataHeaderIndex++));
                     continue;
                 }
-                this.LogDevInfo("Succeed to seriealize dataHeader");
+
+                this.LogDevInfo(string.Format("Succeed to seriealize dataHeader [{0}]", dataHeaderIndex++));
                 _communicator.AsyncSendCommand(CommunicationCommandID.COMMAND_ID_FILMING_DATAHEADER, CommunicationNode.Filming, serializedObject);
                 this.LogDevInfo(string.Format("Command [{0}] sent with a serialized dataHeader", CommunicationCommandID.COMMAND_ID_FILMING_DATAHEADER));
             }

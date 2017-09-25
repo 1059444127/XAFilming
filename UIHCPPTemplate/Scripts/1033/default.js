@@ -97,18 +97,14 @@ function AddConfig(proj, strProjectName)
 		var config = proj.Object.Configurations('Debug');
 
 		var CLTool = config.Tools('VCCLCompilerTool');
-		// TODO: Add compiler settings
 
 		var LinkTool = config.Tools('VCLinkerTool');
-		// TODO: Add linker settings
 
 		config = proj.Object.Configurations('Release');
 
 		CLTool = config.Tools('VCCLCompilerTool');
-		// TODO: Add compiler settings
 
 		LinkTool = config.Tools('VCLinkerTool');
-		// TODO: Add linker settings
 	}
 	catch(e)
 	{
@@ -118,7 +114,6 @@ function AddConfig(proj, strProjectName)
 
 function PchSettings(proj)
 {
-	// TODO: specify pch settings
 }
 
 function DelFile(fso, strWizTempFile)
@@ -167,7 +162,6 @@ function GetTargetName(strName, strProjectName)
 {
 	try
 	{
-		// TODO: set the name of the rendered file based on the template filename
 		var strTarget = strName;
 
 		if (strName == 'readme.txt')

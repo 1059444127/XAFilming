@@ -41,9 +41,6 @@ public:
 	void StartShutdown(bool bReboot);
 	int GetTaskRemainingProgress(std::list<TaskProgress> & taskProgress);
 
-	// TODO: Comment on class / member
-	// TODO: DisAllow copy and assign macro
-	// TODO: Namespace
 private:
 	ICommunicationProxy* m_pCommProxy;
 	ICommandHandler* m_printDicomFileCommandHandler;
