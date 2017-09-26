@@ -18,13 +18,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -49,13 +49,14 @@
     <ClCompile>
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <AdditionalIncludeDirectories>..\..\..\..\UIH\include\mcs\;..\..\..\..\UIH\include\external\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\..\UIH\include\mcs\;..\..\..\..\UIH\include\external\;..\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ULIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\..\..\UIH\lib_$(configuration)\external;..\..\..\..\UIH\lib_$(configuration)\mcs;..\..\..\..\UIH\lib_$(configuration)\external\boost;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\UIH\lib_$(configuration)\external;..\..\..\..\UIH\lib_$(configuration)\mcs;..\..\..\..\UIH\lib_$(configuration)\external\boost;..\..\..\..\UIH\lib\external\dcmtk;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\..\..\..\UIH\lib_$(Configuration)\mcs\$(ProjectName).lib</ImportLibrary>
+      <AdditionalDependencies>McsfFilming.lib;McsfFilmingDB.lib;oflog.lib;wsock32.lib;ofstd.lib;dcmpstat.lib;dcmimage.lib;dcmimgle.lib;dcmnet.lib;dcmdata.lib;ws2_32.lib;netapi32.lib;dcmtls.lib;McsfLogger.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copyfile.bat</Command>
@@ -65,24 +66,28 @@
     <ClCompile>
       <WarningLevel>Level4</WarningLevel>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <AdditionalIncludeDirectories>..\..\..\..\UIH\include\mcs\;..\..\..\..\UIH\include\external\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\..\UIH\include\mcs\;..\..\..\..\UIH\include\external\;..\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>StdAfx.h</PrecompiledHeaderFile>
+      <PreprocessorDefinitions>ULIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\..\..\UIH\lib\external;..\..\..\..\UIH\lib\mcs;..\..\..\..\UIH\lib\external\boost;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\UIH\lib\external;..\..\..\..\UIH\lib\mcs;..\..\..\..\UIH\lib\external\boost;..\..\..\..\UIH\lib\external\dcmtk;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\..\..\..\UIH\lib\mcs\$(ProjectName).lib</ImportLibrary>
+      <AdditionalDependencies>McsfFilming.lib;McsfFilmingDB.lib;oflog.lib;wsock32.lib;ofstd.lib;dcmpstat.lib;dcmimage.lib;dcmimgle.lib;dcmnet.lib;dcmdata.lib;ws2_32.lib;netapi32.lib;dcmtls.lib;McsfLogger.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copyfile.bat</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="copyfile.bat" />
+    <ClInclude Include="XAFilmingUtility.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="XAFilmingLogger.h" />
-    <ClInclude Include="XAFilmingMacro.h" />
+    <ClCompile Include="XAFilmingUtility.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="copyfile.bat" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

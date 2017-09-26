@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingService", "XAFilmingService\XAFilmingService.vcxproj", "{36476964-0868-44FA-B74E-27989D4B5331}"
 	ProjectSection(ProjectDependencies) = postProject
-		{240E72CF-3DB4-486B-9BB5-317C7FCC1D1E} = {240E72CF-3DB4-486B-9BB5-317C7FCC1D1E}
+		{DB4C8DFB-1369-4600-9720-A7F05FBBF877} = {DB4C8DFB-1369-4600-9720-A7F05FBBF877}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Filming.Proxy", "Filming.Proxy\Filming.Proxy.csproj", "{3F54636A-AFFE-4726-98B4-7A9236BF5B98}"
@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Locally Run", "Locally Run"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingJobDispatchContainee", "XAFilmingJobDispatchContainee\XAFilmingJobDispatchContainee.vcxproj", "{32990BD2-0916-454A-BF86-C9D5A936E908}"
 	ProjectSection(ProjectDependencies) = postProject
-		{240E72CF-3DB4-486B-9BB5-317C7FCC1D1E} = {240E72CF-3DB4-486B-9BB5-317C7FCC1D1E}
+		{DB4C8DFB-1369-4600-9720-A7F05FBBF877} = {DB4C8DFB-1369-4600-9720-A7F05FBBF877}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingCommon", "XAFilmingCommon\XAFilmingCommon.vcxproj", "{DB4C8DFB-1369-4600-9720-A7F05FBBF877}"
@@ -33,10 +33,16 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Template", "Template", "{881A0057-0614-4C43-9C6E-59809B2B356A}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingWrapper", "XAFilmingWrapper\XAFilmingWrapper.vcxproj", "{240E72CF-3DB4-486B-9BB5-317C7FCC1D1E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DB4C8DFB-1369-4600-9720-A7F05FBBF877} = {DB4C8DFB-1369-4600-9720-A7F05FBBF877}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingContaineeTemplate", "XAFilmingContaineeTemplate\XAFilmingContaineeTemplate.vcxproj", "{1DAC3D69-A462-45D5-818B-E3175F401C6F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingServiceContainee", "XAFilmingServiceContainee\XAFilmingServiceContainee.vcxproj", "{0051C742-2658-4EAB-9134-AA065AA84963}"
+	ProjectSection(ProjectDependencies) = postProject
+		{240E72CF-3DB4-486B-9BB5-317C7FCC1D1E} = {240E72CF-3DB4-486B-9BB5-317C7FCC1D1E}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Filming.CommandSenderSimulator", "Filming.CommandSenderSimulator\Filming.CommandSenderSimulator.csproj", "{D0513F12-CA67-4024-9874-123A44B59A6C}"
 EndProject

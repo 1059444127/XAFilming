@@ -12,7 +12,7 @@ MCSF_FILMING_BEGIN_NAMESPACE
 
 int MCSF_FILMING_NAMESPACE::PrintDicomFileCommandHandler::HandleCommand(const CommandContext* pContext,std::string* pReplyObject)
 {
-	*pReplyObject = EMPTY_STRING;
+	*pReplyObject = XA_FILMING_EMPTY_STRING;
 	assert(nullptr != pContext);
 	assert(nullptr != pReplyObject);
 

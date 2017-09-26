@@ -16,7 +16,7 @@ typedef boost::shared_ptr<IDataHeaderElementMap> IDataHeaderElementMapPtr;
 
 int PrintDataHeaderCommandHandler::HandleCommand(const CommandContext* pContext,std::string* pReplyObject)
 {
-	*pReplyObject = EMPTY_STRING;
+	*pReplyObject = XA_FILMING_EMPTY_STRING;
 	assert(nullptr != pContext);
 	assert(nullptr != pReplyObject);
 
