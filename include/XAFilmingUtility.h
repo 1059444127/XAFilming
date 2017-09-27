@@ -2,5 +2,6 @@
 #include <vector>
 using namespace  std;
 
-void split(const string serializedString, const string separator, vector<string> & splitStringVector);
-void join(const vector<string> stringVector, const string separator, string &joinedString);
+void serializeStrings(const vector<string>& stringVector, string& serializedString);
+void deserializeStrings(const string serializedString, vector<string>& splitStringVector);
+
