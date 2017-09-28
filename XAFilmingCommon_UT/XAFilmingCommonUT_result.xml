@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="2" failures="1" disabled="0" errors="0" time="0.003" name="AllTests">
-  <testsuite name="XAFilmingUtilityTests" tests="2" failures="1" disabled="0" errors="0" time="0">
-    <testcase name="EmptyString_Serailize_and_Deserialize" value_param="" type_param="" status="run" time="0" classname="XAFilmingUtilityTests" />
-    <testcase name="OneString_Serailize_and_Deserialize" value_param="" type_param="" status="run" time="0" classname="XAFilmingUtilityTests">
+<testsuites tests="2" failures="2" disabled="0" errors="0" time="0.004" name="AllTests">
+  <testsuite name="XAFilmingUtilityTests" tests="2" failures="2" disabled="0" errors="0" time="0.002">
+    <testcase name="EmptyString_Serailize_and_Deserialize" value_param="" type_param="" status="run" time="0.001" classname="XAFilmingUtilityTests">
+      <failure message="Value of: 0 == expectedStringsCount - actualStringsCount&#x0A;  Actual: false&#x0A;Expected: true" type=""><![CDATA[XAFilmingUtilityTests.cpp:11
+Value of: 0 == expectedStringsCount - actualStringsCount
+  Actual: false
+Expected: true]]></failure>
+    </testcase>
+    <testcase name="OneString_Serailize_and_Deserialize" value_param="" type_param="" status="run" time="0.001" classname="XAFilmingUtilityTests">
+      <failure message="Value of: 0 == expectedStringsCount - actualStringsCount&#x0A;  Actual: false&#x0A;Expected: true" type=""><![CDATA[XAFilmingUtilityTests.cpp:11
+Value of: 0 == expectedStringsCount - actualStringsCount
+  Actual: false
+Expected: true]]></failure>
       <failure message="Value of: actualStrings[i].c_str()&#x0A;  Actual: &quot;OneString&quot;&#x0A;Expected: expectedStrings[i].c_str()&#x0A;Which is: &quot;&quot;" type=""><![CDATA[XAFilmingUtilityTests.cpp:15
 Value of: actualStrings[i].c_str()
   Actual: "OneString"

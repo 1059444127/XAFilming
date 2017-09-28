@@ -49,6 +49,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UTProjectTemplate", "UTProjectTemplate\UTProjectTemplate.vcxproj", "{ACE2A218-4220-4774-912F-0C43FB6A6B49}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingCommon_UT", "XAFilmingCommon_UT\XAFilmingCommon_UT.vcxproj", "{002D929B-A8EE-46FF-8679-46BAE5286BD3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DB4C8DFB-1369-4600-9720-A7F05FBBF877} = {DB4C8DFB-1369-4600-9720-A7F05FBBF877}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
