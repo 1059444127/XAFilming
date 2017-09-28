@@ -1,6 +1,8 @@
 #include "XAFilmingUtility.h"
 #include "XAFilmingLogger.h"
 
+#include "CommunicationCommandID.h"
+
 
 void split(const string serializedString, const string separator, vector<string> & splitStringVector)
 {
@@ -41,13 +43,12 @@ void join(const vector<string>& stringVector, const string separator, string& jo
 
 void serializeStrings(const vector<string>& stringVector, string& serializedString)
 {
-	//TODO: Replace "|" with Definitions
 	LOG_INFO_XA_FILMING << "serializing strings " << LOG_END;
-	join(stringVector, "|", serializedString);
+	join(stringVector, PARAMETER_LIST_SEPARATOR, serializedString);
 }
 
 void deserializeStrings(const string serializedString, vector<string>& splitStringVector)
 {
 	LOG_INFO_XA_FILMING << "Deserializing [" << serializedString << "]" <<  LOG_END;
-	split(serializedString, "|", splitStringVector);
+	split(serializedString, PARAMETER_LIST_SEPARATOR, splitStringVector);
 }
