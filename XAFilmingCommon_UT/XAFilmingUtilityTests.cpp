@@ -32,3 +32,20 @@ TEST_F(XAFilmingUtilityTests, EmptyString_Serailize_and_Deserialize)
 	// Assert
 	Compare(expectedStrings, actualStrings);
 }
+
+TEST_F(XAFilmingUtilityTests, OneString_Serailize_and_Deserialize)
+{
+		// Preapare
+	vector<string> actualStrings;
+	vector<string> expectedStrings;
+
+	actualStrings.push_back("OneString");
+	string serializedString;
+
+	// Act
+	serializeStrings(actualStrings, serializedString);
+	deserializeStrings(serializedString, expectedStrings);
+
+	// Assert
+	Compare(expectedStrings, actualStrings);
+}
