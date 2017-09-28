@@ -9,6 +9,13 @@
     XA_FILMING_DISALLOW_ASSIGN(classname)
 
 
+#ifdef XA_FilmingCommon_LIB
+#define XA_FilmingCommon_Export __declspec (dllexport)
+#else //!defined(XA_FilmingCommon_LIB)
+#define XA_FilmingCommon_Export __declspec (dllimport)
+#endif
+
+
 #define MCSF_NAMESPACE_FOR_XA       Mcsf
 
 #define XA_FILMING_EMPTY_STRING ""

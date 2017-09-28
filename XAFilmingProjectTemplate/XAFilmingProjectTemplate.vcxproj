@@ -79,6 +79,9 @@
   <ItemGroup>
     <None Include="copyfile.bat" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ExportMacro.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

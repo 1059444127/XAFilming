@@ -8,11 +8,11 @@ void Compare(const vector<string>& expectedStrings, const vector<string>& actual
 	auto actualStringsCount = actualStrings.size();
 	auto expectedStringsCount = expectedStrings.size();
 
-	EXPECT_EQ(expectedStringsCount, actualStringsCount);
+	EXPECT_TRUE(0 == expectedStringsCount - actualStringsCount);
 
 	for (int i=0; i<actualStringsCount; i++)
 	{
-		EXPECT_EQ(expectedStrings[i], actualStrings[i]);
+		EXPECT_STREQ(expectedStrings[i].c_str(), actualStrings[i].c_str());
 	}
 }
 
@@ -26,8 +26,6 @@ TEST_F(XAFilmingUtilityTests, EmptyString_Serailize_and_Deserialize)
 	string serializedString;
 
 	// Act
-
-	//TODO: Import serialize funcitons from project XAFilmingCommon
 	serializeStrings(actualStrings, serializedString);
 	deserializeStrings(serializedString, expectedStrings);
 
