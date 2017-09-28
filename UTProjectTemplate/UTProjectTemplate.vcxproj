@@ -41,16 +41,17 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\..\UIH\include\external\;..\..\..\..\UIH\include\mcs\;..\include\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>gtestd.lib;XAFilmingService.lib</AdditionalDependencies>
+      <AdditionalDependencies>gtestd.lib;</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\..\..\UIH\lib_$(configuration)\external;..\..\..\..\UIH\lib_$(configuration)\mcs;..\..\..\..\UIH\lib_$(configuration)\external\gtest;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\..\..\UIH\include\external\;..\..\..\..\UIH\include\mcs\;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\..\UIH\include\external\;..\..\..\..\UIH\include\mcs\;..\include\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

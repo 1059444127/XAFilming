@@ -41,25 +41,30 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\..\UIH\include\external\;..\..\..\..\UIH\include\mcs\;..\include\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>gtestd.lib;XAFilmingService.lib</AdditionalDependencies>
+      <AdditionalDependencies>gtestd.lib;XAFilmingCommon.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\..\..\UIH\lib_$(configuration)\external;..\..\..\..\UIH\lib_$(configuration)\mcs;..\..\..\..\UIH\lib_$(configuration)\external\gtest;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\..\..\UIH\include\external\;..\..\..\..\UIH\include\mcs\;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\..\UIH\include\external\;..\..\..\..\UIH\include\mcs\;..\include\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>gtest.lib</AdditionalDependencies>
+      <AdditionalDependencies>gtest.lib;XAFilmingCommon.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\..\..\UIH\lib\external;..\..\..\..\UIH\lib\mcs;..\..\..\..\UIH\lib\external\gtest;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="XAFilmingCommonUT.cpp" />
+    <ClCompile Include="XAFilmingUtilityTests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="XAFilmingUtilityTests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
