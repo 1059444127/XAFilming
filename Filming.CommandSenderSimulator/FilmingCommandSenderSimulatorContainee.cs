@@ -48,7 +48,7 @@ namespace UIH.XA.Filming.CommandSenderSimulator
             var commandText = new CommandContext();
             commandText.iCommandId = commandID;
             commandText.sReceiver = "XAFilmingService@@";
-            commandText.sStringObject = @"E:\1.dcm";
+            commandText.sStringObject = @"E:\1.dcm|E:\2.dcm";
             commandText.pCommandCallback = new PrintCommandCallBack();
 
             var proxy = GetCommunicationProxy();

@@ -1,6 +1,6 @@
 #include "XAFilmingUtilityTests.h"
 #include "XAFilmingMacro.h"
-#include "XAFilmingUtility.h"
+#include "XAFilmingSerializer.h"
 
 
 void Compare(const vector<string>& expectedStrings, const vector<string>& actualStrings)

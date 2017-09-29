@@ -19,7 +19,6 @@
 #define MCSF_NAMESPACE_FOR_XA       Mcsf
 
 #define XA_FILMING_EMPTY_STRING ""
-#define LOG_END "\n"
 
 
 

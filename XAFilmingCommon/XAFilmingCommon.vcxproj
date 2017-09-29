@@ -95,10 +95,10 @@
   <ItemGroup>
     <ClInclude Include="XAFilmingLogger.h" />
     <ClInclude Include="XAFilmingMacro.h" />
-    <ClInclude Include="XAFilmingUtility.h" />
+    <ClInclude Include="XAFilmingSerializer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="XAFilmingUtility.cpp" />
+    <ClCompile Include="XAFilmingSerializer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,8 +1,12 @@
-#include "XAFilmingUtility.h"
 #include <ctime>
-#include "XAFilmingLogger.h"
+
 #include <McsfFilming/mcsf_filming_libary_interface.h>
 #include <McsfFilming/mcsf_filming_libary_factory.h>
+
+#include "XAFilmingLogger.h"
+#include "XAFilmingMacro.h"
+
+#include "XAPrint.h"
 
 namespace MCSF_NAMESPACE_FOR_XA
 {

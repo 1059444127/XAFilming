@@ -5,6 +5,8 @@
 const string XA_FILMING_LOGGER_SOURCE = "XA/Filming";
 const int XA_FILMING_LOGGER_UID = 001035010;
 
+#define LOG_END "\n"
+
 #ifndef CONSOLE_LOG
 
 #define LOG_INFO_XA_FILMING             \

@@ -81,10 +81,10 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="XAFilmingUtility.h" />
+    <ClInclude Include="XAPrint.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="XAFilmingUtility.cpp" />
+    <ClCompile Include="XAPrint.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="copyfile.bat" />
