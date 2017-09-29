@@ -2,8 +2,6 @@
 
 #include "McsfLogger/mcsf_logger.h"
 
-using namespace std;
-
 const string XA_FILMING_LOGGER_SOURCE = "XA/Filming";
 const int XA_FILMING_LOGGER_UID = 001035010;
 
@@ -47,16 +45,16 @@ const int XA_FILMING_LOGGER_UID = 001035010;
 
 #else
 
-#define LOG_INFO_XA_FILMING  cout
+#define LOG_INFO_XA_FILMING  std::cout
 
-#define LOG_WARN_XA_FILMING  cout                        
+#define LOG_WARN_XA_FILMING  std::cout                        
 
-#define LOG_ERROR_XA_FILMING  cout                           
+#define LOG_ERROR_XA_FILMING  std::cout                           
 
-#define LOG_SVC_ERROR_XA_FILMING  cout                           
+#define LOG_SVC_ERROR_XA_FILMING  std::cout                           
 
-#define LOG_SVC_WARN_XA_FILMING  cout                           
+#define LOG_SVC_WARN_XA_FILMING  std::cout                           
 
-#define LOG_SVC_INFO_XA_FILMING  cout       
+#define LOG_SVC_INFO_XA_FILMING  std::cout       
 
 #endif
