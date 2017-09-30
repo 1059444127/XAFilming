@@ -1,18 +1,30 @@
+#include "XAFilmingLogger.h"
+
+#include "XAFilmingSerializer.h"
+#include "XAPrint.h"
+
 #include "XAFilmingServiceCommandHandler.h"
-#include <XAFilmingLogger.h>
 
 int XAFilmingServiceCommandHandler::HandleCommand(const CommandContext* pContext, std::string* pReplyObject)
 {
 	assert(nullptr != pContext);
 	assert(nullptr != pReplyObject);
 
-	*pReplyObject = "true";
-	LOG_INFO_XA_FILMING << "Received Command [" << pContext->iCommandId << "] from [" << pContext->sSender << LOG_END;
+	string serializedPaths = pContext->sSerializeObject;
 
-	//	vector<string> stringVector;
-	//split(serializedPaths, PARAMETER_LIST_SEPARATOR, stringVector);
-	//
-	//Print(stringVector);
+	LOG_INFO_XA_FILMING << "Received Command [" << pContext->iCommandId << "] from [" << pContext->sSender 
+				<< "] with message [" << serializedPaths << "]" << LOG_END;
+
+	vector<string> stringVector;
+	deserializeStrings(serializedPaths, stringVector);
+	
+	bool printResult = print(stringVector);
+	LOG_INFO_XA_FILMING << "Print Result is [" << printResult << "]" << LOG_END;
+
+	stringstream ss;
+	ss << printResult;
+
+	*pReplyObject = ss.str();
 
 	return 0;
 }

@@ -4,15 +4,11 @@
 
 #include "XAFilmingMacro.h"
 
-using namespace std;
+#include "XAFilmingWrapperExportMacro.h"
 
 namespace MCSF_NAMESPACE_FOR_XA
 {
 
-	bool Print(const vector<string>& dicomFilePaths);
-
-	const string TEMP_DIRECTORY = "E:\\Images\\Temp\\";
-
-	string CreateDicomFileName();
+	bool XA_FilmingWrapper_Export print(const std::vector<string>& dicomFilePaths);
 
 }
