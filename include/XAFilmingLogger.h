@@ -47,6 +47,8 @@ const int XA_FILMING_LOGGER_UID = 001035010;
 
 #else
 
+//TODO-RELEASE: Replace CONSOLE LOG with UIH LOG
+
 #define LOG_INFO_XA_FILMING  std::cout
 
 #define LOG_WARN_XA_FILMING  std::cout                        
@@ -60,3 +62,11 @@ const int XA_FILMING_LOGGER_UID = 001035010;
 #define LOG_SVC_INFO_XA_FILMING  std::cout       
 
 #endif
+
+#define LOG_COLLECTION_XA_FILMING(collection)\
+{\
+		for (auto iter = (collection).begin(); iter != (collection).end() ; iter++)\
+		{\
+			LOG_INFO_XA_FILMING << *iter << LOG_END;\
+		}\
+}
