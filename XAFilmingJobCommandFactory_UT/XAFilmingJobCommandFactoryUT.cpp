@@ -3,7 +3,7 @@
 using namespace std;
 
 //xml output file of UT result 
-static const string ksTestOutputFile = "xml:UTProjectTemplate_result.xml";
+static const string ksTestOutputFile = "xml:XAFilmingJobCommandFactoryUT_result.xml";
 
 int main(int argc, char* argv[])
 {
