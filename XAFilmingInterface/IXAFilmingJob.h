@@ -6,5 +6,5 @@ class IXAFilmingJob
 {
 public:
     virtual int GetJobID() = 0;
-    virtual XAFilmingJobStatusBase GetJobStatus() = 0;
+    virtual const XAFilmingJobStatusBase* GetJobStatus() = 0;
 };

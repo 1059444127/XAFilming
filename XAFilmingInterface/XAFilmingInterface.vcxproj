@@ -17,6 +17,9 @@
     <ClInclude Include="IXAFilmingJob.h" />
     <ClInclude Include="XAFilmingJobStatusBase.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="XAFilmingJobStatusBase.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FEC9A280-D31E-4BF9-8C8A-0A3150B2F9E4}</ProjectGuid>
     <RootNamespace>XAFilmingInterface</RootNamespace>
@@ -57,6 +60,7 @@
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\include;..\..\..\..\UIH\include\mcs\;..\..\..\..\UIH\include\external\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>CONSOLE_LOG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

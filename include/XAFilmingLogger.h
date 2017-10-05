@@ -1,13 +1,12 @@
 #pragma once
 
+#define LOG_END "\n"
+
+#ifndef CONSOLE_LOG
 #include "McsfLogger/mcsf_logger.h"
 
 const string XA_FILMING_LOGGER_SOURCE = "XA/Filming";
 const int XA_FILMING_LOGGER_UID = 001035010;
-
-#define LOG_END "\n"
-
-#ifndef CONSOLE_LOG
 
 #define LOG_INFO_XA_FILMING             \
 	LOG_DEV_INFO_2(            \
@@ -48,6 +47,7 @@ const int XA_FILMING_LOGGER_UID = 001035010;
 #else
 
 //TODO-RELEASE: Replace CONSOLE LOG with UIH LOG
+#include <iostream>
 
 #define LOG_INFO_XA_FILMING  std::cout
 
