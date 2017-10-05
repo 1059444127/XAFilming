@@ -50,7 +50,7 @@
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\include;..\..\..\..\UIH\include\mcs\;..\..\..\..\UIH\include\external\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>CONSOLE_LOG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>XA_FilmingJobStatus_LIB;CONSOLE_LOG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -58,6 +58,9 @@
       <ImportLibrary>..\..\..\..\UIH\lib_$(Configuration)\mcs\$(ProjectName).lib</ImportLibrary>
       <AdditionalDependencies>XAFilmingInterface.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copyfile.bat</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -65,6 +68,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <AdditionalIncludeDirectories>..\include;..\..\..\..\UIH\include\mcs\;..\..\..\..\UIH\include\external\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>StdAfx.h</PrecompiledHeaderFile>
+      <PreprocessorDefinitions>XA_FilmingJobStatus_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -72,10 +76,15 @@
       <ImportLibrary>..\..\..\..\UIH\lib\mcs\$(ProjectName).lib</ImportLibrary>
       <AdditionalDependencies>XAFilmingInterface.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>copyfile.bat</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="XADone.h" />
     <ClInclude Include="XAFailed.h" />
+    <ClInclude Include="XAFilmingJobStatusExportMacro.h" />
+    <ClInclude Include="XAFilmingJobStatusFactory.h" />
     <ClInclude Include="XAPaused.h" />
     <ClInclude Include="XAPrinting.h" />
     <ClInclude Include="XAWaiting.h" />
@@ -83,9 +92,13 @@
   <ItemGroup>
     <ClCompile Include="XADone.cpp" />
     <ClCompile Include="XAFailed.cpp" />
+    <ClCompile Include="XAFilmingJobStatusFactory.cpp" />
     <ClCompile Include="XAPaused.cpp" />
     <ClCompile Include="XAPrinting.cpp" />
     <ClCompile Include="XAWaiting.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="copyfile.bat" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
