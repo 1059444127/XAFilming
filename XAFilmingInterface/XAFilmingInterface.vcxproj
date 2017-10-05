@@ -10,6 +10,13 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="copyfile.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IXAFilmingJob.h" />
+    <ClInclude Include="XAFilmingJobStatusBase.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FEC9A280-D31E-4BF9-8C8A-0A3150B2F9E4}</ProjectGuid>
     <RootNamespace>XAFilmingInterface</RootNamespace>
@@ -76,9 +83,6 @@
       <Command>copyfile.bat</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <None Include="copyfile.bat" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
