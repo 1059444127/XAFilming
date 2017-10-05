@@ -63,6 +63,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingInterface", "XAFilmingInterface\XAFilmingInterface.vcxproj", "{FEC9A280-D31E-4BF9-8C8A-0A3150B2F9E4}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingJobStatus", "XAFilmingJobStatus\XAFilmingJobStatus.vcxproj", "{07493DE2-DB22-4766-8D5F-AF93B8916BCF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FEC9A280-D31E-4BF9-8C8A-0A3150B2F9E4} = {FEC9A280-D31E-4BF9-8C8A-0A3150B2F9E4}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
