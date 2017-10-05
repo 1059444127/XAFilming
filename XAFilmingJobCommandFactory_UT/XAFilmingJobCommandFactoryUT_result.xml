@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="1" failures="0" disabled="0" errors="0" time="0.003" name="AllTests">
+<testsuites tests="1" failures="0" disabled="0" errors="0" timestamp="2017-10-03T15:23:52" time="0.007" name="AllTests">
   <testsuite name="XAFilmingJobCommandFactoryTests" tests="1" failures="0" disabled="0" errors="0" time="0.001">
-    <testcase name="XAFilmingJobCommandFactory_Is_Singleton" value_param="" type_param="" status="run" time="0" classname="XAFilmingJobCommandFactoryTests" />
+    <testcase name="XAFilmingJobCommandFactory_Is_Singleton" status="run" time="0" classname="XAFilmingJobCommandFactoryTests" />
   </testsuite>
 </testsuites>
