@@ -2,10 +2,14 @@
 
 #include "XAFilmingJobStatusBase.h"
 
-class XAFilmingJobBase
+class XA_FilmingInterface_Export XAFilmingJobBase
 {
 public:
+    XAFilmingJobBase(XAFilmingJobStatusBase* status);
     virtual int GetJobID() = 0;
-    virtual XAFilmingJobStatusBase* GetJobStatus() = 0;
-    virtual void SetJobStatus(XAFilmingJobStatusBase* jobStatus) = 0;
+    virtual XAFilmingJobStatusBase* GetJobStatus();
+    virtual void SetJobStatus(XAFilmingJobStatusBase* jobStatus);
+    virtual ~XAFilmingJobBase();
+private:
+    XAFilmingJobStatusBase* _status;
 };

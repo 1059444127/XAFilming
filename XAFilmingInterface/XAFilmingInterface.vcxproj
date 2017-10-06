@@ -19,6 +19,7 @@
     <ClInclude Include="XAFilmingJobStatusBase.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="XAFilmingJobBase.cpp" />
     <ClCompile Include="XAFilmingJobStatusBase.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
