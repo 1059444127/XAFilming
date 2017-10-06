@@ -28,6 +28,11 @@ string serialize(const vector<T>& collection)
     return serialize<T>(collection, PARAMETER_LIST_SEPARATOR);
 }
 
+string serialize(const vector<int> collection)
+{
+    return serialize<int>(collection);
+}
+
 void split(const string serializedString, const string& separator, vector<string> & splitStringVector)
 {
 	LOG_INFO_XA_FILMING << "Spliting [" << serializedString << "] with separator [" << separator << "]" << LOG_END;
