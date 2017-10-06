@@ -24,3 +24,38 @@ XAFilmingJobBase::~XAFilmingJobBase()
 {
     SAFE_DELETE_ELEMENT(_status);
 }
+
+void XAFilmingJobBase::Complete()
+{
+    LOG_INFO_XA_FILMING << "Complete job [" << GetJobID() << "] with status [" << GetJobStatus()->ToString() << "]" << LOG_END;
+}
+
+void XAFilmingJobBase::Continue()
+{
+    LOG_INFO_XA_FILMING << "Continue job [" << GetJobID() << "] with status [" << GetJobStatus()->ToString() << "]" << LOG_END;
+    _status->Continue(this);
+}
+
+void XAFilmingJobBase::Fail()
+{
+    LOG_INFO_XA_FILMING << "Set Failed flag for job [" << GetJobID() << "] with status [" << GetJobStatus()->ToString() << "]" << LOG_END;
+    _status->Fail(this);
+}
+
+void XAFilmingJobBase::Pause()
+{
+    LOG_INFO_XA_FILMING << "Pause job [" << GetJobID() << "] with status [" << GetJobStatus()->ToString() << "]" << LOG_END;
+    _status->Pause(this);
+}
+
+void XAFilmingJobBase::Print()
+{
+    LOG_INFO_XA_FILMING << "Print job [" << GetJobID() << "] with status [" << GetJobStatus()->ToString() << "]" << LOG_END;
+    _status->Print(this);
+}
+
+void XAFilmingJobBase::Restart()
+{
+    LOG_INFO_XA_FILMING << "Restart job [" << GetJobID() << "] with status [" << GetJobStatus()->ToString() << "]" << LOG_END;
+    _status->Restart(this);
+}

@@ -10,6 +10,14 @@ public:
     virtual XAFilmingJobStatusBase* GetJobStatus();
     virtual void SetJobStatus(XAFilmingJobStatusBase* jobStatus);
     virtual ~XAFilmingJobBase();
+
+    virtual void Complete();
+    virtual void Continue();
+    virtual void Fail();
+    virtual void Pause();
+    virtual void Print();
+    virtual void Restart();
+
 private:
     XAFilmingJobStatusBase* _status;
 };
