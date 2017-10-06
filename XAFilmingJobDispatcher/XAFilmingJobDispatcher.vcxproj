@@ -86,9 +86,11 @@
   <ItemGroup>
     <ClInclude Include="XAFilmingJobDispatcher.h" />
     <ClInclude Include="XAFilmingJobDispatcherExportMacro.h" />
+    <ClInclude Include="XAFilmingJobDispatcherFactory.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="XAFilmingJobDispatcher.cpp" />
+    <ClCompile Include="XAFilmingJobDispatcherFactory.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
