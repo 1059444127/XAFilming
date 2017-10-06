@@ -7,5 +7,4 @@ using namespace  std;
 XA_FilmingCommon_Export void serializeStrings(const vector<string>& stringVector, string& serializedString);
 XA_FilmingCommon_Export void deserializeStrings(const string serializedString, vector<string>& splitStringVector);
 
-template<class T>
-XA_FilmingCommon_Export string serialize(const vector<T>& collection);
+string XA_FilmingCommon_Export serialize(const vector<int> collection);

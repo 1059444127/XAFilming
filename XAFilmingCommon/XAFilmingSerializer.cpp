@@ -25,7 +25,7 @@ string serialize(const vector<T>& collection, const string& separator)
 template<class T>
 string serialize(const vector<T>& collection)
 {
-    return serialize<string>(collection, PARAMETER_LIST_SEPARATOR);
+    return serialize<T>(collection, PARAMETER_LIST_SEPARATOR);
 }
 
 void split(const string serializedString, const string& separator, vector<string> & splitStringVector)
