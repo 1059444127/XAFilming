@@ -73,8 +73,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingJobStatus_UT", "XA
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingJob", "XAFilmingJob\XAFilmingJob.vcxproj", "{D08FCA2E-7E4A-4066-8F01-F282C09C5B99}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FEC9A280-D31E-4BF9-8C8A-0A3150B2F9E4} = {FEC9A280-D31E-4BF9-8C8A-0A3150B2F9E4}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingJob_UT", "XAFilmingJob_UT\XAFilmingJob_UT.vcxproj", "{D5F3D072-A2DD-4088-B2FF-8A1A8240F095}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingJobDispatcher", "XAFilmingJobDispatcher\XAFilmingJobDispatcher.vcxproj", "{667FEC7E-6112-420B-B488-1A1A068A40FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -166,6 +171,10 @@ Global
 		{D5F3D072-A2DD-4088-B2FF-8A1A8240F095}.Debug|x64.Build.0 = Debug|x64
 		{D5F3D072-A2DD-4088-B2FF-8A1A8240F095}.Release|x64.ActiveCfg = Release|x64
 		{D5F3D072-A2DD-4088-B2FF-8A1A8240F095}.Release|x64.Build.0 = Release|x64
+		{667FEC7E-6112-420B-B488-1A1A068A40FE}.Debug|x64.ActiveCfg = Debug|x64
+		{667FEC7E-6112-420B-B488-1A1A068A40FE}.Debug|x64.Build.0 = Debug|x64
+		{667FEC7E-6112-420B-B488-1A1A068A40FE}.Release|x64.ActiveCfg = Release|x64
+		{667FEC7E-6112-420B-B488-1A1A068A40FE}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

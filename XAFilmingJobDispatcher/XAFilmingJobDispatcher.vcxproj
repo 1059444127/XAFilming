@@ -10,22 +10,9 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="copyfile.bat" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="IXAFilmingJobDispatch.h" />
-    <ClInclude Include="XAFilmingJobBase.h" />
-    <ClInclude Include="XAFilmingInterfaceExportMacro.h" />
-    <ClInclude Include="XAFilmingJobStatusBase.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="XAFilmingJobBase.cpp" />
-    <ClCompile Include="XAFilmingJobStatusBase.cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{FEC9A280-D31E-4BF9-8C8A-0A3150B2F9E4}</ProjectGuid>
-    <RootNamespace>XAFilmingInterface</RootNamespace>
+    <ProjectGuid>{667FEC7E-6112-420B-B488-1A1A068A40FE}</ProjectGuid>
+    <RootNamespace>XAFilmingJobDispatcher</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -63,7 +50,6 @@
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\include;..\..\..\..\UIH\include\mcs\;..\..\..\..\UIH\include\external\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>XA_FilmingInterface_LIB;CONSOLE_LOG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -80,7 +66,6 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <AdditionalIncludeDirectories>..\include;..\..\..\..\UIH\include\mcs\;..\..\..\..\UIH\include\external\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>StdAfx.h</PrecompiledHeaderFile>
-      <PreprocessorDefinitions>XA_FilmingInterface_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -91,6 +76,12 @@
       <Command>copyfile.bat</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="copyfile.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="XAFilmingJobDispatcherExportMacro.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
