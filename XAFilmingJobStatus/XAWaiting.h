@@ -5,6 +5,7 @@ class XAWaiting :
 {
 public:
     virtual void Pause(IXAFilmingJob* const job);
+    virtual void Print(IXAFilmingJob* const job);
     virtual std::string ToString() const;
     
 };

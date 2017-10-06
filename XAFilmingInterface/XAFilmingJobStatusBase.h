@@ -10,6 +10,9 @@ public:
     virtual void Continue(IXAFilmingJob*  const job);
     virtual void Pause(IXAFilmingJob*  const job);
     virtual void Restart(IXAFilmingJob*  const job); 
+    virtual void Print(IXAFilmingJob* const job);
+    virtual void Complete(IXAFilmingJob* const job);
+    virtual void Fail(IXAFilmingJob* const job);
     virtual std::string ToString() const = 0;
 };
 
