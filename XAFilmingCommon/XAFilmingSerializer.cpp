@@ -2,9 +2,33 @@
 #include "XAFilmingLogger.h"
 
 #include "CommunicationCommandID.h"
+#include <sstream>
 
 
-void split(const string serializedString, const string separator, vector<string> & splitStringVector)
+
+template<class T>
+string serialize(const vector<T>& collection, const string& separator)
+{
+    auto size = collection.size();
+    if(size <= 0) {return XA_FILMING_EMPTY_STRING;}
+
+	auto iter = collection.begin();
+	stringstream ss;
+	ss << *iter++;
+	for (; iter != collection.end(); ++iter)
+	{
+		ss << separator << *iter;
+	}
+	return ss.str();;
+}
+
+template<class T>
+string serialize(const vector<T>& collection)
+{
+    return serialize<string>(collection, PARAMETER_LIST_SEPARATOR);
+}
+
+void split(const string serializedString, const string& separator, vector<string> & splitStringVector)
 {
 	LOG_INFO_XA_FILMING << "Spliting [" << serializedString << "] with separator [" << separator << "]" << LOG_END;
 
@@ -24,21 +48,11 @@ void split(const string serializedString, const string separator, vector<string>
 	splitStringVector.push_back(lastItem);
 }
 
-void join(const vector<string>& stringVector, const string separator, string& joinedString)
+void join(const vector<string>& stringVector, const string& separator, string& joinedString)
 {
 	LOG_INFO_XA_FILMING << "Joinning series with separator [" << separator << "]" << LOG_END;
 
-	auto size = stringVector.size();
-	if(size <= 0) {joinedString = XA_FILMING_EMPTY_STRING;  return;}
-
-	auto iter = stringVector.begin();
-	stringstream ss;
-	ss << *iter++;
-	for (; iter != stringVector.end(); ++iter)
-	{
-		ss << separator << *iter;
-	}
-	joinedString = ss.str();
+    joinedString = serialize<string>(stringVector, separator);
 }
 
 void serializeStrings(const vector<string>& stringVector, string& serializedString)
@@ -52,3 +66,5 @@ void deserializeStrings(const string serializedString, vector<string>& splitStri
 	LOG_INFO_XA_FILMING << "Deserializing [" << serializedString << "]" <<  LOG_END;
 	split(serializedString, PARAMETER_LIST_SEPARATOR, splitStringVector);
 }
+
+
