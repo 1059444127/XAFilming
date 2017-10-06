@@ -4,8 +4,8 @@ class XAWaiting :
     public XAFilmingJobStatusBase
 {
 public:
-    virtual void Pause(IXAFilmingJob* const job);
-    virtual void Print(IXAFilmingJob* const job);
+    virtual void Pause(XAFilmingJobBase* const job);
+    virtual void Print(XAFilmingJobBase* const job);
     virtual std::string ToString() const;
     
 };

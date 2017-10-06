@@ -5,7 +5,7 @@ class XAPaused :
     public XAFilmingJobStatusBase
 {
 public:
-    virtual void Continue(IXAFilmingJob* const job) ;
+    virtual void Continue(XAFilmingJobBase* const job) ;
     virtual std::string ToString() const ;
 };
 

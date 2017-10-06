@@ -2,7 +2,7 @@
 
 #include "XAFilmingJobStatusBase.h"
 
-class IXAFilmingJob
+class XAFilmingJobBase
 {
 public:
     virtual int GetJobID() = 0;

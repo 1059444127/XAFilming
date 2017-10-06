@@ -6,7 +6,7 @@ class XAPrinting :
 {
 public:
    virtual std::string ToString() const ;
-    virtual void Complete(IXAFilmingJob* const job);
-    virtual void Fail(IXAFilmingJob* const job);
+    virtual void Complete(XAFilmingJobBase* const job);
+    virtual void Fail(XAFilmingJobBase* const job);
 };
 

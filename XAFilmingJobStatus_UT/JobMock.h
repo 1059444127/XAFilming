@@ -1,8 +1,8 @@
 #pragma once
-#include "IXAFilmingJob.h"
+#include "XAFilmingJobBase.h"
 
 class JobMock :
-    public IXAFilmingJob
+    public XAFilmingJobBase
 {
 public:
     JobMock();

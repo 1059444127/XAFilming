@@ -1,10 +1,10 @@
 #include "XADone.h"
 #include "XAFilmingLogger.h"
-#include "IXAFilmingJob.h"
+#include "XAFilmingJobBase.h"
 #include "XAWaiting.h"
 #include "XAFilmingConst.h"
 
-void XADone::Restart(IXAFilmingJob* const job)
+void XADone::Restart(XAFilmingJobBase* const job)
 {
     LOG_INFO_XA_FILMING << "Restart job [ " << job->GetJobID() << "] with Status [" << job->GetJobStatus()->ToString() << "]" << LOG_END;
     LOG_INFO_XA_FILMING << "Job Status: " << ToString() << LOG_END;

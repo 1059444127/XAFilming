@@ -14,7 +14,7 @@
     <None Include="copyfile.bat" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="IXAFilmingJob.h" />
+    <ClInclude Include="XAFilmingJobBase.h" />
     <ClInclude Include="XAFilmingInterfaceExportMacro.h" />
     <ClInclude Include="XAFilmingJobStatusBase.h" />
   </ItemGroup>

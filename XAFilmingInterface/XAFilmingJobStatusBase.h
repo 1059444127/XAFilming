@@ -2,17 +2,17 @@
 #include <string>
 #include "XAFilmingInterfaceExportMacro.h"
 
-class IXAFilmingJob;
+class XAFilmingJobBase;
 
 class XA_FilmingInterface_Export XAFilmingJobStatusBase
 {
 public:
-    virtual void Continue(IXAFilmingJob*  const job);
-    virtual void Pause(IXAFilmingJob*  const job);
-    virtual void Restart(IXAFilmingJob*  const job); 
-    virtual void Print(IXAFilmingJob* const job);
-    virtual void Complete(IXAFilmingJob* const job);
-    virtual void Fail(IXAFilmingJob* const job);
+    virtual void Continue(XAFilmingJobBase*  const job);
+    virtual void Pause(XAFilmingJobBase*  const job);
+    virtual void Restart(XAFilmingJobBase*  const job); 
+    virtual void Print(XAFilmingJobBase* const job);
+    virtual void Complete(XAFilmingJobBase* const job);
+    virtual void Fail(XAFilmingJobBase* const job);
     virtual std::string ToString() const = 0;
 };
 
