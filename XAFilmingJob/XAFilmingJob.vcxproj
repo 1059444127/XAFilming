@@ -50,11 +50,13 @@
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\include;..\..\..\..\UIH\include\mcs\;..\..\..\..\UIH\include\external\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>XA_FilmingJob_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\..\..\..\UIH\lib_$(configuration)\external;..\..\..\..\UIH\lib_$(configuration)\mcs;..\..\..\..\UIH\lib_$(configuration)\external\boost;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\..\..\..\UIH\lib_$(Configuration)\mcs\$(ProjectName).lib</ImportLibrary>
+      <AdditionalDependencies>XAFilmingJobStatus.lib;XAFilmingInterface.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copyfile.bat</Command>
@@ -66,21 +68,29 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <AdditionalIncludeDirectories>..\include;..\..\..\..\UIH\include\mcs\;..\..\..\..\UIH\include\external\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderFile>StdAfx.h</PrecompiledHeaderFile>
+      <PreprocessorDefinitions>XA_FilmingJob_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\..\..\..\UIH\lib\external;..\..\..\..\UIH\lib\mcs;..\..\..\..\UIH\lib\external\boost;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\..\..\..\UIH\lib\mcs\$(ProjectName).lib</ImportLibrary>
+      <AdditionalDependencies>XAFilmingJobStatus.lib;XAFilmingInterface.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copyfile.bat</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="FilmingJob.h" />
     <ClInclude Include="XAFilmingJobExportMacro.h" />
+    <ClInclude Include="XAFilmingJobFactory.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="copyfile.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FilmingJob.cpp" />
+    <ClCompile Include="XAFilmingJobFactory.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
