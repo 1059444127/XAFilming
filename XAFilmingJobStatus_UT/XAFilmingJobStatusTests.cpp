@@ -17,12 +17,14 @@ TEST_F(XAFilmingJobStatusTests, Pause_And_Continue_A_Job)
     auto pJob = new JobMock();
     auto pStatusExpectWaiting = XAFilmingJobStatusFactory::Instance()->CreateJobStatus();
     
-    pStatusExpectWaiting->Pause(pJob);
+    EXPECT_TRUE(pStatusExpectWaiting->Pause(pJob));
     SAFE_DELETE_ELEMENT(pStatusExpectWaiting)
     auto pStatusExpectPaused = pJob->GetJobStatus();  
     EXPECT_EQ(XA_Filming_Job_Paused, pStatusExpectPaused->ToString());
 
-    pStatusExpectPaused->Continue(pJob);
+    EXPECT_TRUE(pStatusExpectPaused->Continue(pJob));
     auto pStatusActual = pJob->GetJobStatus();
     EXPECT_EQ(XA_Filming_Job_Waiting, pStatusActual->ToString());
+
+    SAFE_DELETE_ELEMENT(pJob);
 }

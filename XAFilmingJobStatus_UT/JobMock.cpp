@@ -19,12 +19,12 @@ int JobMock::GetJobID()
     return 0;
 }
 
-const XAFilmingJobStatusBase* JobMock::GetJobStatus()
+XAFilmingJobStatusBase* JobMock::GetJobStatus()
 {
     return _status;
 }
 
-void JobMock::SetJobStatus(const XAFilmingJobStatusBase* jobStatus)
+void JobMock::SetJobStatus(XAFilmingJobStatusBase* jobStatus)
 {
     if(_status == jobStatus) return;
     SAFE_DELETE_ELEMENT(_status);

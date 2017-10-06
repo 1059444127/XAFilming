@@ -9,10 +9,10 @@ public:
     ~JobMock();
 
     virtual int GetJobID();
-    virtual const XAFilmingJobStatusBase* GetJobStatus();
-    virtual void SetJobStatus(const XAFilmingJobStatusBase* jobStatus);
+    virtual XAFilmingJobStatusBase* GetJobStatus();
+    virtual void SetJobStatus(XAFilmingJobStatusBase* jobStatus);
 
 private:
-    const XAFilmingJobStatusBase* _status;
+    XAFilmingJobStatusBase* _status;
 };
 
