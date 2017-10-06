@@ -8,7 +8,7 @@ XAFilmingJobStatusFactory* XAFilmingJobStatusFactory::Instance()
     return _instance;
 }
 
-const XAFilmingJobStatusBase* XAFilmingJobStatusFactory::CreateJobStatus()
+XAFilmingJobStatusBase* XAFilmingJobStatusFactory::CreateJobStatus()
 {
     return new XAWaiting();
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="1" failures="0" disabled="0" errors="0" timestamp="2017-10-05T23:02:52" time="0.006" name="AllTests">
-  <testsuite name="XAFilmingJobStatusTests" tests="1" failures="0" disabled="0" errors="0" time="0.001">
+<testsuites tests="2" failures="0" disabled="0" errors="0" timestamp="2017-10-06T09:33:29" time="0.008" name="AllTests">
+  <testsuite name="XAFilmingJobStatusTests" tests="2" failures="0" disabled="0" errors="0" time="0.005">
     <testcase name="XAFilmingJobStatusFactory_Is_Singleton" status="run" time="0" classname="XAFilmingJobStatusTests" />
+    <testcase name="Paused_A_Job" status="run" time="0.003" classname="XAFilmingJobStatusTests" />
   </testsuite>
 </testsuites>
