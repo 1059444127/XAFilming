@@ -5,7 +5,7 @@ class XADone :
     public XAFilmingJobStatusBase
 {
 public:
-    virtual bool Restart(IXAFilmingJob* const job);
+    virtual void Restart(IXAFilmingJob* const job);
     virtual std::string ToString() const;
 };
 

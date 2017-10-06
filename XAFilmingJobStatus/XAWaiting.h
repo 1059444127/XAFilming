@@ -4,7 +4,7 @@ class XAWaiting :
     public XAFilmingJobStatusBase
 {
 public:
-    virtual bool Pause(IXAFilmingJob* const job);
+    virtual void Pause(IXAFilmingJob* const job);
     virtual std::string ToString() const;
     
 };
