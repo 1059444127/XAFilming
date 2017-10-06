@@ -14,6 +14,11 @@ JobMock::~JobMock()
     SAFE_DELETE_ELEMENT(_status);
 }
 
+int JobMock::GetJobID()
+{
+    return 0;
+}
+
 const XAFilmingJobStatusBase* JobMock::GetJobStatus()
 {
     return _status;

@@ -2,6 +2,7 @@
 #include "XAFilmingLogger.h"
 #include "IXAFilmingJob.h"
 #include "XAWaiting.h"
+#include "XAFilmingConst.h"
 
 void XAFailed::Restart(IXAFilmingJob* const job)
 {
@@ -13,5 +14,5 @@ void XAFailed::Restart(IXAFilmingJob* const job)
 
 std::string XAFailed::ToString() const
 {
-    return "Failed";
+    return XA_Filming_Job_Failed;
 }

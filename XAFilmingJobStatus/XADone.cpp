@@ -2,6 +2,7 @@
 #include "XAFilmingLogger.h"
 #include "IXAFilmingJob.h"
 #include "XAWaiting.h"
+#include "XAFilmingConst.h"
 
 void XADone::Restart(IXAFilmingJob* const job)
 {
@@ -13,5 +14,5 @@ void XADone::Restart(IXAFilmingJob* const job)
 
 std::string XADone::ToString() const
 {
-    return "Done";
+    return XA_Filming_Job_Done;
 }

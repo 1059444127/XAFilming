@@ -8,6 +8,7 @@ public:
     JobMock();
     ~JobMock();
 
+    virtual int GetJobID();
     virtual const XAFilmingJobStatusBase* GetJobStatus();
     virtual void SetJobStatus(const XAFilmingJobStatusBase* jobStatus);
 

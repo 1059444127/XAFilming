@@ -2,6 +2,7 @@
 #include "XAFilmingLogger.h"
 #include "IXAFilmingJob.h"
 #include "XAPaused.h"
+#include "XAFilmingConst.h"
 
 
 void XAWaiting::Pause(IXAFilmingJob* const job)
@@ -14,5 +15,5 @@ void XAWaiting::Pause(IXAFilmingJob* const job)
 
 std::string XAWaiting::ToString() const
 {
-    return "Waiting";
+    return XA_Filming_Job_Waiting;
 }

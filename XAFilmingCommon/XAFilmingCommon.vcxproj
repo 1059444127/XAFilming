@@ -93,6 +93,7 @@
     <None Include="copyfile.bat" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="XAFilmingConst.h" />
     <ClInclude Include="XAFilmingLogger.h" />
     <ClInclude Include="XAFilmingMacro.h" />
     <ClInclude Include="XAFilmingSerializer.h" />
