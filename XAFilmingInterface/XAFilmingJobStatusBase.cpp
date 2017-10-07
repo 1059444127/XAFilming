@@ -38,3 +38,9 @@ void XAFilmingJobStatusBase::Fail(XAFilmingJobBase* const job)
     LOG_WARN_XA_FILMING << "Job Status: " << ToString() << LOG_END;
 }
 
+void XAFilmingJobStatusBase::Urgent(XAFilmingJobBase* const job)
+{
+    LOG_WARN_XA_FILMING << "Urgent job [ " << job->GetJobID() << "] with Status [" << job->GetJobStatus()->ToString() << "]" << LOG_END;
+    LOG_WARN_XA_FILMING << "Job Status: " << ToString() << LOG_END;
+}
+

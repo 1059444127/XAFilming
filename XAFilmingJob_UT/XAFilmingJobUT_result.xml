@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="4" failures="0" disabled="0" errors="0" timestamp="2017-10-07T20:23:14" time="0.027" name="AllTests">
-  <testsuite name="XAFilmingJobTests" tests="4" failures="0" disabled="0" errors="0" time="0.023">
+<testsuites tests="4" failures="0" disabled="0" errors="0" timestamp="2017-10-07T21:34:12" time="0.041" name="AllTests">
+  <testsuite name="XAFilmingJobTests" tests="4" failures="0" disabled="0" errors="0" time="0.037">
     <testcase name="XAFilmingJobFactory_Is_Singleton" status="run" time="0" classname="XAFilmingJobTests" />
     <testcase name="Job_ID_Ascending" status="run" time="0" classname="XAFilmingJobTests" />
-    <testcase name="Urgent_Job_with_High_Priority" status="run" time="0.006" classname="XAFilmingJobTests" />
-    <testcase name="When_Job_Done_Then_Priority_Reset" status="run" time="0.014" classname="XAFilmingJobTests" />
+    <testcase name="Urgent_Job_with_High_Priority" status="run" time="0.008" classname="XAFilmingJobTests" />
+    <testcase name="When_Job_Done_Then_Priority_Reset" status="run" time="0.023" classname="XAFilmingJobTests" />
   </testsuite>
 </testsuites>

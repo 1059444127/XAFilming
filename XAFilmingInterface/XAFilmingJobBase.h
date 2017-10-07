@@ -17,8 +17,9 @@ public:
     virtual void Pause();
     virtual void Print();
     virtual void Restart();
+    virtual void Urgent();
 
-    virtual void Urgent() = 0;
+    virtual void TopPriority() = 0;
     virtual int GetPriority() = 0;
     virtual void ResetPriority() = 0;
 

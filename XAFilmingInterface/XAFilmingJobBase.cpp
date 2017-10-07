@@ -60,3 +60,9 @@ void XAFilmingJobBase::Restart()
     LOG_INFO_XA_FILMING << "Restart job [" << GetJobID() << "] with status [" << GetJobStatus()->ToString() << "]" << LOG_END;
     _status->Restart(this);
 }
+
+void XAFilmingJobBase::Urgent()
+{
+    LOG_INFO_XA_FILMING << "Urgent job [" << GetJobID() << "] with status [" << GetJobStatus()->ToString() << "]" << LOG_END;
+    _status->Urgent(this);
+}

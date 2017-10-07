@@ -14,19 +14,20 @@ int FilmingJob::GetJobID()
     return _iID;
 }
 
-void FilmingJob::Urgent()
-{
-    LOG_INFO_XA_FILMING << "Urgent Job [" << _iID << "] with Priority [" << _iPriority  << "]" << LOG_END;
-    _iPriority = ++MaxPriority;
-    LOG_INFO_XA_FILMING << "Promote to Priority [" << _iPriority << "]" << LOG_END;
-}
-
 void FilmingJob::ResetPriority()
 {
     _iPriority = XA_Filming_Job_Min_Priority;
+    --MaxPriority;
 }
 
 int FilmingJob::GetPriority()
 {
     return _iPriority;
+}
+
+void FilmingJob::TopPriority()
+{
+    LOG_INFO_XA_FILMING << "Urgent Job [" << _iID << "] with Priority [" << _iPriority  << "]" << LOG_END;
+    _iPriority = ++MaxPriority;
+    LOG_INFO_XA_FILMING << "Promote to Priority [" << _iPriority << "]" << LOG_END;
 }

@@ -8,9 +8,9 @@ class FilmingJob :
 public:
     FilmingJob(int ID);
     virtual int GetJobID();
-    virtual void Urgent();
     virtual void ResetPriority();
     virtual int GetPriority();
+    virtual void TopPriority();
 private:
     static int MaxPriority;
     int _iID;

@@ -6,6 +6,7 @@ class XAWaiting :
 public:
     virtual void Pause(XAFilmingJobBase* const job);
     virtual void Print(XAFilmingJobBase* const job);
+    virtual void Urgent(XAFilmingJobBase* const job);
     virtual std::string ToString() const;
 
     virtual XAFilmingJobStatusEnum GetStatusPriority();

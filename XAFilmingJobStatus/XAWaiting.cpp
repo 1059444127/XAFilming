@@ -8,7 +8,7 @@
 
 void XAWaiting::Pause(XAFilmingJobBase* const job)
 {
-    LOG_INFO_XA_FILMING << "Pause job [ " << job->GetJobID() << "] with Status [" << job->GetJobStatus()->ToString() << "]" << LOG_END;
+    LOG_INFO_XA_FILMING << "Pause job [" << job->GetJobID() << "] with Status [" << job->GetJobStatus()->ToString() << "]" << LOG_END;
     LOG_INFO_XA_FILMING << "Job Status: " << ToString() << LOG_END;
 
     job->SetJobStatus(new XAPaused());
@@ -16,10 +16,17 @@ void XAWaiting::Pause(XAFilmingJobBase* const job)
 
 void XAWaiting::Print(XAFilmingJobBase* const job)
 {
-    LOG_INFO_XA_FILMING << "Print job [ " << job->GetJobID() << "] with Status [" << job->GetJobStatus()->ToString() << "]" << LOG_END;
+    LOG_INFO_XA_FILMING << "Print job [" << job->GetJobID() << "] with Status [" << job->GetJobStatus()->ToString() << "]" << LOG_END;
     LOG_INFO_XA_FILMING << "Job Status: " << ToString() << LOG_END;
 
     job->SetJobStatus(new XAPrinting());
+}
+
+void XAWaiting::Urgent(XAFilmingJobBase* const job)
+{
+    LOG_INFO_XA_FILMING << "Urgent job [" << job->GetJobID() << "]" << LOG_END;
+    
+    job->TopPriority();
 }
 
 std::string XAWaiting::ToString() const

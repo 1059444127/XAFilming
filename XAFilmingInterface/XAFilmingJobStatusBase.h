@@ -14,6 +14,7 @@ public:
     virtual void Print(XAFilmingJobBase* const job);
     virtual void Complete(XAFilmingJobBase* const job);
     virtual void Fail(XAFilmingJobBase* const job);
+    virtual void Urgent(XAFilmingJobBase* const job);
     virtual std::string ToString() const = 0;
     
     virtual XAFilmingJobStatusEnum GetStatusPriority() = 0;
