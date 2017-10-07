@@ -3,13 +3,19 @@
 #include <XAFilmingSerializer.h>
 
 
-XAFilmingJobDispatcher::XAFilmingJobDispatcher(void)
+XAFilmingJobDispatcher::XAFilmingJobDispatcher() : _jobQueue()
 {
 }
 
 
-XAFilmingJobDispatcher::~XAFilmingJobDispatcher(void)
+XAFilmingJobDispatcher::~XAFilmingJobDispatcher()
 {
+    while(!_jobQueue.empty())
+    {
+        auto job = _jobQueue.top();
+        _jobQueue.pop();
+        SAFE_DELETE_ELEMENT(job);
+    }
 }
 
 void XAFilmingJobDispatcher::AddJob(XAFilmingJobBase* job)

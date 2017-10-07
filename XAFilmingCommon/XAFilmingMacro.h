@@ -32,3 +32,11 @@ ptr = nullptr;\
 }
 #endif
 
+#ifndef SAFE_DELETE_COLLECTION
+#define SAFE_DELETE_COLLECTION(collection) {\
+    for(auto iter = collection.begin(); iter != collection.end(); iter++)\
+    {\
+        SAFE_DELETE_ELEMENT(*iter)\
+    }\
+}
+#endif
