@@ -50,7 +50,7 @@
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\include;..\..\..\..\UIH\include\mcs\;..\..\..\..\UIH\include\external\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>XA_XAFilmingJobCommand_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>XA_XAFilmingJobCommand_LIB;CONSOLE_LOG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -79,6 +79,14 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ContinueJobCommand.h" />
+    <ClInclude Include="DeleteJobCommand.h" />
+    <ClInclude Include="FilmingJobCommand.h" />
+    <ClInclude Include="PauseJobCommand.h" />
+    <ClInclude Include="RefreshJobCommand.h" />
+    <ClInclude Include="RestartJobCommand.h" />
+    <ClInclude Include="StopJobCommand.h" />
+    <ClInclude Include="UrgentJobCommand.h" />
     <ClInclude Include="XAFilmingJobCommandFactory.h" />
     <ClInclude Include="XAFilmingJobCommandFactoryExportMacro.h" />
   </ItemGroup>
@@ -86,6 +94,14 @@
     <None Include="copyfile.bat" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ContinueJobCommand.cpp" />
+    <ClCompile Include="DeleteJobCommand.cpp" />
+    <ClCompile Include="FilmingJobCommand.cpp" />
+    <ClCompile Include="PauseJobCommand.cpp" />
+    <ClCompile Include="RefreshJobCommand.cpp" />
+    <ClCompile Include="RestartJobCommand.cpp" />
+    <ClCompile Include="StopJobCommand.cpp" />
+    <ClCompile Include="UrgentJobCommand.cpp" />
     <ClCompile Include="XAFilmingJobCommandFactory.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
