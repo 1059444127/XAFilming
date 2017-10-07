@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="2" failures="0" disabled="0" errors="0" timestamp="2017-10-06T22:41:38" time="0.004" name="AllTests">
-  <testsuite name="XAFilmingJobTests" tests="2" failures="0" disabled="0" errors="0" time="0.003">
+<testsuites tests="3" failures="0" disabled="0" errors="0" timestamp="2017-10-07T20:01:28" time="11.354" name="AllTests">
+  <testsuite name="XAFilmingJobTests" tests="3" failures="0" disabled="0" errors="0" time="11.35">
     <testcase name="XAFilmingJobFactory_Is_Singleton" status="run" time="0" classname="XAFilmingJobTests" />
     <testcase name="Job_ID_Ascending" status="run" time="0" classname="XAFilmingJobTests" />
+    <testcase name="Urgent_Job_with_High_Priority" status="run" time="11.346" classname="XAFilmingJobTests" />
   </testsuite>
 </testsuites>

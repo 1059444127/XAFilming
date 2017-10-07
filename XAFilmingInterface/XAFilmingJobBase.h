@@ -18,6 +18,9 @@ public:
     virtual void Print();
     virtual void Restart();
 
+    virtual void Urgent() = 0;
+    virtual int GetPriority() = 0;
+
 private:
     XAFilmingJobStatusBase* _status;
 };
