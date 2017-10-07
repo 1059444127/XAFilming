@@ -1,9 +1,6 @@
 #include "DeleteJobCommand.h"
 #include "XAFilmingLogger.h"
 
-DeleteJobCommand::DeleteJobCommand(IXAFilmingJobDispatch* jobDispatcher) : _jobDispatcher(jobDispatcher)
-{
-}
 
 void DeleteJobCommand::Excute(const std::vector<int>& IDs)
 {

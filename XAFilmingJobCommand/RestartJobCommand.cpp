@@ -1,9 +1,6 @@
 #include "RestartJobCommand.h"
 #include "XAFilmingLogger.h"
 
-RestartJobCommand::RestartJobCommand(IXAFilmingJobDispatch* jobDispatcher) : _jobDispatcher(jobDispatcher)
-{
-}
 
 void RestartJobCommand::Excute(const std::vector<int>& IDs)
 {

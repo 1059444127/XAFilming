@@ -1,14 +1,10 @@
 #pragma once
-#include "IXAFilmingCommand.h"
-#include "IXAFilmingJobDispatch.h"
+#include "JobCommandBase.h"
 
 class RefreshJobCommand :
-    public IXAFilmingCommand
+    public JobCommandBase
 {
 public:
-    RefreshJobCommand(IXAFilmingJobDispatch* jobDispatcher);
     virtual void Excute(const std::string& serializedParameters);
-private:
-    IXAFilmingJobDispatch* _jobDispatcher;
 };
 

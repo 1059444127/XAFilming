@@ -1,9 +1,6 @@
 #include "ContinueJobCommand.h"
 #include "XAFilmingLogger.h"
 
-ContinueJobCommand::ContinueJobCommand(IXAFilmingJobDispatch* jobDispatcher) : _jobDispatcher(jobDispatcher)
-{
-}
 
 void ContinueJobCommand::Excute(const std::vector<int>& IDs)
 {
