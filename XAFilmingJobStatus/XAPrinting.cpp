@@ -17,6 +17,8 @@ void XAPrinting::Complete(XAFilmingJobBase* const job)
     LOG_INFO_XA_FILMING << "Job Status: " << ToString() << LOG_END;
 
     job->SetJobStatus(new XADone());
+
+    job->ResetPriority();
 }
 
 void XAPrinting::Fail(XAFilmingJobBase* const job)

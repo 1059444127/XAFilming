@@ -1,12 +1,13 @@
 #include "XAFilmingJobTests.h"
 #include "XAFilmingJobFactory.h"
+#include "XAFilmingConst.h"
 
 
 TEST_F(XAFilmingJobTests, XAFilmingJobFactory_Is_Singleton)
 {
     auto factory1 = XAFilmingJobFactory::Instance();
     auto factory2 = XAFilmingJobFactory::Instance();
-	EXPECT_EQ(factory2, factory1);
+    EXPECT_EQ(factory2, factory1);
 }
 
 TEST_F(XAFilmingJobTests, Job_ID_Ascending)
@@ -41,4 +42,19 @@ TEST_F(XAFilmingJobTests, Urgent_Job_with_High_Priority)
     EXPECT_GT(job2Priority, job1Priority);
 }
 
-//TODO-Feature; When Job done , job Priority return to min
+TEST_F(XAFilmingJobTests, When_Job_Done_Then_Priority_Reset)
+{
+    auto factory = XAFilmingJobFactory::Instance();
+    auto job = factory->CreateJob();
+    
+    job->Urgent();
+    EXPECT_GT(job->GetPriority(), XA_Filming_Job_Min_Priority);
+
+    job->Print();
+    job->Complete();
+
+    auto donePriority = job->GetPriority();
+    SAFE_DELETE_ELEMENT(job);
+
+    EXPECT_EQ(donePriority, XA_Filming_Job_Min_Priority);
+}

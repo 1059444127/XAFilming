@@ -28,6 +28,7 @@ XAFilmingJobBase::~XAFilmingJobBase()
 void XAFilmingJobBase::Complete()
 {
     LOG_INFO_XA_FILMING << "Complete job [" << GetJobID() << "] with status [" << GetJobStatus()->ToString() << "]" << LOG_END;
+    _status->Complete(this);
 }
 
 void XAFilmingJobBase::Continue()

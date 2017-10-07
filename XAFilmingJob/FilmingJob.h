@@ -9,6 +9,7 @@ public:
     FilmingJob(int ID);
     virtual int GetJobID();
     virtual void Urgent();
+    virtual void ResetPriority();
     virtual int GetPriority();
 private:
     static int MaxPriority;

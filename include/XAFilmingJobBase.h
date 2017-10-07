@@ -20,6 +20,7 @@ public:
 
     virtual void Urgent() = 0;
     virtual int GetPriority() = 0;
+    virtual void ResetPriority() = 0;
 
 private:
     XAFilmingJobStatusBase* _status;

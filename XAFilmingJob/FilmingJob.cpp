@@ -21,6 +21,11 @@ void FilmingJob::Urgent()
     LOG_INFO_XA_FILMING << "Promote to Priority [" << _iPriority << "]" << LOG_END;
 }
 
+void FilmingJob::ResetPriority()
+{
+    _iPriority = XA_Filming_Job_Min_Priority;
+}
+
 int FilmingJob::GetPriority()
 {
     return _iPriority;
