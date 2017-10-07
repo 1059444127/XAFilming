@@ -18,11 +18,13 @@
     <ClInclude Include="IXAFilmingJobDispatch.h" />
     <ClInclude Include="XAFilmingJobBase.h" />
     <ClInclude Include="XAFilmingInterfaceExportMacro.h" />
+    <ClInclude Include="XAFilmingJobComparer.h" />
     <ClInclude Include="XAFilmingJobStatusBase.h" />
     <ClInclude Include="XAFilmingJobStatusEnum.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="XAFilmingJobBase.cpp" />
+    <ClCompile Include="XAFilmingJobComparer.cpp" />
     <ClCompile Include="XAFilmingJobStatusBase.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
