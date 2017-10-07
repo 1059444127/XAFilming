@@ -4,11 +4,11 @@
 
 #include "XAFilmingJobCommandFactoryExportMacro.h"
 
-class XA_XAFilmingJobCommandFactory_Export XAFilmingJobCommandFactory
+class XA_XAFilmingJobCommand_Export XAFilmingJobCommandFactory
 {
 public:
 	static  XAFilmingJobCommandFactory* GetInstance();
-	~XAFilmingJobCommandFactory() {};
+	~XAFilmingJobCommandFactory() {SAFE_DELETE_ELEMENT(_pInstance)};
 private:
 	static XAFilmingJobCommandFactory* _pInstance;
 

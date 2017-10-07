@@ -4,7 +4,7 @@
 
 #include "XAFilmingJobCommandFactoryExportMacro.h"
 
-class XA_XAFilmingJobCommandFactory_Export XAFilmingJobCommandFactory
+class XA_XAFilmingJobCommand_Export XAFilmingJobCommandFactory
 {
 public:
 	static  XAFilmingJobCommandFactory* GetInstance();

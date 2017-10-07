@@ -1,8 +1,8 @@
 #include "XAFilmingJobCommandFactory.h"
 
-#include "XAFilmingJobCommandFactoryTests.h"
+#include "XAFilmingJobCommandTests.h"
 
-TEST_F(XAFilmingJobCommandFactoryTests, XAFilmingJobCommandFactory_Is_Singleton)
+TEST_F(XAFilmingJobCommandTests, XAFilmingJobCommandFactory_Is_Singleton)
 {
 	auto pJobCommandFactory1 = XAFilmingJobCommandFactory::GetInstance();
 	auto pJobCommandFactory2=  XAFilmingJobCommandFactory::GetInstance();
