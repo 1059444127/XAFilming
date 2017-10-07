@@ -19,6 +19,7 @@
     <ClInclude Include="XAFilmingJobBase.h" />
     <ClInclude Include="XAFilmingInterfaceExportMacro.h" />
     <ClInclude Include="XAFilmingJobStatusBase.h" />
+    <ClInclude Include="XAFilmingJobStatusEnum.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="XAFilmingJobBase.cpp" />

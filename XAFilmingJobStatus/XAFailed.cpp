@@ -16,3 +16,8 @@ std::string XAFailed::ToString() const
 {
     return XA_Filming_Job_Failed;
 }
+
+XAFilmingJobStatusEnum XAFailed::GetStatusPriority()
+{
+    return Failed;
+}

@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "XAFilmingInterfaceExportMacro.h"
+#include "XAFilmingJobStatusEnum.h"
 
 class XAFilmingJobBase;
 
@@ -14,5 +15,7 @@ public:
     virtual void Complete(XAFilmingJobBase* const job);
     virtual void Fail(XAFilmingJobBase* const job);
     virtual std::string ToString() const = 0;
+    
+    virtual XAFilmingJobStatusEnum GetStatusPriority() = 0;
 };
 

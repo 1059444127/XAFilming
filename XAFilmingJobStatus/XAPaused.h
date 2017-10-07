@@ -7,5 +7,6 @@ class XAPaused :
 public:
     virtual void Continue(XAFilmingJobBase* const job) ;
     virtual std::string ToString() const ;
+    virtual XAFilmingJobStatusEnum GetStatusPriority();
 };
 

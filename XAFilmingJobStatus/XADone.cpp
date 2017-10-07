@@ -16,3 +16,8 @@ std::string XADone::ToString() const
 {
     return XA_Filming_Job_Done;
 }
+
+XAFilmingJobStatusEnum XADone::GetStatusPriority()
+{
+    return Done;
+}

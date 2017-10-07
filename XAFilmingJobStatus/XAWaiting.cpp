@@ -26,3 +26,8 @@ std::string XAWaiting::ToString() const
 {
     return XA_Filming_Job_Waiting;
 }
+
+XAFilmingJobStatusEnum XAWaiting::GetStatusPriority()
+{
+    return Waiting;
+}

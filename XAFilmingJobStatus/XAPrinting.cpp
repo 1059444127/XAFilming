@@ -28,3 +28,8 @@ void XAPrinting::Fail(XAFilmingJobBase* const job)
 
     job->SetJobStatus(new XAFailed());
 }
+
+XAFilmingJobStatusEnum XAPrinting::GetStatusPriority()
+{
+    return Printing;
+}

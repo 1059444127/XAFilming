@@ -17,3 +17,8 @@ std::string XAPaused::ToString() const
 {
     return XA_Filming_Job_Paused;
 }
+
+XAFilmingJobStatusEnum XAPaused::GetStatusPriority()
+{
+    return Paused;
+}
