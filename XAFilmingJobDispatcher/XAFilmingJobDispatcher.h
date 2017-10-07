@@ -1,8 +1,9 @@
 #pragma once
 
 #include "IXAFilmingJobDispatch.h"
-#include <queue>
+
 #include "XAFilmingJobComparer.h"
+#include <map>
 
 class XAFilmingJobDispatcher :
     public IXAFilmingJobDispatch
@@ -19,6 +20,6 @@ public:
     virtual void UrgentJobs(const vector<int>& IDs);
     virtual void PushJobsProgress();
 private:
-    priority_queue<XAFilmingJobBase*, XAFilmingJobComparer> _jobQueue;
+    map<int, XAFilmingJobBase*> _jobMap;
 };
 

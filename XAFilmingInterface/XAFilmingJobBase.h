@@ -18,6 +18,7 @@ public:
     virtual void Print();
     virtual void Restart();
     virtual void Urgent();
+    virtual bool CanCancel();
 
     virtual void TopPriority() = 0;
     virtual int GetPriority() = 0;

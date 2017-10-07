@@ -44,3 +44,8 @@ void XAFilmingJobStatusBase::Urgent(XAFilmingJobBase* const job)
     LOG_WARN_XA_FILMING << "Job Status: " << ToString() << LOG_END;
 }
 
+bool XAFilmingJobStatusBase::IsAtomic()
+{
+    return false;
+}
+

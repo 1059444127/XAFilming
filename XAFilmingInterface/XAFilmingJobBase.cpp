@@ -66,3 +66,8 @@ void XAFilmingJobBase::Urgent()
     LOG_INFO_XA_FILMING << "Urgent job [" << GetJobID() << "] with status [" << GetJobStatus()->ToString() << "]" << LOG_END;
     _status->Urgent(this);
 }
+
+bool XAFilmingJobBase::CanCancel()
+{
+    return !_status->IsAtomic();
+}

@@ -33,3 +33,8 @@ XAFilmingJobStatusEnum XAPrinting::GetStatusPriority()
 {
     return Printing;
 }
+
+bool XAPrinting::IsAtomic()
+{
+    return true;
+}
