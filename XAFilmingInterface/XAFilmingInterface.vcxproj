@@ -15,6 +15,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IXAFilmingCommand.h" />
+    <ClInclude Include="IXAFilmingCommunicator.h" />
     <ClInclude Include="IXAFilmingJobDispatch.h" />
     <ClInclude Include="XAFilmingJobBase.h" />
     <ClInclude Include="XAFilmingInterfaceExportMacro.h" />
