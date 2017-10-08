@@ -4,13 +4,14 @@
 
 #include "XAFilmingJobComparer.h"
 #include <map>
+#include <IXAFilmingCommunicator.h>
 
-class XAFilmingJobDispatcher :
+class FilmingJobDispatcher :
     public IXAFilmingJobDispatch
 {
 public:
-    XAFilmingJobDispatcher();
-    ~XAFilmingJobDispatcher();
+    FilmingJobDispatcher(IXAFilmingCommunicator* communicator);
+    ~FilmingJobDispatcher();
 
     virtual void AddJob(XAFilmingJobBase* job);
     virtual void ContinueJobs(const vector<int>& IDs);
@@ -21,5 +22,6 @@ public:
     virtual void PushJobsProgress();
 private:
     map<int, XAFilmingJobBase*> _jobMap;
+    IXAFilmingCommunicator* _communicator;
 };
 

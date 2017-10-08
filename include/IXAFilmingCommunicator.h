@@ -4,6 +4,7 @@
 
 class IXAFilmingCommunicator
 {
+public:
     virtual void PublishJobProgress(const std::vector<XAFilmingJobBase*>& jobs) = 0;
     virtual void Print(const std::vector<std::string>& files) = 0;
 };

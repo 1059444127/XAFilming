@@ -1,4 +1,4 @@
-#include "XAFilmingJobDispatcher.h"
+#include "FilmingJobDispatcher.h"
 #include <XAFilmingLogger.h>
 #include <XAFilmingSerializer.h>
 #include <algorithm>
@@ -23,35 +23,36 @@
 #endif
 
 
-XAFilmingJobDispatcher::XAFilmingJobDispatcher() : _jobMap()
+FilmingJobDispatcher::FilmingJobDispatcher(IXAFilmingCommunicator* communicator) : _jobMap(), _communicator(communicator)
 {
 }
 
 
-XAFilmingJobDispatcher::~XAFilmingJobDispatcher()
+FilmingJobDispatcher::~FilmingJobDispatcher()
 {
     for(auto iter = _jobMap.begin(); iter != _jobMap.end(); iter++)
     {
         auto job = iter->second;
         SAFE_DELETE_ELEMENT(job);
     }
+    SAFE_DELETE_ELEMENT(_communicator);
 }
 
-void XAFilmingJobDispatcher::AddJob(XAFilmingJobBase* job)
+void FilmingJobDispatcher::AddJob(XAFilmingJobBase* job)
 {
     LOG_INFO_XA_FILMING << "Add a filming job" << LOG_END;
     _jobMap[job->GetJobID()] = job;
     PushJobsProgress();
 }
 
-void XAFilmingJobDispatcher::ContinueJobs(const vector<int>& IDs)
+void FilmingJobDispatcher::ContinueJobs(const vector<int>& IDs)
 {
     LOG_INFO_XA_FILMING << "Continue jobs [" << serialize(IDs).c_str() << "]" << LOG_END;
     XA_FILMING_JOB_MAP_DELEGATE(Continue);
     PushJobsProgress();
 }
 
-void XAFilmingJobDispatcher::DeleteJobs(const vector<int>& IDs)
+void FilmingJobDispatcher::DeleteJobs(const vector<int>& IDs)
 {
     LOG_INFO_XA_FILMING << "Delete jobs [" << serialize(IDs).c_str() << "]" << LOG_END;
     for (auto iter = IDs.begin(); iter != IDs.end(); iter++)
@@ -76,28 +77,28 @@ void XAFilmingJobDispatcher::DeleteJobs(const vector<int>& IDs)
     PushJobsProgress();
 }
 
-void XAFilmingJobDispatcher::PauseJobs(const vector<int>& IDs)
+void FilmingJobDispatcher::PauseJobs(const vector<int>& IDs)
 {
     LOG_INFO_XA_FILMING << "Pause jobs [" << serialize(IDs).c_str() << "]" << LOG_END;
     XA_FILMING_JOB_MAP_DELEGATE(Pause);
     PushJobsProgress();
 }
 
-void XAFilmingJobDispatcher::RestartJobs(const vector<int>& IDs)
+void FilmingJobDispatcher::RestartJobs(const vector<int>& IDs)
 {
     LOG_INFO_XA_FILMING << "Restart jobs [" << serialize(IDs).c_str() << "]" << LOG_END;
     XA_FILMING_JOB_MAP_DELEGATE(Restart);
     PushJobsProgress();
 }
 
-void XAFilmingJobDispatcher::UrgentJobs(const vector<int>& IDs)
+void FilmingJobDispatcher::UrgentJobs(const vector<int>& IDs)
 {
     LOG_INFO_XA_FILMING << "Urgent jobs [" << serialize(IDs).c_str() << "]" << LOG_END;
     XA_FILMING_JOB_MAP_DELEGATE(Urgent);
     PushJobsProgress();
 }
 
-void XAFilmingJobDispatcher::PushJobsProgress()
+void FilmingJobDispatcher::PushJobsProgress()
 {
     vector<XAFilmingJobBase*> jobs;
     for(auto iter = _jobMap.begin(); iter != _jobMap.end(); iter++)
@@ -108,5 +109,5 @@ void XAFilmingJobDispatcher::PushJobsProgress()
     XAFilmingJobComparer comparer;
     sort(jobs.begin(), jobs.end(), comparer);
 
-    //TODO: Converter to Serialized Info to JobManager
+    _communicator->PublishJobProgress(jobs);
 }
