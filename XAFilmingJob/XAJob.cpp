@@ -1,20 +1,20 @@
-#include "FilmingJob.h"
+#include "XAJob.h"
 #include "XAFilmingJobStatusFactory.h"
 #include "XAFilmingLogger.h"
 #include "XAFilmingConst.h"
 
-int FilmingJob::MaxPriority = XA_Filming_Job_Min_Priority;
+int XAJob::MaxPriority = XA_Filming_Job_Min_Priority;
 
-FilmingJob::FilmingJob(int ID) : XAFilmingJobBase(XAFilmingJobStatusFactory::Instance()->CreateJobStatus()), _iID(ID), _iPriority(XA_Filming_Job_Min_Priority)
+XAJob::XAJob(int ID) : XAFilmingJobBase(XAFilmingJobStatusFactory::Instance()->CreateJobStatus()), _iID(ID), _iPriority(XA_Filming_Job_Min_Priority)
 {
 }
 
-int FilmingJob::GetJobID()
+int XAJob::GetJobID()
 {
     return _iID;
 }
 
-void FilmingJob::ResetPriority()
+void XAJob::ResetPriority()
 {
     if(_iPriority > XA_Filming_Job_Min_Priority) 
     { --MaxPriority;}
@@ -22,19 +22,19 @@ void FilmingJob::ResetPriority()
     _iPriority = XA_Filming_Job_Min_Priority;
 }
 
-int FilmingJob::GetPriority()
+int XAJob::GetPriority()
 {
     return _iPriority;
 }
 
-void FilmingJob::TopPriority()
+void XAJob::TopPriority()
 {
     LOG_INFO_XA_FILMING << "Urgent Job [" << _iID << "] with Priority [" << _iPriority  << "]" << LOG_END;
     _iPriority = ++MaxPriority;
     LOG_INFO_XA_FILMING << "Promote to Priority [" << _iPriority << "]" << LOG_END;
 }
 
-std::string FilmingJob::GetProgress()
+std::string XAJob::GetProgress()
 {
     return std::string();
 }

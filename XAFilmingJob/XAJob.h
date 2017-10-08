@@ -2,11 +2,11 @@
 #include "XAFilmingJobBase.h"
 #include "XAFilmingMacro.h"
 
-class FilmingJob :
+class XAJob :
     public XAFilmingJobBase
 {
 public:
-    FilmingJob(int ID);
+    XAJob(int ID);
     virtual int GetJobID();
     virtual void ResetPriority();
     virtual int GetPriority();
@@ -16,6 +16,6 @@ private:
     static int MaxPriority;
     int _iID;
     int _iPriority;
-    XA_FILMING_DISALLOW_COPY_AND_ASSIGN(FilmingJob);
+    XA_FILMING_DISALLOW_COPY_AND_ASSIGN(XAJob);
 };
 

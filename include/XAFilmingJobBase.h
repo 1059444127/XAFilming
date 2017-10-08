@@ -25,6 +25,8 @@ public:
     virtual void ResetPriority() = 0;
     virtual std::string GetProgress() = 0;
 
+    //TODO: interface inheritance
+
 private:
     XAFilmingJobStatusBase* _status;
 };
