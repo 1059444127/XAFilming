@@ -23,6 +23,7 @@ public:
     virtual void TopPriority() = 0;
     virtual int GetPriority() = 0;
     virtual void ResetPriority() = 0;
+    virtual std::string GetProgress() = 0;
 
 private:
     XAFilmingJobStatusBase* _status;

@@ -4,7 +4,7 @@
 
 #include "XAFilmingJobCommandFactoryExportMacro.h"
 #include "IXAFilmingJobDispatch.h"
-#include "JobCommandBase.h"
+#include "IXAFilmingCommand.h"
 
 #include <map>
 using namespace std;
@@ -18,7 +18,7 @@ public:
 private:
 	static XAFilmingJobCommandFactory* _pInstance;
 
-    map<int, JobCommandBase*> _filmingCommandDictionary;
+    map<int, IXAFilmingCommand*> _filmingCommandDictionary;
     XAFilmingJobCommandFactory();
 	XA_FILMING_DISALLOW_COPY_AND_ASSIGN(XAFilmingJobCommandFactory)
 };

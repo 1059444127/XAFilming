@@ -16,6 +16,7 @@ public:
     virtual void TopPriority() {}
     virtual int GetPriority() { return _iPriority;}
     virtual void ResetPriority() {};
+    virtual std::string GetProgress() {return std::string();}
 private:
     int _iID;
     int _iPriority;

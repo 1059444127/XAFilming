@@ -33,3 +33,8 @@ void FilmingJob::TopPriority()
     _iPriority = ++MaxPriority;
     LOG_INFO_XA_FILMING << "Promote to Priority [" << _iPriority << "]" << LOG_END;
 }
+
+std::string FilmingJob::GetProgress()
+{
+    return std::string();
+}

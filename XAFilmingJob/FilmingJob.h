@@ -11,6 +11,7 @@ public:
     virtual void ResetPriority();
     virtual int GetPriority();
     virtual void TopPriority();
+    virtual std::string GetProgress();
 private:
     static int MaxPriority;
     int _iID;
