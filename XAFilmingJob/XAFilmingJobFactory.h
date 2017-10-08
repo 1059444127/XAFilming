@@ -2,12 +2,15 @@
 #include "XAFilmingJobExportMacro.h"
 #include "XAFilmingJobBase.h"
 #include "XAFilmingMacro.h"
+#include <vector>
+using namespace std;
 
 class XA_FilmingJob_Export XAFilmingJobFactory
 {
 public:
     static XAFilmingJobFactory* Instance();
     XAFilmingJobBase* CreateJob();
+    XAFilmingJobBase* CreateFilmingJob(vector<string> dicomFiles);
     ~XAFilmingJobFactory() {SAFE_DELETE_ELEMENT(_instance);}
 
 private:
