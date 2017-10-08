@@ -2,13 +2,17 @@
 #include "IXAFilmingJobDispatch.h"
 #include <sstream>
 #include <map>
+#include "XAFilmingJobDispatcherFactory.h"
+#include "FilmingCommunicatorMock.h"
+#include "XAFilmingJobFactory.h"
 using namespace std;
 
 IXAFilmingJobDispatch* job_dispatcher;
 
 void addJob(const vector<int> IDs)
 {
-    job_dispatcher->AddJob(nullptr);
+    auto job = XAFilmingJobFactory::Instance()->CreateJob();
+    job_dispatcher->AddJob(job);
 }
 
 void continueJobs(const vector<int> IDs)
@@ -113,6 +117,7 @@ void main()
     command_map["restartJobs"] = restartJobs;
     command_map["urgentJobs"] = urgentJobs;
 
+    job_dispatcher = XAFilmingJobDispatcherFactory::Instance()->CreateJobDispatcher(new FilmingCommunicatorMock());
 
     while(true)
     {

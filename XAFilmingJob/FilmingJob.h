@@ -1,6 +1,6 @@
 #pragma once
 #include "XAFilmingJobBase.h"
-#include "../XAFilmingCommon/XAFilmingMacro.h"
+#include "XAFilmingMacro.h"
 
 class FilmingJob :
     public XAFilmingJobBase
