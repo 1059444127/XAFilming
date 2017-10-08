@@ -12,7 +12,8 @@ void FilmingCommunicatorMock::PublishJobProgress(const std::vector<XAFilmingJobB
         auto job = *iter;
         cout << job->GetJobID() << "\t" ;
         auto jobStatus = job->GetJobStatus();
-        cout << jobStatus->ToString() << endl;
+        cout << jobStatus->ToString() << "\t";
+        cout << job->GetPriority() << endl;
     }
     cout << "----------------------------------" << endl;
 

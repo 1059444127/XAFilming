@@ -2,7 +2,6 @@
 
 #include "IXAFilmingJobDispatch.h"
 
-#include "XAFilmingJobComparer.h"
 #include <map>
 #include <IXAFilmingCommunicator.h>
 
@@ -20,8 +19,11 @@ public:
     virtual void RestartJobs(const vector<int>& IDs);
     virtual void UrgentJobs(const vector<int>& IDs);
     virtual void PushJobsProgress();
+    virtual void Printed();
 private:
     map<int, XAFilmingJobBase*> _jobMap;
     IXAFilmingCommunicator* _communicator;
+
+    vector<XAFilmingJobBase*> GetSortedJobVector();
 };
 

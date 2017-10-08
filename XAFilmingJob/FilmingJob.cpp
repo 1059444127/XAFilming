@@ -16,8 +16,10 @@ int FilmingJob::GetJobID()
 
 void FilmingJob::ResetPriority()
 {
+    if(_iPriority > XA_Filming_Job_Min_Priority) 
+    { --MaxPriority;}
+    
     _iPriority = XA_Filming_Job_Min_Priority;
-    --MaxPriority;
 }
 
 int FilmingJob::GetPriority()

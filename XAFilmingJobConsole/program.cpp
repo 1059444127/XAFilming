@@ -45,6 +45,11 @@ void urgentJobs(const vector<int> IDs)
     job_dispatcher->UrgentJobs(IDs);
 }
 
+void printed(const vector<int> IDs)
+{
+    job_dispatcher->Printed();
+}
+
 typedef void (*Execute)(const vector<int> parameters);
 map<string, Execute> command_map;
 
@@ -59,6 +64,7 @@ void printUsage()
     cout << "\t" << "status" << endl;
     cout << "\t" << "restartJobs 1 2 3" <<endl;
     cout << "\t" << "urgentJobs 1 2 3" << endl;
+    cout << "\t" << "printed" << endl;
 }
 
 
@@ -83,8 +89,11 @@ void ExcuteCommand(string str)
 
     vector<int> parameters = splitParameters(ss);
 
-    auto command = command_map[commandName];
-    command(parameters);
+    if(command_map.find(commandName) != command_map.end())
+    {
+        auto command = command_map[commandName];
+        command(parameters);
+    }
 }
 
 void LauguageTest()
@@ -116,6 +125,7 @@ void main()
     command_map["status"] = showStatus;
     command_map["restartJobs"] = restartJobs;
     command_map["urgentJobs"] = urgentJobs;
+    command_map["printed"] = printed;
 
     job_dispatcher = XAFilmingJobDispatcherFactory::Instance()->CreateJobDispatcher(new FilmingCommunicatorMock());
 

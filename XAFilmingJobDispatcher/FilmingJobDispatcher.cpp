@@ -2,6 +2,8 @@
 #include <XAFilmingLogger.h>
 #include <XAFilmingSerializer.h>
 #include <algorithm>
+#include "XAFilmingJobComparer.h"
+#include <cassert>
 
 #ifndef XA_FILMING_JOB_MAP_DELEGATE
 #define XA_FILMING_JOB_MAP_DELEGATE(Delegate)\
@@ -102,6 +104,26 @@ void FilmingJobDispatcher::UrgentJobs(const vector<int>& iDs)
 
 void FilmingJobDispatcher::PushJobsProgress()
 {
+    auto jobs = GetSortedJobVector();
+    
+    if(!jobs.empty()) {jobs[0]->Print();}
+
+    _communicator->PublishJobProgress(jobs);
+}
+
+void FilmingJobDispatcher::Printed()
+{
+    LOG_INFO_XA_FILMING << "Received Printed Message" << LOG_END;
+
+    auto jobs = GetSortedJobVector();
+    assert(!jobs.empty());
+    jobs[0]->Complete();
+    
+    PushJobsProgress();
+}
+
+vector<XAFilmingJobBase*> FilmingJobDispatcher::GetSortedJobVector()
+{
     vector<XAFilmingJobBase*> jobs;
     for(auto iter = _jobMap.begin(); iter != _jobMap.end(); iter++)
     {
@@ -110,6 +132,5 @@ void FilmingJobDispatcher::PushJobsProgress()
 
     XAFilmingJobComparer comparer;
     sort(jobs.begin(), jobs.end(), comparer);
-
-    _communicator->PublishJobProgress(jobs);
+    return jobs;
 }

@@ -13,7 +13,8 @@ public:
     virtual void PauseJobs(const vector<int>& IDs) = 0;
     virtual void RestartJobs(const vector<int>& IDs) = 0;
     virtual void UrgentJobs(const vector<int>& IDs) = 0;
-    
+
     virtual void PushJobsProgress()= 0;
     
+    virtual void Printed() = 0;
 };
