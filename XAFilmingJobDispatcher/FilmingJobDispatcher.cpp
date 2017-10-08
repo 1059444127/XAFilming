@@ -91,9 +91,11 @@ void FilmingJobDispatcher::RestartJobs(const vector<int>& IDs)
     PushJobsProgress();
 }
 
-void FilmingJobDispatcher::UrgentJobs(const vector<int>& IDs)
+void FilmingJobDispatcher::UrgentJobs(const vector<int>& iDs)
 {
-    LOG_INFO_XA_FILMING << "Urgent jobs [" << serialize(IDs).c_str() << "]" << LOG_END;
+    LOG_INFO_XA_FILMING << "Urgent jobs [" << serialize(iDs).c_str() << "]" << LOG_END;
+    vector<int> IDs(iDs);
+    reverse(IDs.begin(), IDs.end());
     XA_FILMING_JOB_MAP_DELEGATE(Urgent);
     PushJobsProgress();
 }
