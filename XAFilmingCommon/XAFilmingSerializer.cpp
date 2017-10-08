@@ -28,9 +28,14 @@ string serialize(const vector<T>& collection)
     return serialize<T>(collection, PARAMETER_LIST_SEPARATOR);
 }
 
-string serialize(const vector<int> collection)
+string serialize(const vector<int>& collection)
 {
     return serialize<int>(collection);
+}
+
+string serialize(const vector<string>& collection)
+{
+    return serialize<string>(collection);
 }
 
 void split(const string serializedString, const string& separator, vector<string> & splitStringVector)

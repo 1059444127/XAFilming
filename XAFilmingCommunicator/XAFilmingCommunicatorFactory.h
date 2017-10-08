@@ -7,6 +7,7 @@ class XA_FilmingCommunicator_Export XAFilmingCommunicatorFactory
 {
 public:
     static XAFilmingCommunicatorFactory* Instance();
+    ~XAFilmingCommunicatorFactory() {SAFE_DELETE_ELEMENT(_instance);}
 private:
     static XAFilmingCommunicatorFactory* _instance;
     XAFilmingCommunicatorFactory();
