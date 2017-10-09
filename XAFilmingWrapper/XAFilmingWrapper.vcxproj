@@ -81,10 +81,12 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="XACommand.h" />
     <ClInclude Include="XAFilmingWrapperExportMacro.h" />
     <ClInclude Include="XAPrint.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="XACommand.cpp" />
     <ClCompile Include="XAPrint.cpp" />
   </ItemGroup>
   <ItemGroup>
