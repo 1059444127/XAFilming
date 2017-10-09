@@ -91,6 +91,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingJobDispatcher_UT",
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingJobCommand", "XAFilmingJobCommand\XAFilmingJobCommand.vcxproj", "{7B25A339-D78C-4AE7-88C6-12BCDD6F18F0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FEC9A280-D31E-4BF9-8C8A-0A3150B2F9E4} = {FEC9A280-D31E-4BF9-8C8A-0A3150B2F9E4}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingJobCommand_UT", "XAFilmingJobCommand_UT\XAFilmingJobCommand_UT.vcxproj", "{367B1B87-4589-4B02-AF1B-93388F66929A}"
 EndProject

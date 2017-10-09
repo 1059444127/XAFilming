@@ -1,8 +1,8 @@
 #pragma once
-#include "JobCommandBase.h"
+#include "XAFilmingJobCommandBase.h"
 
 class RefreshJobCommand :
-    public JobCommandBase
+    public XAFilmingJobCommandBase
 {
 public:
     virtual void Excute(const std::string& serializedParameters);

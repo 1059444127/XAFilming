@@ -19,7 +19,7 @@ public:
     virtual void RestartJobs(const vector<int>& IDs);
     virtual void UrgentJobs(const vector<int>& IDs);
     virtual void PushJobsProgress();
-    virtual void Printed();
+	virtual void NofifyPrintStatus(bool bStatus);
 private:
     map<int, XAFilmingJobBase*> _jobMap;
     IXAFilmingCommunicator* _communicator;

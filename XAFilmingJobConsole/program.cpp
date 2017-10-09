@@ -48,8 +48,14 @@ void urgentJobs(const vector<int> IDs)
 
 void printed(const vector<int> IDs)
 {
-    job_dispatcher->Printed();
+    job_dispatcher->NofifyPrintStatus(true);
 }
+
+void failed(const vector<int> IDs)
+{
+	job_dispatcher->NofifyPrintStatus(false);
+}
+
 
 typedef void (*Execute)(const vector<int> parameters);
 map<string, Execute> command_map;
@@ -66,6 +72,7 @@ void printUsage()
     cout << "\t" << "restartJobs 1 2 3" <<endl;
     cout << "\t" << "urgentJobs 1 2 3" << endl;
     cout << "\t" << "printed" << endl;
+	cout << "\t" << "failed" << endl;
 }
 
 
@@ -127,6 +134,7 @@ void main()
     command_map["restartJobs"] = restartJobs;
     command_map["urgentJobs"] = urgentJobs;
     command_map["printed"] = printed;
+	command_map["failed"] = failed;
 
     job_dispatcher = XAFilmingJobDispatcherFactory::Instance()->CreateJobDispatcher(new FilmingCommunicatorMock());
 

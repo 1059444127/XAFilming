@@ -83,7 +83,7 @@
     <ClInclude Include="ContinueJobCommand.h" />
     <ClInclude Include="DeleteJobCommand.h" />
     <ClInclude Include="FilmingJobCommand.h" />
-    <ClInclude Include="JobCommandBase.h" />
+    <ClInclude Include="XAFilmingJobCommandBase.h" />
     <ClInclude Include="PauseJobCommand.h" />
     <ClInclude Include="RefreshJobCommand.h" />
     <ClInclude Include="RestartJobCommand.h" />

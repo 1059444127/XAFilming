@@ -1,9 +1,10 @@
 #pragma once
 #include <vector>
+#include "INotifyPrintStatus.h"
 
 class XAFilmingJobBase;
 using namespace std;
-class IXAFilmingJobDispatch
+class IXAFilmingJobDispatch : public INofifyPrintStatus
 {
 public:
     virtual void AddJob(XAFilmingJobBase *job) = 0;
@@ -16,5 +17,4 @@ public:
 
     virtual void PushJobsProgress()= 0;
     
-    virtual void Printed() = 0;
 };

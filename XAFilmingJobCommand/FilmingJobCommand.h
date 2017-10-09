@@ -1,9 +1,9 @@
 #pragma once
 #include <vector>
-#include "JobCommandBase.h"
+#include "XAFilmingJobCommandBase.h"
 
 class FilmingJobCommand :
-    public JobCommandBase
+    public XAFilmingJobCommandBase
 {
 public:
     virtual void Excute(const std::string& serializedParameters);

@@ -111,13 +111,15 @@ void FilmingJobDispatcher::PushJobsProgress()
     _communicator->PublishJobProgress(jobs);
 }
 
-void FilmingJobDispatcher::Printed()
+void FilmingJobDispatcher::NofifyPrintStatus(bool bStatus)
 {
-    LOG_INFO_XA_FILMING << "Received Printed Message" << LOG_END;
+	LOG_INFO_XA_FILMING << "Received Printed Message : Succeed? [" << bStatus << "]" << LOG_END;
 
     auto jobs = GetSortedJobVector();
     assert(!jobs.empty());
-    jobs[0]->Complete();
+
+	auto job = jobs[0];
+	bStatus ? job->Complete() : job->Fail();
     
     PushJobsProgress();
 }
