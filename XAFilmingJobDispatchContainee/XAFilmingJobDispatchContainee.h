@@ -2,6 +2,9 @@
 
 #include "XAFilmingMacro.h"
 #include "McsfContainee\mcsf_containee_base.h"
+
+#include "IXAFilmingJobDispatch.h"
+
 using namespace MCSF_NAMESPACE_FOR_XA;
 
 class ICommunicationProxy;
@@ -15,7 +18,7 @@ class XAFilmingJobDispatchContainee : public IContainee
 public:
 
 
-	XAFilmingJobDispatchContainee(): m_pCommunicationProxy(nullptr)
+	XAFilmingJobDispatchContainee(): m_pCommunicationProxy(nullptr), _filmingJobDispatcher(nullptr)
 	{
 	}
 
@@ -52,6 +55,7 @@ public:
 	virtual ~XAFilmingJobDispatchContainee();
 
 private:
+	IXAFilmingJobDispatch* _filmingJobDispatcher;
 	XA_FILMING_DISALLOW_COPY_AND_ASSIGN(XAFilmingJobDispatchContainee)
 	MCSF_NAMESPACE_FOR_XA::ICommunicationProxy * m_pCommunicationProxy;
 };
