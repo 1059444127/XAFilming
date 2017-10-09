@@ -7,7 +7,7 @@ TEST_F(XAFilmingJobTests, XAFilmingJobFactory_Is_Singleton)
 {
     auto factory1 = XAFilmingJobFactory::Instance();
     auto factory2 = XAFilmingJobFactory::Instance();
-    EXPECT_EQ(factory2, factory1);
+    EXPECT_TRUE(factory2==factory1);
 }
 
 TEST_F(XAFilmingJobTests, Job_ID_Ascending)
@@ -21,7 +21,7 @@ TEST_F(XAFilmingJobTests, Job_ID_Ascending)
     SAFE_DELETE_ELEMENT(job1)
     SAFE_DELETE_ELEMENT(job2)
 
-    EXPECT_GT(job2ID, job1ID);
+    EXPECT_TRUE(job2ID>job1ID);
 }
 
 TEST_F(XAFilmingJobTests, Urgent_Job_with_High_Priority)
@@ -39,7 +39,7 @@ TEST_F(XAFilmingJobTests, Urgent_Job_with_High_Priority)
     SAFE_DELETE_ELEMENT(job1);
     SAFE_DELETE_ELEMENT(job2);
 
-    EXPECT_GT(job2Priority, job1Priority);
+    EXPECT_TRUE(job2Priority>job1Priority);
 }
 
 TEST_F(XAFilmingJobTests, When_Job_Done_Then_Priority_Reset)
@@ -48,7 +48,7 @@ TEST_F(XAFilmingJobTests, When_Job_Done_Then_Priority_Reset)
     auto job = factory->CreateJob();
     
     job->Urgent();
-    EXPECT_GT(job->GetPriority(), XA_Filming_Job_Min_Priority);
+    EXPECT_TRUE(job->GetPriority()>XA_Filming_Job_Min_Priority);
 
     job->Print();
     job->Complete();
@@ -56,5 +56,5 @@ TEST_F(XAFilmingJobTests, When_Job_Done_Then_Priority_Reset)
     auto donePriority = job->GetPriority();
     SAFE_DELETE_ELEMENT(job);
 
-    EXPECT_EQ(donePriority, XA_Filming_Job_Min_Priority);
+    EXPECT_TRUE(donePriority==XA_Filming_Job_Min_Priority);
 }

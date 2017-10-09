@@ -4,6 +4,7 @@
 #include "XAPrint.h"
 
 #include "XAFilmingServiceCommandHandler.h"
+#include <sstream>
 
 int XAFilmingServiceCommandHandler::HandleCommand(const CommandContext* pContext, std::string* pReplyObject)
 {
