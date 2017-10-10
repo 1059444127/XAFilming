@@ -20,6 +20,7 @@ void XAWaiting::Print(XAFilmingJobBase* const job)
     LOG_INFO_XA_FILMING << "Job Status: " << ToString() << LOG_END;
 
     job->SetJobStatus(new XAPrinting());
+	job->Complete();
 }
 
 void XAWaiting::Urgent(XAFilmingJobBase* const job)

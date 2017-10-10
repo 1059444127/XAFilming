@@ -10,10 +10,9 @@ FilmingJob::FilmingJob(int ID, vector<string> dicomFiles) : XAJob(ID), _files(di
 
 void FilmingJob::Complete()
 {
-    _iProgress++;
-    if(_iProgress < _files.size()) return;
-    
-    XAJob::Complete();
+    _iProgress < _files.size() 
+	? _iProgress++ 
+	: XAJob::Complete();
 }
 
 string FilmingJob::GetProgress()
