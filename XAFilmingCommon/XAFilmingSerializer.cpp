@@ -38,6 +38,17 @@ string serialize(const vector<string>& collection)
     return serialize<string>(collection);
 }
 
+int string_to_int(const string& numberInStringType)
+{
+	LOG_INFO_XA_FILMING << "converting [" << numberInStringType << "] to int" << LOG_END;
+	stringstream ss;
+	ss << numberInStringType;
+	int result;
+	ss >> result;
+	LOG_INFO_XA_FILMING << "result : [" << result << "]" << LOG_END;
+	return result;
+}
+
 void split(const string serializedString, const string& separator, vector<string> & splitStringVector)
 {
 	LOG_INFO_XA_FILMING << "Spliting [" << serializedString << "] with separator [" << separator << "]" << LOG_END;

@@ -67,3 +67,13 @@ TEST_F(XAFilmingUtilityTests, MultiString_Serailize_and_Deserialize)
 	// Assert
 	Compare(expectedStrings, actualStrings);
 }
+
+TEST_F(XAFilmingUtilityTests, String_To_Int)
+{
+	int expected = 32;
+	string actualString = "32";
+
+	int actual = string_to_int(actualString);
+
+	EXPECT_TRUE(expected==actual);
+}
