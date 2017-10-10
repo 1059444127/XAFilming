@@ -2,6 +2,7 @@
 #include "vector"
 #include "XAFilmingSerializer.h"
 #include "XAFilmingLogger.h"
+#include <XAFilmingJobFactory.h>
 
 void FilmDicomFileCommand::Excute(const string& serializedParameters)
 {
@@ -9,5 +10,6 @@ void FilmDicomFileCommand::Excute(const string& serializedParameters)
 	vector<string> filePaths;
 	deserializeStrings(serializedParameters, filePaths);
 
-	_jobDispatcher->AddJob(nullptr);	//TODO: CreateFilmingJob;
+	auto job = XAFilmingJobFactory::Instance()->CreateFilmingJob(filePaths);
+	_jobDispatcher->AddJob(job);	
 }
