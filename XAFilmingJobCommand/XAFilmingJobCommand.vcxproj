@@ -56,7 +56,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\..\..\..\UIH\lib_$(configuration)\external;..\..\..\..\UIH\lib_$(configuration)\mcs;..\..\..\..\UIH\lib_$(configuration)\external\boost;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\..\..\..\UIH\lib_$(Configuration)\mcs\$(ProjectName).lib</ImportLibrary>
-      <AdditionalDependencies>XAFilmingWrapper.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>XAFilmingWrapper.lib;XAFilmingCommon.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copyfile.bat</Command>
@@ -74,7 +74,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\..\..\..\UIH\lib\external;..\..\..\..\UIH\lib\mcs;..\..\..\..\UIH\lib\external\boost;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\..\..\..\UIH\lib\mcs\$(ProjectName).lib</ImportLibrary>
-      <AdditionalDependencies>McsfLogger.lib;XAFilmingWrapper.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>McsfLogger.lib;XAFilmingWrapper.lib;XAFilmingCommon.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copyfile.bat</Command>
@@ -83,6 +83,7 @@
   <ItemGroup>
     <ClInclude Include="ContinueJobCommand.h" />
     <ClInclude Include="DeleteJobCommand.h" />
+    <ClInclude Include="FilmDicomFileCommand.h" />
     <ClInclude Include="FilmingJobCommand.h" />
     <ClInclude Include="XAFilmingJobCommandBase.h" />
     <ClInclude Include="PauseJobCommand.h" />
@@ -99,6 +100,7 @@
   <ItemGroup>
     <ClCompile Include="ContinueJobCommand.cpp" />
     <ClCompile Include="DeleteJobCommand.cpp" />
+    <ClCompile Include="FilmDicomFileCommand.cpp" />
     <ClCompile Include="FilmingJobCommand.cpp" />
     <ClCompile Include="PauseJobCommand.cpp" />
     <ClCompile Include="RefreshJobCommand.cpp" />

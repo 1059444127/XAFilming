@@ -11,6 +11,7 @@
 #include "UrgentJobCommand.h"
 #include <McsfJobManagerInfo/mcsf_jobmanager_info.pb.h>
 #include "../../../XParameters/Contract/CommunicationCommandID.h"
+#include "FilmDicomFileCommand.h"
 
 XAFilmingJobCommandFactory* XAFilmingJobCommandFactory::_pInstance = new XAFilmingJobCommandFactory();
 
@@ -59,6 +60,6 @@ XAFilmingJobCommandFactory::XAFilmingJobCommandFactory():_filmingCommandDictiona
     _filmingCommandDictionary[Mcsf::JobManager::JobManagerCommunicationID::FromMainFrameStopCmd] = new StopJobCommand();
     _filmingCommandDictionary[Mcsf::JobManager::JobManagerCommunicationID::FromMainFrameUrgentCmd] = new UrgentJobCommand();
 
-	_filmingCommandDictionary[COMMUNICATION_COMMAND_ID::COMMAND_ID_FILMING] = nullptr;
-	_filmingCommandDictionary[COMMAND_ID_FILMING_DATAHEADER] = nullptr;
+	_filmingCommandDictionary[COMMUNICATION_COMMAND_ID::COMMAND_ID_FILMING] = new FilmDicomFileCommand();
+	_filmingCommandDictionary[COMMUNICATION_COMMAND_ID::COMMAND_ID_FILMING_DATAHEADER] = nullptr;
 }
