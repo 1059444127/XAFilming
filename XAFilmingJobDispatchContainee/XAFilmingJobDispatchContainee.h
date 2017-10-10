@@ -56,6 +56,7 @@ public:
 
 private:
 	IXAFilmingJobDispatch* _filmingJobDispatcher;
+	MCSF_NAMESPACE_FOR_XA::ICommandHandler* _commandHandler;
 	XA_FILMING_DISALLOW_COPY_AND_ASSIGN(XAFilmingJobDispatchContainee)
 	MCSF_NAMESPACE_FOR_XA::ICommunicationProxy * m_pCommunicationProxy;
 };

@@ -3,6 +3,8 @@
 #include <McsfContainee/mcsf_containee_cmd_id.h>
 #include "XAFilmingJobDispatcherFactory.h"
 #include "XAFilmingCommunicatorFactory.h"
+#include "../XAFilmingWrapper/XACommand.h"
+#include "XAFilmingJobCommandHandler.h"
 
 
 IMPLEMENT_CONTAINEE(XAFilmingJobDispatchContainee);
@@ -17,6 +19,16 @@ void XAFilmingJobDispatchContainee::Startup()
 		return;
 	}
 
+	auto communicator = XAFilmingCommunicatorFactory::Instance()->CreateCommunicator(m_pCommunicationProxy);
+	_filmingJobDispatcher = XAFilmingJobDispatcherFactory::Instance()->CreateJobDispatcher(communicator);
+	communicator->Register(_filmingJobDispatcher);
+
+	_commandHandler = new XAFilmingJobCommandHandler(_filmingJobDispatcher);
+	auto commandIDs = GetXACommandIDs();
+	for(auto iter = commandIDs.begin(); iter != commandIDs.end(); iter++)
+	{
+		m_pCommunicationProxy->RegisterCommandHandler(*iter, _commandHandler);		
+	}
 }
 
 void XAFilmingJobDispatchContainee::DoWork()
@@ -39,8 +51,6 @@ void XAFilmingJobDispatchContainee::SetCommunicationProxy(MCSF_NAMESPACE_FOR_XA:
 {
 	LOG_INFO_XA_FILMING << "SetCommunicationProxy" << LOG_END;
 	m_pCommunicationProxy = pProxy;
-	auto communicator = XAFilmingCommunicatorFactory::Instance()->CreateCommunicator(pProxy);
-	_filmingJobDispatcher = XAFilmingJobDispatcherFactory::Instance()->CreateJobDispatcher(communicator);
 }
 
 int XAFilmingJobDispatchContainee::GetEstimatedTimeToFinishJob(bool bReboot)
@@ -74,5 +84,6 @@ XAFilmingJobDispatchContainee::~XAFilmingJobDispatchContainee()
 {
 	LOG_INFO_XA_FILMING << "Destructor" << LOG_END;
 	SAFE_DELETE_ELEMENT(_filmingJobDispatcher);
+	SAFE_DELETE_ELEMENT(_commandHandler);
 }
 
