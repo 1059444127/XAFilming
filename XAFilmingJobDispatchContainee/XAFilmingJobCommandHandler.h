@@ -11,7 +11,7 @@ class XAFilmingJobCommandHandler : public MCSF_NAMESPACE_FOR_XA::ICommandHandler
 {
 public:
 
-	explicit XAFilmingJobCommandHandler(IXAFilmingJobDispatch* ixa_filming_job_dispatch)
+	XAFilmingJobCommandHandler(IXAFilmingJobDispatch* ixa_filming_job_dispatch)
 		: _jobDispatcher(ixa_filming_job_dispatch)
 	{
 	}
