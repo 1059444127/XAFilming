@@ -1,6 +1,7 @@
 #include "FilmingJobCommand.h"
 
 
+
 void FilmingJobCommand::Excute(const std::string& serializedParameters)
 {
     std::vector<int> jobIDs;
