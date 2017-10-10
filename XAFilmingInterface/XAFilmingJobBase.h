@@ -3,8 +3,9 @@
 #include "XAFilmingJobStatusBase.h"
 #include "IXAFilmingProxy.h"
 #include "IProgress.h"
+#include "IPriority.h"
 
-class XA_FilmingInterface_Export XAFilmingJobBase : public IXAFilmingProxy, public IProgress
+class XA_FilmingInterface_Export XAFilmingJobBase : public IXAFilmingProxy, public IProgress, public IPriority
 {
 public:
     XAFilmingJobBase(XAFilmingJobStatusBase* status);
@@ -21,10 +22,6 @@ public:
     virtual void Restart();
     virtual void Urgent();
     virtual bool CanCancel();
-
-    virtual void TopPriority() = 0;
-    virtual int GetPriority() = 0;
-    virtual void ResetPriority() = 0;
 
     //TODO: interface inheritance
 
