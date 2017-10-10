@@ -17,8 +17,8 @@
     <ClInclude Include="INotifyPrintStatus.h" />
     <ClInclude Include="IXAFilmingCommand.h" />
     <ClInclude Include="IXAFilmingCommunicationProxy.h" />
-    <ClInclude Include="IXAFilmingCommunicator.h" />
     <ClInclude Include="IXAFilmingJobDispatch.h" />
+    <ClInclude Include="IXAFilmingProxy.h" />
     <ClInclude Include="XAFilmingJobBase.h" />
     <ClInclude Include="XAFilmingInterfaceExportMacro.h" />
     <ClInclude Include="XAFilmingJobComparer.h" />
