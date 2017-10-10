@@ -9,6 +9,8 @@
 #include "RestartJobCommand.h"
 #include "StopJobCommand.h"
 #include "UrgentJobCommand.h"
+#include <McsfJobManagerInfo/mcsf_jobmanager_info.pb.h>
+#include "../../../XParameters/Contract/CommunicationCommandID.h"
 
 XAFilmingJobCommandFactory* XAFilmingJobCommandFactory::_pInstance = new XAFilmingJobCommandFactory();
 
@@ -49,11 +51,14 @@ XAFilmingJobCommandFactory::~XAFilmingJobCommandFactory()
 XAFilmingJobCommandFactory::XAFilmingJobCommandFactory():_filmingCommandDictionary()
 {
     //TODO: Map Command ID & Command
-    _filmingCommandDictionary[1] = new ContinueJobCommand();
-    _filmingCommandDictionary[2] = new DeleteJobCommand();
-    _filmingCommandDictionary[3] = new PauseJobCommand();
-    _filmingCommandDictionary[4] = new RefreshJobCommand();
-    _filmingCommandDictionary[5] = new RestartJobCommand();
-    _filmingCommandDictionary[6] = new StopJobCommand();
-    _filmingCommandDictionary[7] = new UrgentJobCommand();
+    _filmingCommandDictionary[Mcsf::JobManager::JobManagerCommunicationID::FromMainFrameContinueCmd] = new ContinueJobCommand();
+    _filmingCommandDictionary[Mcsf::JobManager::JobManagerCommunicationID::FromMainFrameDeleteCmd] = new DeleteJobCommand();
+    _filmingCommandDictionary[Mcsf::JobManager::JobManagerCommunicationID::FromMainFramePauseCmd] = new PauseJobCommand();
+    _filmingCommandDictionary[Mcsf::JobManager::JobManagerCommunicationID::FromMainFrameRefreshCmd] = new RefreshJobCommand();
+    _filmingCommandDictionary[Mcsf::JobManager::JobManagerCommunicationID::FromMainFrameRestartCmd] = new RestartJobCommand();
+    _filmingCommandDictionary[Mcsf::JobManager::JobManagerCommunicationID::FromMainFrameStopCmd] = new StopJobCommand();
+    _filmingCommandDictionary[Mcsf::JobManager::JobManagerCommunicationID::FromMainFrameUrgentCmd] = new UrgentJobCommand();
+
+	_filmingCommandDictionary[COMMUNICATION_COMMAND_ID::COMMAND_ID_FILMING] = nullptr;
+	_filmingCommandDictionary[COMMAND_ID_FILMING_DATAHEADER] = nullptr;
 }
