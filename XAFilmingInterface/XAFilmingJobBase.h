@@ -2,8 +2,9 @@
 
 #include "XAFilmingJobStatusBase.h"
 #include "IXAFilmingProxy.h"
+#include "IProgress.h"
 
-class XA_FilmingInterface_Export XAFilmingJobBase : public IXAFilmingProxy
+class XA_FilmingInterface_Export XAFilmingJobBase : public IXAFilmingProxy, public IProgress
 {
 public:
     XAFilmingJobBase(XAFilmingJobStatusBase* status);
@@ -24,7 +25,6 @@ public:
     virtual void TopPriority() = 0;
     virtual int GetPriority() = 0;
     virtual void ResetPriority() = 0;
-    virtual std::string GetProgress() = 0;
 
     //TODO: interface inheritance
 
