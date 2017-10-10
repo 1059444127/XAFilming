@@ -44,6 +44,8 @@ void FilmingJobDispatcher::AddJob(XAFilmingJobBase* job)
 {
     LOG_INFO_XA_FILMING << "Add a filming job" << LOG_END;
     _jobMap[job->GetJobID()] = job;
+	job->SetFilmingProxy(_communicator);
+
     PushJobsProgress();
 }
 

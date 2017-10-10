@@ -2,7 +2,6 @@
 #include "XAJob.h"
 #include <vector>
 #include <queue>
-#include "XAFilmingMacro.h"
 
 using namespace std;
 class FilmingJob :
