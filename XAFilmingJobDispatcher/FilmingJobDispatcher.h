@@ -3,13 +3,13 @@
 #include "IXAFilmingJobDispatch.h"
 
 #include <map>
-#include <IXAFilmingCommunicator.h>
+#include <IXAFilmingCommunicationProxy.h>
 
 class FilmingJobDispatcher :
     public IXAFilmingJobDispatch
 {
 public:
-    FilmingJobDispatcher(IXAFilmingCommunicator* communicator);
+    FilmingJobDispatcher(IXAFilmingCommunicationProxy* communicator);
     ~FilmingJobDispatcher();
 
     virtual void AddJob(XAFilmingJobBase* job);
@@ -22,7 +22,7 @@ public:
 	virtual void NofifyPrintStatus(bool bStatus);
 private:
     map<int, XAFilmingJobBase*> _jobMap;
-    IXAFilmingCommunicator* _communicator;
+    IXAFilmingCommunicationProxy* _communicator;
 
     vector<XAFilmingJobBase*> GetSortedJobVector();
 };

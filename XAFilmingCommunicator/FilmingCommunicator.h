@@ -1,10 +1,10 @@
 #pragma once
-#include "IXAFilmingCommunicator.h"
 #include <XAFilmingMacro.h>
 #include <McsfNetBase/mcsf_netbase_icommunication_proxy.h>
+#include "IXAFilmingCommunicationProxy.h"
 
 class FilmingCommunicator :
-    public IXAFilmingCommunicator
+    public IXAFilmingCommunicationProxy
 {
 public:
 	FilmingCommunicator(MCSF_NAMESPACE_FOR_XA::ICommunicationProxy* pProxy) : _pProxy(pProxy), _pNotifier(nullptr)

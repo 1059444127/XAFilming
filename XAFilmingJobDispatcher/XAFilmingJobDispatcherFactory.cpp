@@ -8,7 +8,7 @@ XAFilmingJobDispatcherFactory* XAFilmingJobDispatcherFactory::Instance()
     return _instance;
 }
 
-IXAFilmingJobDispatch* XAFilmingJobDispatcherFactory::CreateJobDispatcher(IXAFilmingCommunicator* communicator)
+IXAFilmingJobDispatch* XAFilmingJobDispatcherFactory::CreateJobDispatcher(IXAFilmingCommunicationProxy* communicator)
 {
     return new FilmingJobDispatcher(communicator);
 }

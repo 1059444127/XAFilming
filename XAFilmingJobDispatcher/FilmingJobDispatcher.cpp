@@ -25,7 +25,7 @@
 #endif
 
 
-FilmingJobDispatcher::FilmingJobDispatcher(IXAFilmingCommunicator* communicator) : _jobMap(), _communicator(communicator)
+FilmingJobDispatcher::FilmingJobDispatcher(IXAFilmingCommunicationProxy* communicator) : _jobMap(), _communicator(communicator)
 {
 }
 

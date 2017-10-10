@@ -1,8 +1,8 @@
 #pragma once
-#include <IXAFilmingCommunicator.h>
+#include <IXAFilmingCommunicationProxy.h>
 
 class FilmingCommunicatorMock :
-    public IXAFilmingCommunicator
+    public IXAFilmingCommunicationProxy
 {
 public:
 	virtual void Register(INofifyPrintStatus* pNotifier){}

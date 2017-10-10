@@ -8,7 +8,7 @@ XAFilmingCommunicatorFactory* XAFilmingCommunicatorFactory::Instance()
     return _instance;
 }
 
-IXAFilmingCommunicator* XAFilmingCommunicatorFactory::CreateCommunicator(MCSF_NAMESPACE_FOR_XA::ICommunicationProxy* pProxy)
+IXAFilmingCommunicationProxy* XAFilmingCommunicatorFactory::CreateCommunicator(MCSF_NAMESPACE_FOR_XA::ICommunicationProxy* pProxy)
 {
     return new FilmingCommunicator(pProxy);
 }
