@@ -1,8 +1,9 @@
 #pragma once
 
 #include "XAFilmingJobStatusBase.h"
+#include "IXAFilmingProxy.h"
 
-class XA_FilmingInterface_Export XAFilmingJobBase
+class XA_FilmingInterface_Export XAFilmingJobBase : public IXAFilmingProxy
 {
 public:
     XAFilmingJobBase(XAFilmingJobStatusBase* status);
