@@ -2,9 +2,9 @@
 #include <vector>
 #include <XAFilmingJobBase.h>
 #include "INotifyPrintStatus.h"
-#include "IXAFilmingProxy.h"
+#include "IXAFilming.h"
 
-class IXAFilmingCommunicationProxy : public IXAFilmingProxy
+class IXAFilmingCommunicationProxy : public IXAFilming
 {
 public:
     virtual void PublishJobProgress(const std::vector<XAFilmingJobBase*>& jobs) = 0;

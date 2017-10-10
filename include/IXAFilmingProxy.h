@@ -1,7 +1,6 @@
-#pragma once
-#include <vector>
+#include <IXAFilming.h>
 
-class IXAFilmingProxy
+class IXAFilmingProxy : public IXAFilming
 {
-	virtual void Print(const std::vector<std::string>& filePaths) = 0;
+	virtual void SetFilmingProxy(IXAFilming* pFilming) = 0;
 };
