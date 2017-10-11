@@ -11,7 +11,7 @@ IXAFilmingJobDispatch* job_dispatcher;
 
 void addJob(const vector<int> IDs)
 {
-    vector<string> files; files.push_back("1"); files.push_back("2"); files.push_back("3");
+    vector<string> files; files.push_back("1"); //files.push_back("2"); files.push_back("3");
     auto job = XAFilmingJobFactory::Instance()->CreateFilmingJob(files);
     job_dispatcher->AddJob(job);
 }

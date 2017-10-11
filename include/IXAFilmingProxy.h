@@ -1,7 +1,7 @@
 #include "IXAFilming.h"
 #include <cassert>
 
-class IXAFilmingProxy : public IXAFilming
+class XA_FilmingInterface_Export IXAFilmingProxy : public IXAFilming
 {
 public:
 	virtual void SetFilmingProxy(IXAFilming* pFilming)

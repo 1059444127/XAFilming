@@ -15,7 +15,7 @@ namespace UIH.XA.Filming.Proxy
         public void Print(params string[] paths)
         {
             var serializedPaths = string.Join(CommunicationCommandID.ParameterListSeparator, paths);
-            this.LogDevInfo(string.Format("Print {0}", serializedPaths));
+            this.LogDevInfo(string.Format("Film {0}", serializedPaths));
  
             _communicator.AsyncSendCommand(CommunicationCommandID.COMMAND_ID_FILMING, CommunicationNode.Filming ,serializedPaths);
             this.LogDevInfo(string.Format("Command [{0}] sent with message [{1}]",
@@ -28,7 +28,7 @@ namespace UIH.XA.Filming.Proxy
             int dataHeaderIndex = 0;
             foreach (var dataHeader in dataHeaders)
             {
-                // TODO-Print-MayBe: 私有 Tag 添加任务信息
+                // TODO-Film-MayBe: 私有 Tag 添加任务信息
                 byte[] serializedObject;
                 if (!dataHeader.Serialize(out serializedObject))
                 {

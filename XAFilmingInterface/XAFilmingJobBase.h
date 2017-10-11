@@ -18,7 +18,7 @@ public:
     virtual void Continue();
     virtual void Fail();
     virtual void Pause();
-    virtual void Print();
+    virtual void Film();
     virtual void Restart();
     virtual void Urgent();
     virtual bool CanCancel();

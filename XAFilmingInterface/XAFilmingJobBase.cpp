@@ -49,9 +49,9 @@ void XAFilmingJobBase::Pause()
     _status->Pause(this);
 }
 
-void XAFilmingJobBase::Print()
+void XAFilmingJobBase::Film()
 {
-    LOG_INFO_XA_FILMING << "Print job [" << GetJobID() << "] with status [" << GetJobStatus()->ToString() << "]" << LOG_END;
+    LOG_INFO_XA_FILMING << "Film job [" << GetJobID() << "] with status [" << GetJobStatus()->ToString() << "]" << LOG_END;
     _status->Print(this);
 }
 

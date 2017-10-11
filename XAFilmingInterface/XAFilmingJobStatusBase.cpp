@@ -22,7 +22,7 @@ void XAFilmingJobStatusBase::Restart(XAFilmingJobBase*  const job)
 
 void XAFilmingJobStatusBase::Print(XAFilmingJobBase* const job)
 {
-    LOG_WARN_XA_FILMING << "Print job [ " << job->GetJobID() << "] with Status [" << job->GetJobStatus()->ToString() << "]" << LOG_END;
+    LOG_WARN_XA_FILMING << "Film job [ " << job->GetJobID() << "] with Status [" << job->GetJobStatus()->ToString() << "]" << LOG_END;
     LOG_WARN_XA_FILMING << "Job Status: " << ToString() << LOG_END;
 }
 

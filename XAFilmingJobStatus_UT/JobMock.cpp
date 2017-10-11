@@ -1,5 +1,4 @@
 #include "JobMock.h"
-#include "XAFilmingMacro.h"
 #include "XAFilmingJobStatusFactory.h"
 
 

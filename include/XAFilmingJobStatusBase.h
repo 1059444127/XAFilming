@@ -18,6 +18,8 @@ public:
     virtual bool IsAtomic();
     virtual std::string ToString() const = 0;
     
+	//TODO: »æÖÆ×´Ì¬Í¼
+
     virtual XAFilmingJobStatusEnum GetStatusPriority() = 0;
 };
 

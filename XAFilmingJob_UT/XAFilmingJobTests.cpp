@@ -50,7 +50,7 @@ TEST_F(XAFilmingJobTests, When_Job_Done_Then_Priority_Reset)
     job->Urgent();
     EXPECT_TRUE(job->GetPriority()>XA_Filming_Job_Min_Priority);
 
-    job->Print();
+    job->Film();
     job->Complete();
 
     auto donePriority = job->GetPriority();
