@@ -5,6 +5,8 @@
 void FilmingCommunicator::PublishJobProgress(const vector<XAFilmingJobBase*>& jobs)
 {
     LOG_INFO_XA_FILMING << "publish job progress" << LOG_END;
+
+
 }
 
 void FilmingCommunicator::Print(const vector<std::string>& files)
