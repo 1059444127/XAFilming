@@ -16,6 +16,7 @@ namespace UIH.XA.Filming.CommandSenderSimulator
             _actionDictionary.Add(CommunicationCommandID.COMMAND_ID_PRINT, SendPrintCommand);
         }
 
+        //TODO: Move containee & log configure file to project directory
 
         /// <inheritdoc />
         public override void DoWork()
