@@ -66,10 +66,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="XAFilmingCommonUT.cpp" />
-    <ClCompile Include="XAFilmingUtilityTests.cpp" />
+    <ClCompile Include="XAFilmingSerializerTests.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="XAFilmingUtilityTests.h" />
+    <ClInclude Include="XAFilmingSerializerTests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

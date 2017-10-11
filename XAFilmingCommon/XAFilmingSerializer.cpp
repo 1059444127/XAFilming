@@ -49,6 +49,13 @@ int string_to_int(const string& numberInStringType)
 	return result;
 }
 
+string int_to_string(int number)
+{
+	stringstream ss;
+	ss << number;
+	return ss.str();
+}
+
 void split(const string serializedString, const string& separator, vector<string> & splitStringVector)
 {
 	LOG_INFO_XA_FILMING << "Spliting [" << serializedString << "] with separator [" << separator << "]" << LOG_END;

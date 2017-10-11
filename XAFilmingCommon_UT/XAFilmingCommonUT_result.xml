@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="4" failures="0" disabled="0" errors="0" time="0.004" name="AllTests">
-  <testsuite name="XAFilmingUtilityTests" tests="4" failures="0" disabled="0" errors="0" time="0.001">
-    <testcase name="EmptyString_Serailize_and_Deserialize" value_param="" type_param="" status="run" time="0" classname="XAFilmingUtilityTests" />
-    <testcase name="OneString_Serailize_and_Deserialize" value_param="" type_param="" status="run" time="0" classname="XAFilmingUtilityTests" />
-    <testcase name="MultiString_Serailize_and_Deserialize" value_param="" type_param="" status="run" time="0" classname="XAFilmingUtilityTests" />
-    <testcase name="String_To_Int" value_param="" type_param="" status="run" time="0" classname="XAFilmingUtilityTests" />
+<testsuites tests="5" failures="0" disabled="0" errors="0" time="0.003" name="AllTests">
+  <testsuite name="XAFilmingSerializerTests" tests="5" failures="0" disabled="0" errors="0" time="0.002">
+    <testcase name="EmptyString_Serailize_and_Deserialize" value_param="" type_param="" status="run" time="0" classname="XAFilmingSerializerTests" />
+    <testcase name="OneString_Serailize_and_Deserialize" value_param="" type_param="" status="run" time="0" classname="XAFilmingSerializerTests" />
+    <testcase name="MultiString_Serailize_and_Deserialize" value_param="" type_param="" status="run" time="0" classname="XAFilmingSerializerTests" />
+    <testcase name="String_To_Int" value_param="" type_param="" status="run" time="0" classname="XAFilmingSerializerTests" />
+    <testcase name="Int_To_String" value_param="" type_param="" status="run" time="0" classname="XAFilmingSerializerTests" />
   </testsuite>
 </testsuites>

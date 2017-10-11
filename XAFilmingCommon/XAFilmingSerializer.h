@@ -10,3 +10,4 @@ void XA_FilmingCommon_Export deserializeStrings(const string serializedString, v
 string XA_FilmingCommon_Export serialize(const vector<int>& collection);
 string XA_FilmingCommon_Export serialize(const vector<string>& collection);
 int XA_FilmingCommon_Export string_to_int(const string& numberInStringType);
+string XA_FilmingCommon_Export int_to_string(int number);
