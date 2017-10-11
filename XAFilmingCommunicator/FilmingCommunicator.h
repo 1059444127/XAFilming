@@ -7,9 +7,7 @@ class FilmingCommunicator :
     public IXAFilmingCommunicationProxy
 {
 public:
-	FilmingCommunicator(MCSF_NAMESPACE_FOR_XA::ICommunicationProxy* pProxy) : _pProxy(pProxy), _pNotifier(nullptr)
-	{
-	}
+	FilmingCommunicator(MCSF_NAMESPACE_FOR_XA::ICommunicationProxy* pProxy);
 
     virtual void PublishJobProgress(const std::vector<XAFilmingJobBase*>& jobs);
     virtual void Print(const std::vector<std::string>& files);

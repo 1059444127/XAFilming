@@ -56,7 +56,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\..\..\..\UIH\lib_$(configuration)\external;..\..\..\..\UIH\lib_$(configuration)\mcs;..\..\..\..\UIH\lib_$(configuration)\external\boost;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\..\..\..\UIH\lib_$(Configuration)\mcs\$(ProjectName).lib</ImportLibrary>
-      <AdditionalDependencies>XAFilmingCommon.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>XAFilmingCommon.lib;McsfNetBase.lib;XAFilmingWrapper.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copyfile.bat</Command>
@@ -74,7 +74,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\..\..\..\UIH\lib\external;..\..\..\..\UIH\lib\mcs;..\..\..\..\UIH\lib\external\boost;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\..\..\..\UIH\lib\mcs\$(ProjectName).lib</ImportLibrary>
-      <AdditionalDependencies>XAFilmingCommon.lib;McsfLogger.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>XAFilmingCommon.lib;McsfLogger.lib;McsfNetBase.lib;XAFilmingWrapper.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copyfile.bat</Command>
