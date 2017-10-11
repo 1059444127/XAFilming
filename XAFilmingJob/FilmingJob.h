@@ -15,5 +15,6 @@ private:
     vector<string> _files;
     queue<string> _fileQueue;
     int _iProgress;
+	vector<string> GetDicomFilsToPrint();
 };
 

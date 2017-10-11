@@ -12,13 +12,13 @@ void FilmingJob::Complete()
 {
     if (_iProgress < _files.size())
     {
-		vector<string> filesToBePrinted;
-		filesToBePrinted.push_back(_files[_iProgress]);
+		vector<string> filesToBePrinted = GetDicomFilsToPrint();
 		Print(filesToBePrinted);
 	    _iProgress++;
     }
 
     else XAJob::Complete();
+
 }
 
 string FilmingJob::GetProgress()
@@ -26,4 +26,11 @@ string FilmingJob::GetProgress()
     stringstream ss;
     ss << _iProgress << "/" << _files.size();
     return ss.str();
+}
+
+vector<string> FilmingJob::GetDicomFilsToPrint()
+{
+	vector<string> filesToBePrinted;
+	filesToBePrinted.push_back(_files[_iProgress]);
+	return filesToBePrinted;
 }
