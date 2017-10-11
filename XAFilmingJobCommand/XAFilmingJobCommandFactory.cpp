@@ -51,7 +51,6 @@ XAFilmingJobCommandFactory::~XAFilmingJobCommandFactory()
 
 XAFilmingJobCommandFactory::XAFilmingJobCommandFactory():_filmingCommandDictionary()
 {
-    //TODO: Map Command ID & Command
     _filmingCommandDictionary[Mcsf::JobManager::JobManagerCommunicationID::FromMainFrameContinueCmd] = new ContinueJobCommand();
     _filmingCommandDictionary[Mcsf::JobManager::JobManagerCommunicationID::FromMainFrameDeleteCmd] = new DeleteJobCommand();
     _filmingCommandDictionary[Mcsf::JobManager::JobManagerCommunicationID::FromMainFramePauseCmd] = new PauseJobCommand();
@@ -61,5 +60,6 @@ XAFilmingJobCommandFactory::XAFilmingJobCommandFactory():_filmingCommandDictiona
     _filmingCommandDictionary[Mcsf::JobManager::JobManagerCommunicationID::FromMainFrameUrgentCmd] = new UrgentJobCommand();
 
 	_filmingCommandDictionary[COMMUNICATION_COMMAND_ID::COMMAND_ID_FILMING] = new FilmDicomFileCommand();
+    //TODO: FilmingDataHeaderCommand Register to Factory
 	_filmingCommandDictionary[COMMUNICATION_COMMAND_ID::COMMAND_ID_FILMING_DATAHEADER] = nullptr;
 }
