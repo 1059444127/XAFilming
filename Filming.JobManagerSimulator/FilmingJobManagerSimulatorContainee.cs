@@ -7,21 +7,31 @@ namespace UIH.XA.Filming.JobManagerSimulator
 {
     public class FilmingJobManagerSimulatorContainee : CLRContaineeBase
     {
+        private JobManagerWindow _jobManagerWindow;
+
         /// <inheritdoc />
         public override void Startup()
         {
             Console.WriteLine("StartUp");
 
+            var proxy = GetCommunicationProxy();
+            proxy.RegisterCommandHandler(0, (StringCmdHandler) HandleCommand);  //TODO: Find JobManager push Command ID
+        }
 
-            var thread = new Thread(ShowWindow);
-            thread.SetApartmentState(ApartmentState.STA);   //UI thread must be STA
-            thread.Start();
+        private string HandleCommand(CommandContext commandContext)
+        {
+            //TODO: convert commandContext to JobCollectionViewModel
+
+            var jobs = new JobCollectionViewModel();
+            _jobManagerWindow.DataContext = jobs;
+
+            return string.Empty;
         }
 
         private void ShowWindow()
         {
-            var window = new JobManagerWindow();
-            window.ShowDialog();                            //Should Be ShowDialog, not Show
+            _jobManagerWindow = new JobManagerWindow();
+            _jobManagerWindow.ShowDialog();                            //Should Be ShowDialog, not Show
         }
 
 
@@ -34,6 +44,10 @@ namespace UIH.XA.Filming.JobManagerSimulator
                 Console.WriteLine("The event send to System manager fail,Please restart the FilmingFEContainee");
             }
             Console.WriteLine("has informed system manager that FilmingViewer is up");
+
+            var thread = new Thread(ShowWindow);
+            thread.SetApartmentState(ApartmentState.STA);   //UI thread must be STA
+            thread.Start();
 
         }
 

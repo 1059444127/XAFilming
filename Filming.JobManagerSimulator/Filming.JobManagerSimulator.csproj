@@ -43,6 +43,14 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Reference Include="UIH.XA.Common">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.XA.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.XA.Core">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.XA.Core.dll</HintPath>
+    </Reference>
     <Reference Include="UIH.Mcsf.Core.ContaineeBase">
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.ContaineeBase.dll</HintPath>
       <Private>False</Private>
@@ -53,6 +61,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <Reference Include="UIH.XA.Common">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.XA.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.XA.Core">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.XA.Core.dll</HintPath>
+    </Reference>
     <Reference Include="UIH.Mcsf.Core.ContaineeBase">
       <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.ContaineeBase.dll</HintPath>
       <Private>False</Private>
@@ -75,6 +91,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FilmingJobManagerSimulatorContainee.cs" />
+    <Compile Include="JobCollectionViewModel.cs" />
+    <Compile Include="JobViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Filming.ViewMock\Filming.ViewMock.csproj">

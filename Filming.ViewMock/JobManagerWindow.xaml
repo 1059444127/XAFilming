@@ -6,6 +6,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-            <DataGrid></DataGrid>
+            <DataGrid ItemsSource="{Binding JobColletion}" AutoGenerateColumns="True">
+                <DataGridTextColumn Header="Index" Binding="{Binding ID}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Progress" Binding="{Binding Progress}"></DataGridTextColumn>
+        </DataGrid>
     </Grid>
 </Window>
