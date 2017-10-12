@@ -2,6 +2,9 @@
 #include "McsfJobManagerInfo/mcsf_jobmanager_info_wrapper.h"
 #include <XAFilmingLogger.h>
 #include "XAFilmingSerializer.h"
+#include <McsfNetBase/mcsf_communication_node_name.h>
+#include <McsfNetBase/mcsf_netbase_command_context.h>
+#include <McsfNetBase/mcsf_netbase_icommunication_proxy.h>
 
 using namespace Mcsf::JobManager;
 
@@ -20,6 +23,7 @@ vector<int> GetJobIDsFrom(const string& serializedJobManagerInfo)
 		int jobID = string_to_int(jobItemID);
 		jobIDs.push_back(jobID);
 	}
+	return jobIDs;
 }
 
 JobManagerItemStatus ConvertFrom(XAFilmingJobStatusEnum job_status)
@@ -62,5 +66,20 @@ string SerializeFrom(const vector<XAFilmingJobBase*>& jobs)
 	job_manager_info_wrapper.AddJobManagerInfos(job_manager_infos);
 	
 	return job_manager_info_wrapper.Serialize();
+}
+
+string GetJobManagerCommunicationNodeName()
+{
+	return Mcsf::CommunicationNodeName::CreateCommunicationProxyName("JobManager", "FE");
+}
+
+void PushJobProgressToJobManager(const vector<XAFilmingJobBase*>& jobs, Mcsf::ICommunicationProxy* pProxy)
+{
+	Mcsf::CommandContext command_context;
+	command_context.sSerializeObject = SerializeFrom(jobs);
+	command_context.iCommandId = ToMainFrameCmd;
+	command_context.sReceiver =  GetJobManagerCommunicationNodeName(); 
+	
+	pProxy->AsyncSendCommand(&command_context);
 }
 
