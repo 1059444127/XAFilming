@@ -1,4 +1,4 @@
-﻿namespace UIH.XA.Filming.JobManagerSimulator
+﻿namespace UIH.XA.Filming.ViewMock
 {
     /// <summary>
     /// Interaction logic for JobManagerWindow.xaml

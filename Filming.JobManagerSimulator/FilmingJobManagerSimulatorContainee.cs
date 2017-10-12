@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
-using System.Windows.Threading;
 using UIH.Mcsf.Core;
+using UIH.XA.Filming.ViewMock;
 
 namespace UIH.XA.Filming.JobManagerSimulator
 {

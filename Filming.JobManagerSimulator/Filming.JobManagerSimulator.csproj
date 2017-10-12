@@ -40,11 +40,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xaml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
@@ -55,10 +50,6 @@
     <Reference Include="UIH.Mcsf.Core.NetBase">
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.NetBase.dll</HintPath>
       <Private>False</Private>
-    </Reference>
-    <Reference Include="UIH.XA.GlobalParameter">
-      <Private>False</Private>
-      <HintPath>..\..\..\..\UIH\bin_debug\UIH.XA.GlobalParameter.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
@@ -84,15 +75,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FilmingJobManagerSimulatorContainee.cs" />
-    <Compile Include="JobManagerWindow.xaml.cs">
-      <DependentUpon>JobManagerWindow.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="JobManagerWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <ProjectReference Include="..\Filming.ViewMock\Filming.ViewMock.csproj">
+      <Project>{97B47257-C9B1-49E2-B067-3A2F78C8396D}</Project>
+      <Name>Filming.ViewMock</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
