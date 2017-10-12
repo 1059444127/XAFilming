@@ -38,6 +38,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Reference Include="Google.ProtocolBuffers">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\Google.ProtocolBuffers.dll</HintPath>
+    </Reference>
     <Reference Include="UIH.XA.Common">
       <Private>False</Private>
       <HintPath>..\..\..\..\UIH\bin\UIH.XA.Common.dll</HintPath>
@@ -76,6 +80,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Reference Include="Google.ProtocolBuffers">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\Google.ProtocolBuffers.dll</HintPath>
+    </Reference>
     <Reference Include="UIH.XA.Common">
       <Private>False</Private>
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.XA.Common.dll</HintPath>

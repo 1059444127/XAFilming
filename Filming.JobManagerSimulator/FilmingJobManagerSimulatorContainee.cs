@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using UIH.Mcsf.Core;
+using UIH.Mcsf.JobManager;
 using UIH.XA.Filming.ViewMock;
 
 namespace UIH.XA.Filming.JobManagerSimulator
@@ -20,12 +22,32 @@ namespace UIH.XA.Filming.JobManagerSimulator
 
         private string HandleCommand(CommandContext commandContext)
         {
-            //TODO: convert commandContext to JobCollectionViewModel
+            var jobManagerInfoWrapper = new JobManagerInfoWrapper();
+            jobManagerInfoWrapper.Deserialize(commandContext.sSerializeObject);
+            var jobManagerInfoList = jobManagerInfoWrapper.GetJobManagerInfoList();
 
-            var jobs = new JobCollectionViewModel();
-            _jobManagerWindow.DataContext = jobs;
+            var jobCollectionViewModel = ConvertFrom(jobManagerInfoList);
+
+            _jobManagerWindow.DataContext = jobCollectionViewModel;
 
             return string.Empty;
+        }
+
+        private JobCollectionViewModel ConvertFrom(List<JobManagerInfo> jobManagerInfoList)
+        {
+            var jobCollectionViewModel = new JobCollectionViewModel();
+            var jobCollection = jobCollectionViewModel.JobCollection;
+
+            foreach (var jobManagerInfo in jobManagerInfoList)
+            {
+                var job = new JobViewModel();
+                job.ID = jobManagerInfo.Jobitemid;
+                job.Progress = jobManagerInfo.Progress;
+                job.Status = jobManagerInfo.Jobitemstatus.ToString();
+
+                jobCollection.Add(job);
+            }
+            return jobCollectionViewModel;
         }
 
         private void ShowWindow()
