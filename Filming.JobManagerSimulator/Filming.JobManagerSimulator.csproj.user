@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <StartAction>Program</StartAction>
+    <StartProgram>D:\X-SW\XA\Trunk\UIH\bin\UIH.Mcsf.Core.ContainerBase.exe</StartProgram>
+    <StartWorkingDirectory>D:\X-SW\XA\Trunk\UIH\bin\</StartWorkingDirectory>
+    <StartArguments>..\..\IAS\MiddleWare\Filming\Filming.JobManagerSimulator\Config\XAFilmingJobManagerSimulatorContainee.xml  JobManagerSimulator@@</StartArguments>
+  </PropertyGroup>
+</Project>

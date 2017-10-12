@@ -38,6 +38,7 @@ namespace UIH.XA.Filming.JobManagerSimulator
         private void FillJobCollectionViewModelWith(List<JobManagerInfo> jobManagerInfoList)
         {
             var jobCollection = _jobCollectionViewModel.JobCollection;
+            _jobManagerWindow.Dispatcher.Invoke(new Action(() => jobCollection.Clear()));
 
             foreach (var jobManagerInfo in jobManagerInfoList)
             {

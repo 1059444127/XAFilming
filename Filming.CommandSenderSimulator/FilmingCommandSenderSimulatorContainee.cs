@@ -14,6 +14,19 @@ namespace UIH.XA.Filming.CommandSenderSimulator
         {
             Console.WriteLine("StartUp");
             _actionDictionary.Add(CommunicationCommandID.COMMAND_ID_PRINT, SendPrintCommand);
+            _actionDictionary.Add(CommunicationCommandID.COMMAND_ID_FILMING, SendFilmFilesCommand);
+        }
+
+        private void SendFilmFilesCommand(int commandID)
+        {
+            var commandText = new CommandContext();
+            commandText.iCommandId = commandID;
+            commandText.sReceiver = CommunicationNode.FilmingService; 
+            commandText.sStringObject = @"E:\1.dcm|E:\2.dcm|E:\1.dcm|E:\2.dcm";
+            commandText.pCommandCallback = new PrintCommandCallBack();
+
+            var proxy = GetCommunicationProxy();
+            var result = proxy.AsyncSendCommand(commandText);
         }
 
 
@@ -31,7 +44,8 @@ namespace UIH.XA.Filming.CommandSenderSimulator
                 Console.WriteLine("Press any key to continue");
                 Console.ReadKey();
 
-                SendCommand(CommunicationCommandID.COMMAND_ID_PRINT);
+                SendCommand(CommunicationCommandID.COMMAND_ID_FILMING);
+                //SendCommand(CommunicationCommandID.COMMAND_ID_PRINT);
             }
         }
 
@@ -47,7 +61,7 @@ namespace UIH.XA.Filming.CommandSenderSimulator
         {
             var commandText = new CommandContext();
             commandText.iCommandId = commandID;
-            commandText.sReceiver = "XAFilmingService@@";
+            commandText.sReceiver = CommunicationNode.Filming;
             commandText.sStringObject = @"E:\1.dcm|E:\2.dcm|E:\1.dcm|E:\2.dcm";
             commandText.pCommandCallback = new PrintCommandCallBack();
 
