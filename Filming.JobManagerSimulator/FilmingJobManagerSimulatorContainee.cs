@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.Windows.Threading;
 using UIH.Mcsf.Core;
 using UIH.Mcsf.JobManager;
 using UIH.XA.Filming.ViewMock;
@@ -10,6 +11,7 @@ namespace UIH.XA.Filming.JobManagerSimulator
     public class FilmingJobManagerSimulatorContainee : CLRContaineeBase
     {
         private JobManagerWindow _jobManagerWindow;
+        private JobCollectionViewModel _jobCollectionViewModel;
 
         /// <inheritdoc />
         public override void Startup()
@@ -22,21 +24,20 @@ namespace UIH.XA.Filming.JobManagerSimulator
 
         private string HandleCommand(CommandContext commandContext)
         {
+            Console.WriteLine("Received command from [{0}]", commandContext.sReceiver);
+
             var jobManagerInfoWrapper = new JobManagerInfoWrapper();
             jobManagerInfoWrapper.Deserialize(commandContext.sSerializeObject);
             var jobManagerInfoList = jobManagerInfoWrapper.GetJobManagerInfoList();
 
-            var jobCollectionViewModel = ConvertFrom(jobManagerInfoList);
-
-            _jobManagerWindow.DataContext = jobCollectionViewModel;
+            FillJobCollectionViewModelWith(jobManagerInfoList);
 
             return string.Empty;
         }
 
-        private JobCollectionViewModel ConvertFrom(List<JobManagerInfo> jobManagerInfoList)
+        private void FillJobCollectionViewModelWith(List<JobManagerInfo> jobManagerInfoList)
         {
-            var jobCollectionViewModel = new JobCollectionViewModel();
-            var jobCollection = jobCollectionViewModel.JobCollection;
+            var jobCollection = _jobCollectionViewModel.JobCollection;
 
             foreach (var jobManagerInfo in jobManagerInfoList)
             {
@@ -45,19 +46,18 @@ namespace UIH.XA.Filming.JobManagerSimulator
                 job.Progress = jobManagerInfo.Progress;
                 job.Status = jobManagerInfo.Jobitemstatus.ToString();
 
-                jobCollection.Add(job);
+                _jobManagerWindow.Dispatcher.Invoke(new Action(() => jobCollection.Add(job)));
             }
-            return jobCollectionViewModel;
         }
 
         private void ShowWindow()
         {
             _jobManagerWindow = new JobManagerWindow();
-            var jobCollectionViewModel = new JobCollectionViewModel();
-            jobCollectionViewModel.JobCollection.Add(new JobViewModel() { ID = "SampleID", Progress = "SampleProgress", Status = "SampleStatus" });
+            _jobCollectionViewModel = new JobCollectionViewModel();
+            _jobCollectionViewModel.JobCollection.Add(new JobViewModel() { ID = "SampleID", Progress = "SampleProgress", Status = "SampleStatus" });
 
            
-            _jobManagerWindow.DataContext = jobCollectionViewModel;
+            _jobManagerWindow.DataContext = _jobCollectionViewModel;
             _jobManagerWindow.ShowDialog();                            //Should Be ShowDialog, not Show
         }
 

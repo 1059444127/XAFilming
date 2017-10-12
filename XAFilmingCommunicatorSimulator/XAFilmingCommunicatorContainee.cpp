@@ -3,6 +3,8 @@
 #include <McsfContainee/mcsf_containee_cmd_id.h>
 #include <XAFilmingCommunicatorFactory.h>
 #include <XAFilmingJobFactory.h>
+#include <McsfJobManagerInfoWrapper.h>
+#include <McsfJobManagerInfo/mcsf_jobmanager_info.pb.h>
 
 using namespace std;
 
@@ -28,8 +30,10 @@ void XAFilmingCommunicatorContainee::DoWork()
 	send_system_event_result ?
 		LOG_ERROR_XA_FILMING << "Fail to send componet_ready event to System manager,Please restart the containee" << LOG_END
 		:	LOG_ERROR_XA_FILMING << "Succeed to send componet_ready event to System manager" << LOG_END;
-
-	Simulate();
+	while(true)
+	{
+		Simulate();		
+	}
 }
 
 void XAFilmingCommunicatorContainee::Simulate()
@@ -45,7 +49,12 @@ void XAFilmingCommunicatorContainee::Simulate()
 	jobs.push_back(pJob1);
 	jobs.push_back(pJob2);
 
-	_pCommunicator->PublishJobProgress(jobs);
+	CommandContext command_context;
+	command_context.sSerializeObject = SerializeFrom(jobs);
+	command_context.iCommandId = JobManager::ToMainFrameCmd;
+	command_context.sReceiver =  CommunicationNodeName::CreateCommunicationProxyName("JobManagerSimulator");; 
+	
+	m_pCommunicationProxy->AsyncSendCommand(&command_context);
 }
 
 bool XAFilmingCommunicatorContainee::Shutdown(bool bReboot)
@@ -58,7 +67,6 @@ void XAFilmingCommunicatorContainee::SetCommunicationProxy(MCSF_NAMESPACE_FOR_XA
 {
 	LOG_INFO_XA_FILMING << "SetCommunicationProxy" << LOG_END;
 	m_pCommunicationProxy = pProxy;
-	_pCommunicator = XAFilmingCommunicatorFactory::Instance()->CreateCommunicator(pProxy);
 
 }
 
@@ -92,6 +100,5 @@ int XAFilmingCommunicatorContainee::GetTaskRemainingProgress(std::list<TaskProgr
 XAFilmingCommunicatorContainee::~XAFilmingCommunicatorContainee()
 {
 	LOG_INFO_XA_FILMING << "Destructor" << LOG_END;
-	SAFE_DELETE_ELEMENT(_pCommunicator);
 }
 

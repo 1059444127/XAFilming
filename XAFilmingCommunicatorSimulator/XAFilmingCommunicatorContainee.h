@@ -16,7 +16,7 @@ class XAFilmingCommunicatorContainee : public IContainee
 public:
 
 
-	XAFilmingCommunicatorContainee(): m_pCommunicationProxy(nullptr), _pCommunicator(nullptr)
+	XAFilmingCommunicatorContainee(): m_pCommunicationProxy(nullptr)
 	{
 	}
 
@@ -55,7 +55,6 @@ public:
 private:
 	XA_FILMING_DISALLOW_COPY_AND_ASSIGN(XAFilmingCommunicatorContainee)
 	MCSF_NAMESPACE_FOR_XA::ICommunicationProxy * m_pCommunicationProxy;
-	IXAFilmingCommunicationProxy * _pCommunicator;
 
 	void Simulate();
 };
