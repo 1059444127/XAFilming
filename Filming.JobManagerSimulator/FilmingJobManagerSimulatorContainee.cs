@@ -53,6 +53,11 @@ namespace UIH.XA.Filming.JobManagerSimulator
         private void ShowWindow()
         {
             _jobManagerWindow = new JobManagerWindow();
+            var jobCollectionViewModel = new JobCollectionViewModel();
+            jobCollectionViewModel.JobCollection.Add(new JobViewModel() { ID = "SampleID", Progress = "SampleProgress", Status = "SampleStatus" });
+
+           
+            _jobManagerWindow.DataContext = jobCollectionViewModel;
             _jobManagerWindow.ShowDialog();                            //Should Be ShowDialog, not Show
         }
 
