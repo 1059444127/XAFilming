@@ -1,7 +1,10 @@
 #include "XAFilmingCommunicatorContainee.h"
 #include "XAFilmingLogger.h"
 #include <McsfContainee/mcsf_containee_cmd_id.h>
+#include <XAFilmingCommunicatorFactory.h>
+#include <XAFilmingJobFactory.h>
 
+using namespace std;
 
 IMPLEMENT_CONTAINEE(XAFilmingCommunicatorContainee);
 
@@ -23,8 +26,26 @@ void XAFilmingCommunicatorContainee::DoWork()
 
 	auto send_system_event_result = m_pCommunicationProxy->SendSystemEvent( "", static_cast<int>(SYSTEM_COMMAND_EVENT_ID_COMPONENT_READY), m_pCommunicationProxy->GetName() );
 	send_system_event_result ?
-			LOG_ERROR_XA_FILMING << "Fail to send componet_ready event to System manager,Please restart the containee" << LOG_END
+		LOG_ERROR_XA_FILMING << "Fail to send componet_ready event to System manager,Please restart the containee" << LOG_END
 		:	LOG_ERROR_XA_FILMING << "Succeed to send componet_ready event to System manager" << LOG_END;
+
+	Simulate();
+}
+
+void XAFilmingCommunicatorContainee::Simulate()
+{
+	cout << "Press Any key and return to continue: " << endl;
+	cin.get();
+
+	auto pJobFactory = XAFilmingJobFactory::Instance();
+
+	vector<XAFilmingJobBase*> jobs;
+	auto pJob1 = pJobFactory->CreateJob();
+	auto pJob2 = pJobFactory->CreateJob();
+	jobs.push_back(pJob1);
+	jobs.push_back(pJob2);
+
+	_pCommunicator->PublishJobProgress(jobs);
 }
 
 bool XAFilmingCommunicatorContainee::Shutdown(bool bReboot)
@@ -37,6 +58,8 @@ void XAFilmingCommunicatorContainee::SetCommunicationProxy(MCSF_NAMESPACE_FOR_XA
 {
 	LOG_INFO_XA_FILMING << "SetCommunicationProxy" << LOG_END;
 	m_pCommunicationProxy = pProxy;
+	_pCommunicator = XAFilmingCommunicatorFactory::Instance()->CreateCommunicator(pProxy);
+
 }
 
 int XAFilmingCommunicatorContainee::GetEstimatedTimeToFinishJob(bool bReboot)
@@ -69,5 +92,6 @@ int XAFilmingCommunicatorContainee::GetTaskRemainingProgress(std::list<TaskProgr
 XAFilmingCommunicatorContainee::~XAFilmingCommunicatorContainee()
 {
 	LOG_INFO_XA_FILMING << "Destructor" << LOG_END;
+	SAFE_DELETE_ELEMENT(_pCommunicator);
 }
 

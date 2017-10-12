@@ -2,6 +2,7 @@
 
 #include "XAFilmingMacro.h"
 #include "McsfContainee\mcsf_containee_base.h"
+#include <IXAFilmingCommunicationProxy.h>
 using namespace MCSF_NAMESPACE_FOR_XA;
 
 class ICommunicationProxy;
@@ -15,7 +16,7 @@ class XAFilmingCommunicatorContainee : public IContainee
 public:
 
 
-	XAFilmingCommunicatorContainee(): m_pCommunicationProxy(nullptr)
+	XAFilmingCommunicatorContainee(): m_pCommunicationProxy(nullptr), _pCommunicator(nullptr)
 	{
 	}
 
@@ -54,6 +55,9 @@ public:
 private:
 	XA_FILMING_DISALLOW_COPY_AND_ASSIGN(XAFilmingCommunicatorContainee)
 	MCSF_NAMESPACE_FOR_XA::ICommunicationProxy * m_pCommunicationProxy;
+	IXAFilmingCommunicationProxy * _pCommunicator;
+
+	void Simulate();
 };
 
 DECLARE_CONTAINEE(XAFilmingCommunicatorContainee);
