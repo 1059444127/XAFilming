@@ -59,6 +59,10 @@
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.NetBase.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UIH.Mcsf.JobManagerInfo">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.JobManagerInfo.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <Reference Include="UIH.XA.Common">
@@ -75,6 +79,10 @@
     </Reference>
     <Reference Include="UIH.Mcsf.Core.NetBase">
       <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.NetBase.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.JobManagerInfo">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.JobManagerInfo.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UIH.XA.GlobalParameter">

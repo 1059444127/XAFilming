@@ -15,7 +15,7 @@ namespace UIH.XA.Filming.JobManagerSimulator
             Console.WriteLine("StartUp");
 
             var proxy = GetCommunicationProxy();
-            proxy.RegisterCommandHandler(0, (StringCmdHandler) HandleCommand);  //TODO: Find JobManager push Command ID
+            proxy.RegisterCommandHandler((int)Mcsf.JobManager.JobManagerCommunicationID.ToMainFrameCmd, (StringCmdHandler)HandleCommand);  
         }
 
         private string HandleCommand(CommandContext commandContext)

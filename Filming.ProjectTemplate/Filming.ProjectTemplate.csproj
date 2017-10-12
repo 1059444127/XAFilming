@@ -62,6 +62,10 @@
       <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.NetBase.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UIH.Mcsf.JobManagerInfo">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.JobManagerInfo.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="UIH.Mcsf.Core.SystemEnvironmentConfig">
       <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.SystemEnvironmentConfig.dll</HintPath>
       <Private>False</Private>
@@ -94,6 +98,10 @@
     </Reference>
     <Reference Include="UIH.Mcsf.Core.NetBase">
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.NetBase.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.JobManagerInfo">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.JobManagerInfo.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UIH.Mcsf.Core.SystemEnvironmentConfig">
