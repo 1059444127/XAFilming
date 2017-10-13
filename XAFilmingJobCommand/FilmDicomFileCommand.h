@@ -5,6 +5,6 @@ class FilmDicomFileCommand :
 {
 public:
 
-	virtual void Excute(const string& serializedParameters);
+	virtual void Excute(const std::string& serializedParameters);
 };
 

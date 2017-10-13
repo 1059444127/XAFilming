@@ -3,8 +3,9 @@
 
 #include "CommunicationCommandID.h"
 #include <sstream>
+#include "XAFilmingMacro.h"
 
-
+using namespace  std;
 
 template<class T>
 string serialize(const vector<T>& collection, const string& separator)

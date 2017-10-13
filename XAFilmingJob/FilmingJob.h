@@ -3,18 +3,17 @@
 #include <vector>
 #include <queue>
 
-using namespace std;
 class FilmingJob :
     public XAJob
 {
 public:
-    FilmingJob(int ID, vector<string> dicomFiles);
+    FilmingJob(int ID, std::vector<std::string> dicomFiles);
     virtual void Complete();
-    virtual string GetProgress();
+    virtual std::string GetProgress();
 private:
-    vector<string> _files;
-    queue<string> _fileQueue;
+    std::vector<std::string> _files;
+    std::queue<std::string> _fileQueue;
     int _iProgress;
-	vector<string> GetDicomFilsToPrint();
+	std::vector<std::string> GetDicomFilsToPrint();
 };
 

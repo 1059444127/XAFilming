@@ -2,6 +2,7 @@
 #include "XAFilmingMacro.h"
 #include "XAFilmingSerializer.h"
 
+using namespace std;
 
 void Compare(const vector<string>& expectedStrings, const vector<string>& actualStrings)
 {

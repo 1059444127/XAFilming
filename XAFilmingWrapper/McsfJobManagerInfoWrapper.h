@@ -7,8 +7,7 @@ namespace Mcsf {
 	class ICommunicationProxy;
 }
 
-using namespace std;
 
-vector<int> XA_FilmingWrapper_Export GetJobIDsFrom(const string& serializedJobManagerInfo);
-string XA_FilmingWrapper_Export SerializeFrom(const vector<XAFilmingJobBase*>& jobs);
-void XA_FilmingWrapper_Export PushJobProgressToJobManager(const vector<XAFilmingJobBase*>& jobs, Mcsf::ICommunicationProxy* pProxy);
+std::vector<int> XA_FilmingWrapper_Export GetJobIDsFrom(const std::string& serializedJobManagerInfo);
+std::string XA_FilmingWrapper_Export SerializeFrom(const std::vector<XAFilmingJobBase*>& jobs);
+void XA_FilmingWrapper_Export PushJobProgressToJobManager(const std::vector<XAFilmingJobBase*>& jobs, Mcsf::ICommunicationProxy* pProxy);

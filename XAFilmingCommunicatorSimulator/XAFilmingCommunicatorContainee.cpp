@@ -7,6 +7,7 @@
 #include <McsfJobManagerInfo/mcsf_jobmanager_info.pb.h>
 
 using namespace std;
+using namespace MCSF_NAMESPACE_FOR_XA;
 
 IMPLEMENT_CONTAINEE(XAFilmingCommunicatorContainee);
 

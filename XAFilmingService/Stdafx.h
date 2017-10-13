@@ -8,4 +8,3 @@
 #include "CommunicationCommandID.h"
 #include "XAFilmingLogger.h"
 
-using namespace std;

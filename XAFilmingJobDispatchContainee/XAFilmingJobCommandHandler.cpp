@@ -4,6 +4,8 @@
 #include "XAFilmingJobCommandHandler.h"
 #include "XAFilmingJobCommandFactory.h"
 
+using namespace MCSF_NAMESPACE_FOR_XA;
+
 int XAFilmingJobCommandHandler::HandleCommand(const CommandContext* pContext, std::string* pReplyObject)
 {
 	*pReplyObject = XA_FILMING_EMPTY_STRING;

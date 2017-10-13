@@ -2,6 +2,8 @@
 #include "XAJob.h"
 #include "FilmingJob.h"
 
+using namespace std;
+
 XAFilmingJobFactory* XAFilmingJobFactory::_instance = new XAFilmingJobFactory();
 int XAFilmingJobFactory::_maxJobID = 0; //TODO; Get Max JobID From DB ,write in XAFilmingWrapper
 

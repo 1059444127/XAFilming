@@ -6,11 +6,10 @@
 #define XA_Utility_LIB __declspec (dllimport)
 #endif
 
-using namespace std;
 
 #include <vector>
 
 namespace StrUtil
 {
-	XA_Utility_LIB void split(const string serializedString, const string separator, vector<string> & splitStringVector);
+	XA_Utility_LIB void split(const std::string serializedString, const std::string separator, std::vector<std::string> & splitStringVector);
 }

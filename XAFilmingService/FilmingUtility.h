@@ -1,15 +1,13 @@
 #pragma once
 
-using namespace std;
-
 #include <vector>
 
 MCSF_FILMING_BEGIN_NAMESPACE
 
-	void Print(const vector<string>& dicomFilePaths);
+	void Print(const std::vector<std::string>& dicomFilePaths);
 
-	const string TEMP_DIRECTORY = "E:\\Images\\Temp\\";
+	const std::string TEMP_DIRECTORY = "E:\\Images\\Temp\\";
 
-	string CreateDicomFileName();
+	std::string CreateDicomFileName();
 
 MCSF_FILMING_END_NAMESPACE

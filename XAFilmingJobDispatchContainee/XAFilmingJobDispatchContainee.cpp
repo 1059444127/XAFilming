@@ -6,6 +6,7 @@
 #include "../XAFilmingWrapper/XACommand.h"
 #include "XAFilmingJobCommandHandler.h"
 
+using namespace MCSF_NAMESPACE_FOR_XA;
 
 IMPLEMENT_CONTAINEE(XAFilmingJobDispatchContainee);
 

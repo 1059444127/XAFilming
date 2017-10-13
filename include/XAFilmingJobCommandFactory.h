@@ -7,7 +7,6 @@
 #include "XAFilmingJobCommandBase.h"
 
 #include <map>
-using namespace std;
 
 class XA_XAFilmingJobCommand_Export XAFilmingJobCommandFactory
 {
@@ -18,7 +17,7 @@ public:
 private:
 	static XAFilmingJobCommandFactory* _pInstance;
 
-    map<int, XAFilmingJobCommandBase*> _filmingCommandDictionary;
+    std::map<int, XAFilmingJobCommandBase*> _filmingCommandDictionary;
     XAFilmingJobCommandFactory();
 	XA_FILMING_DISALLOW_COPY_AND_ASSIGN(XAFilmingJobCommandFactory)
 };

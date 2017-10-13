@@ -3,6 +3,7 @@
 #include "Utility.h"
 
 using namespace StrUtil;
+using namespace std;
 
 TEST_F(UtilityTest, Split_Empty_SerializedString_Get_Empty_String_Vector)
 {

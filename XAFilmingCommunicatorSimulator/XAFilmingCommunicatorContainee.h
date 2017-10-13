@@ -3,7 +3,6 @@
 #include "XAFilmingMacro.h"
 #include "McsfContainee\mcsf_containee_base.h"
 #include <IXAFilmingCommunicationProxy.h>
-using namespace MCSF_NAMESPACE_FOR_XA;
 
 class ICommunicationProxy;
 class IEventHandler;
@@ -11,7 +10,7 @@ class ICommandHandler;
 class IBigDataHandler;
 
 
-class XAFilmingCommunicatorContainee : public IContainee
+class XAFilmingCommunicatorContainee : public MCSF_NAMESPACE_FOR_XA::IContainee
 {
 public:
 
@@ -49,7 +48,7 @@ public:
 	virtual void SetCustomConfigFile(const std::string& sFilename);
 	virtual std::list<std::string> GetRunningTasks();
 	virtual void StartShutdown(bool bReboot);
-	virtual int GetTaskRemainingProgress(std::list<TaskProgress>& taskProgress);
+	virtual int GetTaskRemainingProgress(std::list<MCSF_NAMESPACE_FOR_XA::TaskProgress>& taskProgress);
 	virtual ~XAFilmingCommunicatorContainee();
 
 private:

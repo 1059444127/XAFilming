@@ -20,7 +20,7 @@ void XAFilmingServiceContainee::DoWork()
 {
 	LOG_INFO_XA_FILMING << "DoWork" << LOG_END;
 
-	auto send_system_event_result = m_pCommunicationProxy->SendSystemEvent( "", static_cast<int>(SYSTEM_COMMAND_EVENT_ID_COMPONENT_READY), m_pCommunicationProxy->GetName() );
+	auto send_system_event_result = m_pCommunicationProxy->SendSystemEvent( "", static_cast<int>(MCSF_NAMESPACE_FOR_XA::SYSTEM_COMMAND_EVENT_ID_COMPONENT_READY), m_pCommunicationProxy->GetName() );
 	send_system_event_result ?
 		LOG_ERROR_XA_FILMING << "Fail to send componet_ready event to System manager,Please restart the containee" << LOG_END
 		:	LOG_ERROR_XA_FILMING << "Succeed to send componet_ready event to System manager" << LOG_END;
@@ -59,7 +59,7 @@ void XAFilmingServiceContainee::StartShutdown(bool bReboot)
 	LOG_INFO_XA_FILMING << "bReboot: "  <<  bReboot << LOG_END;
 }
 
-int XAFilmingServiceContainee::GetTaskRemainingProgress(std::list<TaskProgress> & taskProgress)
+int XAFilmingServiceContainee::GetTaskRemainingProgress(std::list<MCSF_NAMESPACE_FOR_XA::TaskProgress> & taskProgress)
 {
 	LOG_INFO_XA_FILMING << "taskProgress.Count = "  <<  taskProgress.size() << LOG_END;
 	return 0;

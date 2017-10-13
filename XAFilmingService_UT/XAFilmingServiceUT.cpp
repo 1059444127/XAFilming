@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include <iostream>
+using namespace std;
 
 //xml output file of UT result 
 static const std::string ksTestOutputFile = "xml:XFilmingServiceUT_result.xml";

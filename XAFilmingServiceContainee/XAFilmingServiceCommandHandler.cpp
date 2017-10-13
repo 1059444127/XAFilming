@@ -6,7 +6,9 @@
 #include "XAFilmingServiceCommandHandler.h"
 #include <sstream>
 
-int XAFilmingServiceCommandHandler::HandleCommand(const CommandContext* pContext, std::string* pReplyObject)
+using namespace std;
+
+int XAFilmingServiceCommandHandler::HandleCommand(const MCSF_NAMESPACE_FOR_XA::CommandContext* pContext, std::string* pReplyObject)
 {
 	assert(nullptr != pContext);
 	assert(nullptr != pReplyObject);
@@ -19,7 +21,7 @@ int XAFilmingServiceCommandHandler::HandleCommand(const CommandContext* pContext
 	vector<string> stringVector;
 	deserializeStrings(serializedPaths, stringVector);
 	
-	bool printResult = print(stringVector);
+	bool printResult = MCSF_NAMESPACE_FOR_XA::print(stringVector);
 	LOG_INFO_XA_FILMING << "Print Result is [" << printResult << "]" << LOG_END;
 
 	stringstream ss;

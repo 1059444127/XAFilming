@@ -2,12 +2,11 @@
 #include <vector>
 #include "XAFilmingMacro.h"
 
-using namespace  std;
-	
-void XA_FilmingCommon_Export serializeStrings(const vector<string>& stringVector, string& serializedString);
-void XA_FilmingCommon_Export deserializeStrings(const string serializedString, vector<string>& splitStringVector);
 
-string XA_FilmingCommon_Export serialize(const vector<int>& collection);
-string XA_FilmingCommon_Export serialize(const vector<string>& collection);
-int XA_FilmingCommon_Export string_to_int(const string& numberInStringType);
-string XA_FilmingCommon_Export int_to_string(int number);
+void XA_FilmingCommon_Export serializeStrings(const std::vector<std::string>& stringVector, std::string& serializedString);
+void XA_FilmingCommon_Export deserializeStrings(const std::string serializedString, std::vector<std::string>& splitStringVector);
+
+std::string XA_FilmingCommon_Export serialize(const std::vector<int>& collection);
+std::string XA_FilmingCommon_Export serialize(const std::vector<std::string>& collection);
+int XA_FilmingCommon_Export string_to_int(const std::string& numberInStringType);
+std::string XA_FilmingCommon_Export int_to_string(int number);

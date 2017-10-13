@@ -2,6 +2,7 @@
 #include "XAFilmingLogger.h"
 #include <McsfContainee/mcsf_containee_cmd_id.h>
 
+using namespace MCSF_NAMESPACE_FOR_XA;
 
 IMPLEMENT_CONTAINEE(XAFilmingSampleContainee);
 

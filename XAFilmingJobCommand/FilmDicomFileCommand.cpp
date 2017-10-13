@@ -4,6 +4,8 @@
 #include "XAFilmingLogger.h"
 #include <XAFilmingJobFactory.h>
 
+using namespace std;
+
 void FilmDicomFileCommand::Excute(const string& serializedParameters)
 {
 	LOG_INFO_XA_FILMING << "FilmDicomFileCommand Executing, with parameter: [" << serializedParameters << "]" << LOG_END;

@@ -1,7 +1,5 @@
 #pragma once
 
-using namespace std;
-
 #include "McsfNetBase/mcsf_netbase_interface.h"
 
 MCSF_FILMING_BEGIN_NAMESPACE
