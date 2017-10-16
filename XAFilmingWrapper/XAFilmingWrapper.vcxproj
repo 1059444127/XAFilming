@@ -83,12 +83,14 @@
   <ItemGroup>
     <ClInclude Include="McsfJobManagerInfoWrapper.h" />
     <ClInclude Include="XACommand.h" />
+    <ClInclude Include="XACommandID.h" />
     <ClInclude Include="XAFilmingWrapperExportMacro.h" />
     <ClInclude Include="XAPrint.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="McsfJobManagerInfoWrapper.cpp" />
     <ClCompile Include="XACommand.cpp" />
+    <ClCompile Include="XACommandID.cpp" />
     <ClCompile Include="XAPrint.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -2,6 +2,7 @@
 #include "XAFilmingLogger.h"
 #include "XAFilmingSerializer.h"
 #include <McsfJobManagerInfoWrapper.h>
+#include "XACommand.h"
 
 using namespace MCSF_NAMESPACE_FOR_XA;
 
@@ -20,8 +21,8 @@ void FilmingCommunicator::PublishJobProgress(const vector<XAFilmingJobBase*>& jo
 
 void FilmingCommunicator::Print(const vector<std::string>& files)
 {
-    string serializedString = serialize(files);
-    LOG_INFO_XA_FILMING << "Print " << serializedString << LOG_END;
+	LOG_INFO_XA_FILMING << "Print" << LOG_END;
+	SendPrintCommand(files, _pProxy);
 }
 
 void FilmingCommunicator::Register(INofifyPrintStatus* pNotifier)
