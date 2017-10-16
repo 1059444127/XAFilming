@@ -1,5 +1,6 @@
 #include "XAFilmingCommunicatorFactory.h"
 #include "FilmingCommunicator.h"
+#include "PrintCallBackHandler.h"
 
 XAFilmingCommunicatorFactory* XAFilmingCommunicatorFactory::_instance = new XAFilmingCommunicatorFactory();
 
@@ -10,7 +11,8 @@ XAFilmingCommunicatorFactory* XAFilmingCommunicatorFactory::Instance()
 
 IXAFilmingCommunicationProxy* XAFilmingCommunicatorFactory::CreateCommunicator(MCSF_NAMESPACE_FOR_XA::ICommunicationProxy* pProxy)
 {
-    return new FilmingCommunicator(pProxy);
+	auto pCallBackCommandHandler = new PrintCallBackHandler();
+    return new FilmingCommunicator(pProxy, pCallBackCommandHandler);
 }
 
 XAFilmingCommunicatorFactory::XAFilmingCommunicatorFactory()

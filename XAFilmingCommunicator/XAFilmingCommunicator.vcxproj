@@ -82,6 +82,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="FilmingCommunicator.h" />
+    <ClInclude Include="PrintCallBackHandler.h" />
     <ClInclude Include="XAFilmingCommunicatorExportMacro.h" />
     <ClInclude Include="XAFilmingCommunicatorFactory.h" />
   </ItemGroup>
@@ -90,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FilmingCommunicator.cpp" />
+    <ClCompile Include="PrintCallBackHandler.cpp" />
     <ClCompile Include="XAFilmingCommunicatorFactory.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
