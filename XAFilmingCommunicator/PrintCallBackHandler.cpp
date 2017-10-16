@@ -1,11 +1,7 @@
 #include "PrintCallBackHandler.h"
 
 
-PrintCallBackHandler::PrintCallBackHandler(void)
+int PrintCallBackHandler::HandleReply(const Mcsf::IAsyncResult* pAsyncResult)
 {
-}
-
-
-PrintCallBackHandler::~PrintCallBackHandler(void)
-{
+	return 0;
 }

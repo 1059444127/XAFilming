@@ -5,7 +5,7 @@
 class PrintCallBackHandler : public MCSF_NAMESPACE_FOR_XA::ICommandCallbackHandler
 {
 public:
-	PrintCallBackHandler(void);
-	~PrintCallBackHandler(void);
+
+	virtual int HandleReply(const Mcsf::IAsyncResult* pAsyncResult);
 };
 
