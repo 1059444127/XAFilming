@@ -6,7 +6,7 @@
 
 using namespace MCSF_NAMESPACE_FOR_XA;
 
-FilmingCommunicator::FilmingCommunicator(ICommunicationProxy* pProxy, ICommandCallbackHandler* pCallbackHandler): _pProxy(pProxy), _pCallbackHandler(pCallbackHandler), _pNotifier(nullptr)
+FilmingCommunicator::FilmingCommunicator(ICommunicationProxy* pProxy, ICommandCallbackHandler* pCallbackHandler): _pProxy(pProxy), _pCallbackHandler(pCallbackHandler), _pObserver(nullptr)
 {
 }
 
@@ -25,7 +25,7 @@ void FilmingCommunicator::Print(const vector<std::string>& files)
 	SendPrintCommand(files, _pProxy, _pCallbackHandler);
 }
 
-void FilmingCommunicator::Register(IPrintStatusObserver* pNotifier)
+void FilmingCommunicator::Register(IPrintStatusObserver* pObserver)
 {
-	_pNotifier = pNotifier;
+	_pObserver = pObserver;
 }

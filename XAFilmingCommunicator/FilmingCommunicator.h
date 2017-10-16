@@ -12,9 +12,9 @@ public:
     virtual void PublishJobProgress(const std::vector<XAFilmingJobBase*>& jobs);
     virtual void Print(const std::vector<std::string>& files);
 
-	virtual void Register(IPrintStatusObserver* pNotifier);
+	virtual void Register(IPrintStatusObserver* pObserver);
 private:
-	IPrintStatusObserver* _pNotifier;
+	IPrintStatusObserver* _pObserver;
 	MCSF_NAMESPACE_FOR_XA::ICommandCallbackHandler* _pCallbackHandler;
 	MCSF_NAMESPACE_FOR_XA::ICommunicationProxy* _pProxy;
 };
