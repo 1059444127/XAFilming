@@ -6,7 +6,7 @@
 
 using namespace MCSF_NAMESPACE_FOR_XA;
 
-FilmingCommunicator::FilmingCommunicator(ICommunicationProxy* pProxy): _pProxy(pProxy), _pNotifier(nullptr)
+FilmingCommunicator::FilmingCommunicator(ICommunicationProxy* pProxy, ICommandCallbackHandler* pCallbackHandler): _pProxy(pProxy), _pCallbackHandler(pCallbackHandler), _pNotifier(nullptr)
 {
 }
 
