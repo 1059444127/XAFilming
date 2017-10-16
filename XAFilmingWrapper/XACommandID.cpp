@@ -1,13 +1,12 @@
-#include "XACommand.h"
 #include "McsfJobManagerInfo/mcsf_jobmanager_info.pb.h"
 #include "..\..\..\..\IAS\XParameters\Contract\CommunicationCommandID.h"
 #include <XAFilmingMacro.h>
-using namespace std;
+#include "XACommandID.h"
 using namespace MCSF_NAMESPACE_FOR_XA;
 
-vector<int> GetXACommandIDs()
+std::vector<int> GetXACommandIDs()
 {
-	vector<int> commandIDs;
+	std::vector<int> commandIDs;
 
 	commandIDs.push_back(JobManager::FromMainFrameContinueCmd);
 	commandIDs.push_back(JobManager::FromMainFrameDeleteCmd);

@@ -3,8 +3,8 @@
 #include <McsfContainee/mcsf_containee_cmd_id.h>
 #include "XAFilmingJobDispatcherFactory.h"
 #include "XAFilmingCommunicatorFactory.h"
-#include "../XAFilmingWrapper/XACommand.h"
 #include "XAFilmingJobCommandHandler.h"
+#include "XACommandID.h"
 
 using namespace MCSF_NAMESPACE_FOR_XA;
 

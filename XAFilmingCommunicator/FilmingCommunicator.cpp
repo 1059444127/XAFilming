@@ -22,10 +22,10 @@ void FilmingCommunicator::PublishJobProgress(const vector<XAFilmingJobBase*>& jo
 void FilmingCommunicator::Print(const vector<std::string>& files)
 {
 	LOG_INFO_XA_FILMING << "Print" << LOG_END;
-	SendPrintCommand(files, _pProxy);
+	SendPrintCommand(files, _pProxy, _pCallbackHandler);
 }
 
-void FilmingCommunicator::Register(INofifyPrintStatus* pNotifier)
+void FilmingCommunicator::Register(IPrintStatusObserver* pNotifier)
 {
 	_pNotifier = pNotifier;
 }

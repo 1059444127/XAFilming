@@ -2,13 +2,13 @@
 #include "McsfJobManagerInfoWrapper.h"
 
 
-void FilmingJobCommand::Excute(const string& serializedParameters)
+void FilmingJobCommand::Excute(const std::string& serializedParameters)
 {
 	auto jobIDs = Deserialize(serializedParameters);
     Excute(jobIDs);
 }
 
-vector<int> FilmingJobCommand::Deserialize(const string& serialized_parameters)
+std::vector<int> FilmingJobCommand::Deserialize(const std::string& serialized_parameters)
 {
 	return GetJobIDsFrom(serialized_parameters);
 }

@@ -1,9 +1,9 @@
 #pragma once
 #include <vector>
-#include "INotifyPrintStatus.h"
+#include "IPrintStatusObserver.h"
 
 class XAFilmingJobBase;
-class IXAFilmingJobDispatch : public INofifyPrintStatus
+class IXAFilmingJobDispatch : public IPrintStatusObserver
 {
 public:
     virtual void AddJob(XAFilmingJobBase *job) = 0;
