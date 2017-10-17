@@ -10,3 +10,5 @@
 
 #define XA_FILMING_JOB_MANAGER  "JobManager"      //JobManagerSimulator
 #define XA_FILMING_FRONT_END	"FE"
+
+#define XA_FILMING_TEMP_DIRECTORY  "E:\\Images\\Temp\\"
