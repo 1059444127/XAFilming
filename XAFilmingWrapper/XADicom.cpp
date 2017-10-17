@@ -10,7 +10,7 @@ using namespace std;
 
 typedef boost::shared_ptr<IDataHeaderElementMap> IDataHeaderElementMapPtr;
 
-bool SaveStringToDicomFile(string& sSerializedDataHeader, string& dicomFilePath)
+bool SaveStringToDicomFile(const string& sSerializedDataHeader, string& dicomFilePath)
 {
 	IDataHeaderElementMapPtr pHeaders(Mcsf::IDataHeaderElementMap::CreateDataHeader());
 	if (!pHeaders)
