@@ -1,5 +1,6 @@
 #include "PrintCallbackHandler.h"
 #include <XAFilmingLogger.h>
+#include "XAFilmingSerializer.h"
 
 
 int PrintCallbackHandler::HandleReply(const MCSF_NAMESPACE_FOR_XA::IAsyncResult* pAsyncResult)
@@ -7,12 +8,12 @@ int PrintCallbackHandler::HandleReply(const MCSF_NAMESPACE_FOR_XA::IAsyncResult*
 	string result = pAsyncResult->GetMarshalObject();
 	LOG_INFO_XA_FILMING << "Print Command Result : [" << result << "],  Call Result: [" << pAsyncResult->GetCallResult() << "]" << LOG_END;
 
-
+	bool printResult = string_to_bool(result);
 
 	for (auto iter = _printStatusObservers.begin(); iter != _printStatusObservers.end(); iter++)
 	{
 		IPrintStatusObserver* pObserver = *iter;
-		pObserver->NofifyPrintStatus(true);		///TODO: convert from callback result;
+		pObserver->NofifyPrintStatus(printResult);		
 	}
 
 	return 0;

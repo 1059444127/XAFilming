@@ -7,3 +7,6 @@
 #define XA_Filming_Job_Failed ("Failed")
 
 #define XA_Filming_Job_Min_Priority 0
+
+#define XA_FILMING_JOB_MANAGER  "JobManager"      //JobManagerSimulator
+#define XA_FILMING_FRONT_END	"FE"

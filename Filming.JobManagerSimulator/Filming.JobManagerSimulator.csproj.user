@@ -4,6 +4,6 @@
     <StartAction>Program</StartAction>
     <StartProgram>D:\X-SW\XA\Trunk\UIH\bin\UIH.Mcsf.Core.ContainerBase.exe</StartProgram>
     <StartWorkingDirectory>D:\X-SW\XA\Trunk\UIH\bin\</StartWorkingDirectory>
-    <StartArguments>..\..\IAS\MiddleWare\Filming\Filming.JobManagerSimulator\Config\XAFilmingJobManagerSimulatorContainee.xml  JobManagerSimulator@@</StartArguments>
+    <StartArguments>..\..\IAS\MiddleWare\Filming\Filming.JobManagerSimulator\Config\XAFilmingJobManagerSimulatorContainee.xml  JobManagerSimulator@FE@</StartArguments>
   </PropertyGroup>
 </Project>

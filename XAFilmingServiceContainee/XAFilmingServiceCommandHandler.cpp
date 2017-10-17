@@ -24,10 +24,7 @@ int XAFilmingServiceCommandHandler::HandleCommand(const MCSF_NAMESPACE_FOR_XA::C
 	bool printResult = MCSF_NAMESPACE_FOR_XA::print(stringVector);
 	LOG_INFO_XA_FILMING << "Print Result is [" << printResult << "]" << LOG_END;
 
-	stringstream ss;
-	ss << printResult;
-
-	*pReplyObject = ss.str();
+	*pReplyObject = bool_to_string(printResult);
 
 	return 0;
 }

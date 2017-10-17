@@ -5,8 +5,11 @@
 #include <McsfNetBase/mcsf_communication_node_name.h>
 #include <McsfNetBase/mcsf_netbase_command_context.h>
 #include <McsfNetBase/mcsf_netbase_icommunication_proxy.h>
+#include <XAFilmingConst.h>
 
 using namespace Mcsf::JobManager;
+using namespace MCSF_NAMESPACE_FOR_XA;
+
 
 vector<int> GetJobIDsFrom(const string& serializedJobManagerInfo)
 {
@@ -70,12 +73,12 @@ string SerializeFrom(const vector<XAFilmingJobBase*>& jobs)
 
 string GetJobManagerCommunicationNodeName()
 {
-	return Mcsf::CommunicationNodeName::CreateCommunicationProxyName("JobManager", "FE");
+	return CommunicationNodeName::CreateCommunicationProxyName(XA_FILMING_JOB_MANAGER, XA_FILMING_FRONT_END);
 }
 
-void PushJobProgressToJobManager(const vector<XAFilmingJobBase*>& jobs, Mcsf::ICommunicationProxy* pProxy)
+void PushJobProgressToJobManager(const vector<XAFilmingJobBase*>& jobs, ICommunicationProxy* pProxy)
 {
-	Mcsf::CommandContext command_context;
+	CommandContext command_context;
 	command_context.sSerializeObject = SerializeFrom(jobs);
 	command_context.iCommandId = ToMainFrameCmd;
 	command_context.sReceiver =  GetJobManagerCommunicationNodeName(); 
