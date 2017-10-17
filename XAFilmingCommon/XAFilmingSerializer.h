@@ -10,3 +10,5 @@ std::string XA_FilmingCommon_Export serialize(const std::vector<int>& collection
 std::string XA_FilmingCommon_Export serialize(const std::vector<std::string>& collection);
 int XA_FilmingCommon_Export string_to_int(const std::string& numberInStringType);
 std::string XA_FilmingCommon_Export int_to_string(int number);
+bool XA_FilmingCommon_Export string_to_bool(const std::string& boolInStringType);
+std::string XA_FilmingCommon_Export bool_to_string(bool b);

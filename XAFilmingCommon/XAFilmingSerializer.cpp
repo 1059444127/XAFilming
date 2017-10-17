@@ -57,6 +57,23 @@ string int_to_string(int number)
 	return ss.str();
 }
 
+bool string_to_bool(const std::string& boolInStringType)
+{
+	stringstream ss;
+	ss << boolInStringType;
+	bool result = false;
+	ss >> result;
+
+	return result;
+}
+
+string bool_to_string(bool b)
+{
+	stringstream ss;
+	ss << b;
+	return ss.str();
+}
+
 void split(const string serializedString, const string& separator, vector<string> & splitStringVector)
 {
 	LOG_INFO_XA_FILMING << "Spliting [" << serializedString << "] with separator [" << separator << "]" << LOG_END;

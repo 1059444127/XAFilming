@@ -88,3 +88,42 @@ TEST_F(XAFilmingSerializerTests, Int_To_String)
 
 	EXPECT_TRUE(expected==actual);
 }
+
+
+TEST_F(XAFilmingSerializerTests, True_To_String)
+{
+	string expected = "1";
+
+	string actual = bool_to_string(true);
+	
+	EXPECT_TRUE(expected==actual);
+}
+
+TEST_F(XAFilmingSerializerTests, False_To_String)
+{
+	string expected = "0";
+
+	string actual = bool_to_string(false);
+	
+	EXPECT_TRUE(expected==actual);
+}
+
+
+TEST_F(XAFilmingSerializerTests, String_1_To_True)
+{
+	bool expected = true;
+
+	bool actual = string_to_bool("1");
+	
+	EXPECT_TRUE(expected==actual);
+}
+
+
+TEST_F(XAFilmingSerializerTests, String_Not_1_To_False)
+{
+	bool expected = false;
+
+	bool actual = string_to_bool("11");
+	
+	EXPECT_TRUE(expected==actual);
+}
