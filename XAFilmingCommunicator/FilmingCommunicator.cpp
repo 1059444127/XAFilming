@@ -3,10 +3,12 @@
 #include "XAFilmingSerializer.h"
 #include <McsfJobManagerInfoWrapper.h>
 #include "XACommand.h"
+#include "IPrintCallbackHandler.h"
+
 
 using namespace MCSF_NAMESPACE_FOR_XA;
 
-FilmingCommunicator::FilmingCommunicator(ICommunicationProxy* pProxy, ICommandCallbackHandler* pCallbackHandler): _pProxy(pProxy), _pCallbackHandler(pCallbackHandler), _pObserver(nullptr)
+FilmingCommunicator::FilmingCommunicator(ICommunicationProxy* pProxy, IPrintCallbackHandler* pCallbackHandler): _pProxy(pProxy), _pCallbackHandler(pCallbackHandler)
 {
 }
 
@@ -27,5 +29,5 @@ void FilmingCommunicator::Print(const vector<std::string>& files)
 
 void FilmingCommunicator::Register(IPrintStatusObserver* pObserver)
 {
-	_pObserver = pObserver;
+	_pCallbackHandler->Register(pObserver);
 }
