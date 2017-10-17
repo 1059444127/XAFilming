@@ -84,6 +84,7 @@
     <ClInclude Include="McsfJobManagerInfoWrapper.h" />
     <ClInclude Include="XACommand.h" />
     <ClInclude Include="XACommandID.h" />
+    <ClInclude Include="XADicom.h" />
     <ClInclude Include="XAFilmingWrapperExportMacro.h" />
     <ClInclude Include="XAPrint.h" />
   </ItemGroup>
@@ -91,6 +92,7 @@
     <ClCompile Include="McsfJobManagerInfoWrapper.cpp" />
     <ClCompile Include="XACommand.cpp" />
     <ClCompile Include="XACommandID.cpp" />
+    <ClCompile Include="XADicom.cpp" />
     <ClCompile Include="XAPrint.cpp" />
   </ItemGroup>
   <ItemGroup>
