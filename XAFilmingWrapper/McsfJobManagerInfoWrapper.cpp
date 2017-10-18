@@ -47,8 +47,13 @@ JobManagerItemStatus ConvertFrom(XAFilmingJobStatusEnum job_status)
 void Translate(XAFilmingJobBase* pJob, McsfJobManagerInfo& job_manager_info)
 {
 	job_manager_info.SetJobitemid(int_to_string(pJob->GetJobID()));
-	job_manager_info.SetProgress(pJob->GetProgress());
+	string sProgress = int_to_string(double_to_percentage(pJob->GetProgress()));
+	job_manager_info.SetProgress(sProgress);
+	job_manager_info.SetTotalFiles(pJob->GetTotal());
+	job_manager_info.SetFinishedFiles(pJob->GetFinished());
 	job_manager_info.SetJobitemstatus(ConvertFrom(pJob->GetJobStatus()->GetStatusPriority()));	
+
+	job_manager_info.SetPatientid("SamplePatientID");
 }
 
 string SerializeFrom(const vector<XAFilmingJobBase*>& jobs)
