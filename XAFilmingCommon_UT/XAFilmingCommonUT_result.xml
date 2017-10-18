@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="9" failures="0" disabled="0" errors="0" time="0.004" name="AllTests">
-  <testsuite name="XAFilmingSerializerTests" tests="9" failures="0" disabled="0" errors="0" time="0.003">
-    <testcase name="EmptyString_Serailize_and_Deserialize" value_param="" type_param="" status="run" time="0" classname="XAFilmingSerializerTests" />
+<testsuites tests="10" failures="0" disabled="0" errors="0" time="0.035" name="AllTests">
+  <testsuite name="XAFilmingSerializerTests" tests="10" failures="0" disabled="0" errors="0" time="0.019">
+    <testcase name="EmptyString_Serailize_and_Deserialize" value_param="" type_param="" status="run" time="0.014" classname="XAFilmingSerializerTests" />
     <testcase name="OneString_Serailize_and_Deserialize" value_param="" type_param="" status="run" time="0" classname="XAFilmingSerializerTests" />
     <testcase name="MultiString_Serailize_and_Deserialize" value_param="" type_param="" status="run" time="0" classname="XAFilmingSerializerTests" />
-    <testcase name="String_To_Int" value_param="" type_param="" status="run" time="0.001" classname="XAFilmingSerializerTests" />
+    <testcase name="String_To_Int" value_param="" type_param="" status="run" time="0.002" classname="XAFilmingSerializerTests" />
     <testcase name="Int_To_String" value_param="" type_param="" status="run" time="0" classname="XAFilmingSerializerTests" />
     <testcase name="True_To_String" value_param="" type_param="" status="run" time="0" classname="XAFilmingSerializerTests" />
     <testcase name="False_To_String" value_param="" type_param="" status="run" time="0" classname="XAFilmingSerializerTests" />
     <testcase name="String_1_To_True" value_param="" type_param="" status="run" time="0" classname="XAFilmingSerializerTests" />
     <testcase name="String_Not_1_To_False" value_param="" type_param="" status="run" time="0" classname="XAFilmingSerializerTests" />
+    <testcase name="Double_To_Percentage" value_param="" type_param="" status="run" time="0" classname="XAFilmingSerializerTests" />
   </testsuite>
 </testsuites>

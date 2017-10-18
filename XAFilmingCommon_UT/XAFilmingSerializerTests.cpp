@@ -127,3 +127,11 @@ TEST_F(XAFilmingSerializerTests, String_Not_1_To_False)
 	
 	EXPECT_TRUE(expected==actual);
 }
+
+TEST_F(XAFilmingSerializerTests, Double_To_Percentage)
+{
+	int expected = 33;
+	int actual = double_to_percentage(1.0/3);
+
+	EXPECT_TRUE(expected==actual);
+}

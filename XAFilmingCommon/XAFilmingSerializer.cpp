@@ -74,6 +74,11 @@ string bool_to_string(bool b)
 	return ss.str();
 }
 
+int double_to_percentage(double d)
+{
+	return static_cast<int>(d*100);
+}
+
 void split(const string serializedString, const string& separator, vector<string> & splitStringVector)
 {
 	LOG_INFO_XA_FILMING << "Spliting [" << serializedString << "] with separator [" << separator << "]" << LOG_END;
