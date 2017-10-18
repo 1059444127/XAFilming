@@ -9,11 +9,15 @@ class FilmingJob :
 public:
     FilmingJob(int ID, std::vector<std::string> dicomFiles);
     virtual void Complete();
-    virtual std::string GetProgress();
+    virtual double GetProgress();
+
+	virtual int GetTotal();
+	virtual int GetFinished();
 private:
     std::vector<std::string> _files;
     std::queue<std::string> _fileQueue;
     int _iProgress;
+	int _iFinished;
 	std::vector<std::string> GetDicomFilsToPrint();
 };
 

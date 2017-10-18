@@ -34,7 +34,17 @@ void XAJob::TopPriority()
     LOG_INFO_XA_FILMING << "Promote to Priority [" << _iPriority << "]" << LOG_END;
 }
 
-std::string XAJob::GetProgress()
+double XAJob::GetProgress()
 {
-    return std::string();
+    return 0;
+}
+
+int XAJob::GetTotal()
+{
+	return 0;
+}
+
+int XAJob::GetFinished()
+{
+	return 0;
 }

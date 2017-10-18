@@ -3,7 +3,7 @@
 #include "XAFilmingLogger.h"
 
 
-FilmingJob::FilmingJob(int ID, vector<string> dicomFiles) : XAJob(ID), _files(dicomFiles), _iProgress(0)
+FilmingJob::FilmingJob(int ID, vector<string> dicomFiles) : XAJob(ID), _files(dicomFiles), _iProgress(0), _iFinished(0)
 {
 
 }
@@ -15,17 +15,30 @@ void FilmingJob::Complete()
 		vector<string> filesToBePrinted = GetDicomFilsToPrint();
 		Print(filesToBePrinted);
 	    _iProgress++;
+		_iFinished = _iProgress - 1;
     }
 
-    else XAJob::Complete();
+    else 
+	{
+		_iFinished ++;
+		XAJob::Complete();
+	}
 
 }
 
-string FilmingJob::GetProgress()
+double FilmingJob::GetProgress()
 {
-    stringstream ss;
-    ss << _iProgress << "/" << _files.size();
-    return ss.str();
+	return _iFinished/_files.size();
+}
+
+int FilmingJob::GetTotal()
+{
+	return _files.size();
+}
+
+int FilmingJob::GetFinished()
+{
+	return _iFinished;
 }
 
 vector<string> FilmingJob::GetDicomFilsToPrint()

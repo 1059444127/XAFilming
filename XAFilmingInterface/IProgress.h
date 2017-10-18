@@ -2,5 +2,7 @@
 class IProgress
 {
 public:
-    virtual std::string GetProgress() = 0;
+    virtual double GetProgress() = 0;
+	virtual int GetTotal() = 0;
+	virtual int GetFinished() = 0;
 };
