@@ -1,16 +1,16 @@
-#include "XAFilmingJobTests.h"
+#include "XAJobTests.h"
 #include "XAFilmingJobFactory.h"
 #include "XAFilmingConst.h"
 
 
-TEST_F(XAFilmingJobTests, XAFilmingJobFactory_Is_Singleton)
+TEST_F(XAJobTests, XAFilmingJobFactory_Is_Singleton)
 {
     auto factory1 = XAFilmingJobFactory::Instance();
     auto factory2 = XAFilmingJobFactory::Instance();
     EXPECT_TRUE(factory2==factory1);
 }
 
-TEST_F(XAFilmingJobTests, Job_ID_Ascending)
+TEST_F(XAJobTests, Job_ID_Ascending)
 {
     auto factory = XAFilmingJobFactory::Instance();
     auto job1 = factory->CreateJob();
@@ -24,7 +24,7 @@ TEST_F(XAFilmingJobTests, Job_ID_Ascending)
     EXPECT_TRUE(job2ID>job1ID);
 }
 
-TEST_F(XAFilmingJobTests, Urgent_Job_with_High_Priority)
+TEST_F(XAJobTests, Urgent_Job_with_High_Priority)
 {
     auto factory = XAFilmingJobFactory::Instance();
     auto job1 = factory->CreateJob();
@@ -42,7 +42,7 @@ TEST_F(XAFilmingJobTests, Urgent_Job_with_High_Priority)
     EXPECT_TRUE(job2Priority>job1Priority);
 }
 
-TEST_F(XAFilmingJobTests, When_Job_Done_Then_Priority_Reset)
+TEST_F(XAJobTests, When_Job_Done_Then_Priority_Reset)
 {
     auto factory = XAFilmingJobFactory::Instance();
     auto job = factory->CreateJob();

@@ -7,7 +7,7 @@ namespace UIH.XA.Filming.CommandSenderSimulator
 {
     public class FilmingCommandSenderSimulatorContainee : CLRContaineeBase
     {
-        private Dictionary<int, Action<int>> _actionDictionary = new Dictionary<int, Action<int>>();
+        private readonly Dictionary<int, Action<int>> _actionDictionary = new Dictionary<int, Action<int>>();
 
         /// <inheritdoc />
         public override void Startup()
@@ -27,6 +27,7 @@ namespace UIH.XA.Filming.CommandSenderSimulator
 
             var proxy = GetCommunicationProxy();
             var result = proxy.AsyncSendCommand(commandText);
+            Console.WriteLine(string.Format("SendFilmFilesComand send result is {0}", result));
         }
 
 

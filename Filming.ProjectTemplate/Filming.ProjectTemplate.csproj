@@ -12,6 +12,10 @@
     <AssemblyName>UIH.XA.Filming.ProjectTemplate</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,7 +49,7 @@
     <Reference Include="UIH.XA.Common">
       <Private>False</Private>
       <HintPath>..\..\..\..\UIH\bin\UIH.XA.Common.dll</HintPath>
-    </Reference>    
+    </Reference>
     <Reference Include="UIH.XA.XBoot">
       <Private>False</Private>
       <HintPath>..\..\..\..\UIH\bin\UIH.XA.XBoot.dll</HintPath>
@@ -87,7 +91,7 @@
     <Reference Include="UIH.XA.Common">
       <Private>False</Private>
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.XA.Common.dll</HintPath>
-    </Reference>  
+    </Reference>
     <Reference Include="UIH.XA.XBoot">
       <Private>False</Private>
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.XA.XBoot.dll</HintPath>
@@ -127,7 +131,6 @@
       <Name>Filming.Interface</Name>
     </ProjectReference>
   </ItemGroup>
-
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

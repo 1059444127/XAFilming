@@ -62,7 +62,7 @@ int XAFilmingJobDispatchContainee::GetEstimatedTimeToFinishJob(bool bReboot)
 
 void XAFilmingJobDispatchContainee::SetCustomConfigFile(const std::string& sFilename)
 {
-	LOG_INFO_XA_FILMING << "CustomConfigFile: "  <<  sFilename << LOG_END;
+	//LOG_INFO_XA_FILMING << "CustomConfigFile: "  <<  sFilename << LOG_END;
 }
 
 std::list<std::string> XAFilmingJobDispatchContainee::GetRunningTasks()

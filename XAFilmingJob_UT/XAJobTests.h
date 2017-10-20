@@ -2,10 +2,10 @@
 
 #include "gtest/gtest.h"
 
-/// \class XAFilmingJobTests
+/// \class XAJobTests
 /// \brief XAFilmingJob Test suite class 
 ///
-class XAFilmingJobTests : public testing::Test
+class XAJobTests : public testing::Test
 {
 
 };

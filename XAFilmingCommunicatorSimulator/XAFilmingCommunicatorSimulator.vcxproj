@@ -23,6 +23,10 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D1B50E0C-067E-4731-8ECC-FBD2E961D8F6}</ProjectGuid>
     <RootNamespace>XAFilmingCommunicatorSimulator</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">

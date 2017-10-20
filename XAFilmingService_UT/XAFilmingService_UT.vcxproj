@@ -13,14 +13,10 @@
   <PropertyGroup Label="Globals">
     <TargetName>$(ProjectName)</TargetName>
     <ProjectGUID>{17404E18-404D-4E62-B4DC-00B6982F4041}</ProjectGUID>
-    <SccProjectName>
-    </SccProjectName>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccProvider>
-    </SccProvider>
+    <SccProjectName>SAK</SccProjectName>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccProvider>SAK</SccProvider>
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>XAFilmingService_UT</RootNamespace>
   </PropertyGroup>
@@ -66,7 +62,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>gtestd.lib;XAFilmingService.lib</AdditionalDependencies>
+      <AdditionalDependencies>gtest.lib;XAFilmingService.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\..\..\UIH\lib_$(configuration)\external;..\..\..\..\UIH\lib_$(configuration)\mcs;..\..\..\..\UIH\lib_$(configuration)\external\gtest;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
