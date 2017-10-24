@@ -5,11 +5,6 @@
 
 using namespace std;
 
-void FilmDicomDataheaderCommand::SetJobDispatcher(IXAFilmingJobDispatch* jobDispatcher)
-{
-	_pJobDispatcher = jobDispatcher;
-}
-
 void FilmDicomDataheaderCommand::Excute(const std::string& serializedParameters)
 {
 	string dicomFilePath;

@@ -69,10 +69,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FilmingJobTests.cpp" />
     <ClCompile Include="XAJobTests.cpp" />
     <ClCompile Include="XAFilmingJobUT.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FilmingJobTests.h" />
+    <ClInclude Include="XAFilmingMock.h" />
     <ClInclude Include="XAJobTests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

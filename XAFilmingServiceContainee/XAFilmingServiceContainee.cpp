@@ -23,7 +23,7 @@ void XAFilmingServiceContainee::DoWork()
 	auto send_system_event_result = m_pCommunicationProxy->SendSystemEvent( "", static_cast<int>(MCSF_NAMESPACE_FOR_XA::SYSTEM_COMMAND_EVENT_ID_COMPONENT_READY), m_pCommunicationProxy->GetName() );
 	send_system_event_result ?
 		LOG_ERROR_XA_FILMING << "Fail to send componet_ready event to System manager,Please restart the containee" << LOG_END
-		:	LOG_ERROR_XA_FILMING << "Succeed to send componet_ready event to System manager" << LOG_END;
+		:	LOG_INFO_XA_FILMING << "Succeed to send componet_ready event to System manager" << LOG_END;
 }
 
 bool XAFilmingServiceContainee::Shutdown(bool bReboot)

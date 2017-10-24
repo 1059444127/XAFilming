@@ -12,6 +12,7 @@
 #include <McsfJobManagerInfo/mcsf_jobmanager_info.pb.h>
 #include "../../../XParameters/Contract/CommunicationCommandID.h"
 #include "FilmDicomFileCommand.h"
+#include "FilmDicomDataheaderCommand.h"
 
 XAFilmingJobCommandFactory* XAFilmingJobCommandFactory::_pInstance = new XAFilmingJobCommandFactory();
 
@@ -61,5 +62,5 @@ XAFilmingJobCommandFactory::XAFilmingJobCommandFactory():_filmingCommandDictiona
 
 	_filmingCommandDictionary[COMMUNICATION_COMMAND_ID::COMMAND_ID_FILMING] = new FilmDicomFileCommand();
     //TODO: FilmingDataHeaderCommand Register to Factory
-	_filmingCommandDictionary[COMMUNICATION_COMMAND_ID::COMMAND_ID_FILMING_DATAHEADER] = nullptr;
+	_filmingCommandDictionary[COMMUNICATION_COMMAND_ID::COMMAND_ID_FILMING_DATAHEADER] = new FilmDicomDataheaderCommand();
 }
