@@ -94,10 +94,12 @@
     <ClInclude Include="XAFilmingLogger.h" />
     <ClInclude Include="XAFilmingMacro.h" />
     <ClInclude Include="XAFilmingSerializer.h" />
+    <ClInclude Include="XAPrintStatus.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="XAFilmingFile.cpp" />
     <ClCompile Include="XAFilmingSerializer.cpp" />
+    <ClCompile Include="XAPrintStatus.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
