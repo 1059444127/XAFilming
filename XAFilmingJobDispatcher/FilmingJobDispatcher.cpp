@@ -4,6 +4,7 @@
 #include <algorithm>
 #include "XAFilmingJobComparer.h"
 #include <cassert>
+#include "XAPrintStatus.h"
 
 using namespace std;
 
@@ -110,7 +111,7 @@ void FilmingJobDispatcher::PushJobsProgress()
 {
     auto jobs = GetSortedJobVector();
     
-    if(!jobs.empty()) {jobs[0]->Film();}
+    if(!jobs.empty() && !IsPrinting()) {jobs[0]->Film();}
 
     _communicator->PublishJobProgress(jobs);
 }
