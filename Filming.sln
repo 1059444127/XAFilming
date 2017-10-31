@@ -138,6 +138,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilming", "XAFilming\XAFilming.vcxproj", "{C94D52F9-E910-4049-863C-7B0C765B95FE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{240E72CF-3DB4-486B-9BB5-317C7FCC1D1E} = {240E72CF-3DB4-486B-9BB5-317C7FCC1D1E}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
