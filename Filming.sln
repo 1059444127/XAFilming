@@ -124,9 +124,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		ReadMe.md = ReadMe.md
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilming", "XAFilming\XAFilming.vcxproj", "{C94D52F9-E910-4049-863C-7B0C765B95FE}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 30
+		SccNumberOfProjects = 31
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = http://tfs:8080/tfs/defaultcollection
 		SccLocalPath0 = .
@@ -233,6 +235,9 @@ Global
 		SccProjectTopLevelParentUniqueName29 = Filming.sln
 		SccProjectName29 = XAFilmingCommunicatorSimulator
 		SccLocalPath29 = XAFilmingCommunicatorSimulator
+		SccProjectUniqueName30 = XAFilming\\XAFilming.vcxproj
+		SccProjectName30 = XAFilming
+		SccLocalPath30 = XAFilming
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -355,6 +360,10 @@ Global
 		{D1B50E0C-067E-4731-8ECC-FBD2E961D8F6}.Debug|x64.Build.0 = Debug|x64
 		{D1B50E0C-067E-4731-8ECC-FBD2E961D8F6}.Release|x64.ActiveCfg = Release|x64
 		{D1B50E0C-067E-4731-8ECC-FBD2E961D8F6}.Release|x64.Build.0 = Release|x64
+		{C94D52F9-E910-4049-863C-7B0C765B95FE}.Debug|x64.ActiveCfg = Debug|x64
+		{C94D52F9-E910-4049-863C-7B0C765B95FE}.Debug|x64.Build.0 = Debug|x64
+		{C94D52F9-E910-4049-863C-7B0C765B95FE}.Release|x64.ActiveCfg = Release|x64
+		{C94D52F9-E910-4049-863C-7B0C765B95FE}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

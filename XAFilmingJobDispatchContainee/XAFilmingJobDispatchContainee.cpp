@@ -56,8 +56,8 @@ void XAFilmingJobDispatchContainee::SetCommunicationProxy(MCSF_NAMESPACE_FOR_XA:
 
 int XAFilmingJobDispatchContainee::GetEstimatedTimeToFinishJob(bool bReboot)
 {
-	LOG_INFO_XA_FILMING << "GetEstimatedTmeToFinishJob with message bReboot ? [" << bReboot  << "]\n";
-	return 0;
+	LOG_INFO_XA_FILMING << "GetEstimatedTimeToFinishJob with message bReboot ? [" << bReboot  << "]\n";
+	return _filmingJobDispatcher->GetEstimatedTimeToFinish();
 }
 
 void XAFilmingJobDispatchContainee::SetCustomConfigFile(const std::string& sFilename)

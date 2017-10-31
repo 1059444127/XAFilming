@@ -20,6 +20,7 @@ public:
     virtual void UrgentJobs(const std::vector<int>& IDs);
     virtual void PushJobsProgress();
 	virtual void NofifyPrintStatus(bool bStatus);
+	virtual int GetEstimatedTimeToFinish();
 private:
     std::map<int, XAFilmingJobBase*> _jobMap;
     IXAFilmingCommunicationProxy* _communicator;

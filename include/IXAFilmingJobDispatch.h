@@ -1,9 +1,10 @@
 #pragma once
 #include <vector>
 #include "IPrintStatusObserver.h"
+#include "ITimeEstimate.h"
 
 class XAFilmingJobBase;
-class IXAFilmingJobDispatch : public IPrintStatusObserver
+class IXAFilmingJobDispatch : public IPrintStatusObserver, public ITimeEstimate
 {
 public:
     virtual void AddJob(XAFilmingJobBase *job) = 0;
@@ -15,5 +16,6 @@ public:
     virtual void UrgentJobs(const std::vector<int>& IDs) = 0;
 
     virtual void PushJobsProgress()= 0;
+	virtual int GetEstimatedTimeToFinish() {return 0;}
     
 };

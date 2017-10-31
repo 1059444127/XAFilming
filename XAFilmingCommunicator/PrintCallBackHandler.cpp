@@ -2,6 +2,7 @@
 #include <XAFilmingLogger.h>
 #include "XAFilmingSerializer.h"
 
+using namespace std;
 
 int PrintCallbackHandler::HandleReply(const MCSF_NAMESPACE_FOR_XA::IAsyncResult* pAsyncResult)
 {

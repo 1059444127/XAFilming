@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="1" failures="0" disabled="0" errors="0" timestamp="2017-10-07T02:29:43" time="0.005" name="AllTests">
-  <testsuite name="XAFilmingJobDispatcherTests" tests="1" failures="0" disabled="0" errors="0" time="0.001">
-    <testcase name="XAFilmingJobDispatcherFactory_Is_Singleton" status="run" time="0" classname="XAFilmingJobDispatcherTests" />
-  </testsuite>
-</testsuites>

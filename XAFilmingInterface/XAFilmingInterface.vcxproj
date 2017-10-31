@@ -18,6 +18,7 @@
     <ClInclude Include="IPrintStatusSubject.h" />
     <ClInclude Include="IPriority.h" />
     <ClInclude Include="IProgress.h" />
+    <ClInclude Include="ITimeEstimate.h" />
     <ClInclude Include="IXAFilmingProxy.h" />
     <ClInclude Include="IPrintStatusObserver.h" />
     <ClInclude Include="IXAFilmingCommand.h" />

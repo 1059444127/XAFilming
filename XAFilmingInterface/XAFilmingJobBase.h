@@ -4,8 +4,9 @@
 #include "IXAFilmingProxy.h"
 #include "IProgress.h"
 #include "IPriority.h"
+#include "ITimeEstimate.h"
 
-class XA_FilmingInterface_Export XAFilmingJobBase : public IXAFilmingProxy, public IProgress, public IPriority
+class XA_FilmingInterface_Export XAFilmingJobBase : public IXAFilmingProxy, public IProgress, public IPriority, public ITimeEstimate
 {
 public:
     XAFilmingJobBase(XAFilmingJobStatusBase* status);
@@ -24,6 +25,8 @@ public:
     virtual bool CanCancel();
 
     //TODO: interface inheritance
+
+	virtual int GetEstimatedTimeToFinish() {return 0;}
 
 private:
     XAFilmingJobStatusBase* _status;

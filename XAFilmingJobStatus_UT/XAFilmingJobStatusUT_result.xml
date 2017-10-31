@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="2" failures="0" disabled="0" errors="0" timestamp="2017-10-06T17:55:28" time="0.043" name="AllTests">
-  <testsuite name="XAFilmingJobStatusTests" tests="2" failures="0" disabled="0" errors="0" time="0.04">
-    <testcase name="XAFilmingJobStatusFactory_Is_Singleton" status="run" time="0" classname="XAFilmingJobStatusTests" />
-    <testcase name="Pause_And_Continue_Print_Fail_Restart_Print_Complete_Restart_Print_A_Job" status="run" time="0.038" classname="XAFilmingJobStatusTests" />
-  </testsuite>
-</testsuites>

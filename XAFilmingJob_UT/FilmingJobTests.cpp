@@ -32,3 +32,7 @@ TEST_F(FilmingJobTests, Printing_A_New_Filming_Job_Finished_is_0)
 	EXPECT_TRUE(0==_job->GetFinished());
 }
 
+TEST_F(FilmingJobTests, Estimate_Time_Of_A_New_Filming_Job_With_Files_GT_0)
+{
+	EXPECT_TRUE(_job->GetEstimatedTimeToFinish()>0);
+}

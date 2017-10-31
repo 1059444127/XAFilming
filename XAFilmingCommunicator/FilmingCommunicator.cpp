@@ -5,6 +5,7 @@
 #include "XACommand.h"
 #include "IPrintCallbackHandler.h"
 
+using namespace std;
 
 using namespace MCSF_NAMESPACE_FOR_XA;
 

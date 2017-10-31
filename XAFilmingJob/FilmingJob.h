@@ -13,6 +13,7 @@ public:
 
 	virtual int GetTotal();
 	virtual int GetFinished();
+	virtual int GetEstimatedTimeToFinish();
 private:
     std::vector<std::string> _files;
     std::queue<std::string> _fileQueue;

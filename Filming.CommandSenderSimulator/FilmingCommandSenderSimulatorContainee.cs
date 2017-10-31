@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UIH.Mcsf.Core;
+using UIH.XA.Core;
 using UIH.XA.GlobalParameter;
 
 namespace UIH.XA.Filming.CommandSenderSimulator
@@ -12,7 +13,7 @@ namespace UIH.XA.Filming.CommandSenderSimulator
         /// <inheritdoc />
         public override void Startup()
         {
-            Console.WriteLine("StartUp");
+            this.LogDevInfo("StartUp");
             _actionDictionary.Add(CommunicationCommandID.COMMAND_ID_PRINT, SendPrintCommand);
             _actionDictionary.Add(CommunicationCommandID.COMMAND_ID_FILMING, SendFilmFilesCommand);
         }
@@ -27,7 +28,7 @@ namespace UIH.XA.Filming.CommandSenderSimulator
 
             var proxy = GetCommunicationProxy();
             var result = proxy.AsyncSendCommand(commandText);
-            Console.WriteLine(string.Format("SendFilmFilesComand send result is {0}", result));
+            this.LogDevInfo(string.Format("SendFilmFilesComand send result is {0}", result));
         }
 
 
@@ -36,13 +37,13 @@ namespace UIH.XA.Filming.CommandSenderSimulator
         {
             if (0 != SendSystemEvent("", (int)CLRContaineeEventId.SYSTEM_COMMAND_EVENT_ID_COMPONENT_READY, GetCommunicationProxy().GetName()))
             {
-                Console.WriteLine("The event send to System manager fail,Please restart the FilmingFEContainee");
+                this.LogDevInfo("The event send to System manager fail,Please restart the FilmingFEContainee");
             }
-            Console.WriteLine("has informed system manager that FilmingViewer is up");
+            this.LogDevInfo("has informed system manager that FilmingViewer is up");
 
             while (true)
             {
-                Console.WriteLine("Press any key to continue");
+                this.LogDevInfo("Press any key to continue");
                 Console.ReadKey();
 
                 SendCommand(CommunicationCommandID.COMMAND_ID_FILMING);
@@ -54,7 +55,7 @@ namespace UIH.XA.Filming.CommandSenderSimulator
         {
             if(_actionDictionary.ContainsKey(commandID)) _actionDictionary[commandID].Invoke(commandID);
             else
-                Console.WriteLine("Non Action for command [{0}]", commandID);
+                this.LogDevInfo(string.Format("Non Action for command [{0}]", commandID));
         }
 
 
@@ -68,7 +69,7 @@ namespace UIH.XA.Filming.CommandSenderSimulator
 
             var proxy = GetCommunicationProxy();
             var result = proxy.AsyncSendCommand(commandText);
-            Console.WriteLine("Command Result : [{0}]", result);
+            this.LogDevInfo(string.Format("Command Result : [{0}]", result));
         }
     }
 }

@@ -5,6 +5,8 @@
 #include "XAFilmingJobComparer.h"
 #include <cassert>
 
+using namespace std;
+
 #ifndef XA_FILMING_JOB_MAP_DELEGATE
 #define XA_FILMING_JOB_MAP_DELEGATE(Delegate)\
     {\
@@ -124,6 +126,17 @@ void FilmingJobDispatcher::NofifyPrintStatus(bool bStatus)
 	bStatus ? job->Complete() : job->Fail();
     
     PushJobsProgress();
+}
+
+int FilmingJobDispatcher::GetEstimatedTimeToFinish()
+{
+	int time = 0;
+	for (auto iter = _jobMap.begin(); iter != _jobMap.end(); iter++)
+	{
+		auto job = iter->second;
+		time += job->GetEstimatedTimeToFinish();
+	}
+	return time;
 }
 
 vector<XAFilmingJobBase*> FilmingJobDispatcher::GetSortedJobVector()

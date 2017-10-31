@@ -51,6 +51,10 @@
       <Private>False</Private>
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.XA.GlobalParameter.dll</HintPath>
     </Reference>
+    <Reference Include="UIH.XA.Core">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.XA.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <Reference Include="UIH.Mcsf.Core.ContaineeBase">
@@ -64,6 +68,10 @@
     <Reference Include="UIH.XA.GlobalParameter">
       <Private>False</Private>
       <HintPath>..\..\..\..\UIH\bin\UIH.XA.GlobalParameter.dll</HintPath>
+    </Reference>
+    <Reference Include="UIH.XA.Core">
+      <Private>False</Private>
+      <HintPath>..\..\..\..\UIH\bin\UIH.XA.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -4,6 +4,7 @@ using System.Threading;
 using System.Windows.Threading;
 using UIH.Mcsf.Core;
 using UIH.Mcsf.JobManager;
+using UIH.XA.Core;
 using UIH.XA.Filming.ViewMock;
 
 namespace UIH.XA.Filming.JobManagerSimulator
@@ -16,7 +17,7 @@ namespace UIH.XA.Filming.JobManagerSimulator
         /// <inheritdoc />
         public override void Startup()
         {
-            Console.WriteLine("StartUp");
+            this.LogDevInfo("StartUp");
 
             var proxy = GetCommunicationProxy();
             proxy.RegisterCommandHandler((int)Mcsf.JobManager.JobManagerCommunicationID.ToMainFrameCmd, (StringCmdHandler)HandleCommand);  
@@ -24,7 +25,7 @@ namespace UIH.XA.Filming.JobManagerSimulator
 
         private string HandleCommand(CommandContext commandContext)
         {
-            Console.WriteLine("Received command from [{0}]", commandContext.sReceiver);
+            this.LogDevInfo(string.Format("Received command from [{0}]", commandContext.sReceiver));
 
             var jobManagerInfoWrapper = new JobManagerInfoWrapper();
             jobManagerInfoWrapper.Deserialize(commandContext.sSerializeObject);
@@ -66,12 +67,12 @@ namespace UIH.XA.Filming.JobManagerSimulator
         /// <inheritdoc />
         public override void DoWork()
         {
-            Console.WriteLine("DoWork");
+            this.LogDevInfo("DoWork");
             if (0 != SendSystemEvent("", (int)CLRContaineeEventId.SYSTEM_COMMAND_EVENT_ID_COMPONENT_READY, GetCommunicationProxy().GetName()))
             {
-                Console.WriteLine("The event send to System manager fail,Please restart the FilmingFEContainee");
+                this.LogDevInfo("The event send to System manager fail,Please restart the FilmingFEContainee");
             }
-            Console.WriteLine("has informed system manager that FilmingViewer is up");
+            this.LogDevInfo("has informed system manager that FilmingViewer is up");
 
             var thread = new Thread(ShowWindow);
             thread.SetApartmentState(ApartmentState.STA);   //UI thread must be STA
