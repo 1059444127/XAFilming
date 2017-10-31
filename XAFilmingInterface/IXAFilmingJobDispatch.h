@@ -1,10 +1,10 @@
 #pragma once
 #include <vector>
-#include "IPrintStatusObserver.h"
+#include "IPrintResultObserver.h"
 #include "ITimeEstimate.h"
 
 class XAFilmingJobBase;
-class IXAFilmingJobDispatch : public IPrintStatusObserver, public ITimeEstimate
+class IXAFilmingJobDispatch : public IPrintResultObserver, public ITimeEstimate
 {
 public:
     virtual void AddJob(XAFilmingJobBase *job) = 0;

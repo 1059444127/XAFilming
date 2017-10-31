@@ -28,7 +28,7 @@ void FilmingCommunicator::Print(const vector<std::string>& files)
 	SendPrintCommand(files, _pProxy, _pCallbackHandler);
 }
 
-void FilmingCommunicator::Register(IPrintStatusObserver* pObserver)
+void FilmingCommunicator::Register(IPrintResultObserver* pObserver)
 {
 	_pCallbackHandler->Register(pObserver);
 }

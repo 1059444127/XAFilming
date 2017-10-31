@@ -1,11 +1,11 @@
 #pragma once
 #include "XAFilmingExportMacro.h"
 #include "IXAFilming.h"
-#include "IPrintStatusSubject.h"
+#include "IPrintResultSubject.h"
 
-class XA_Filming_Export XAFilming : IXAFilming, IPrintStatusSubject
+class XA_Filming_Export XAFilming : IXAFilming, IPrintResultSubject
 {
 public:
 	virtual void Print(const std::vector<std::string>& filePaths);
-	virtual void Register(IPrintStatusObserver* pObserver);
+	virtual void Register(IPrintResultObserver* pObserver);
 };

@@ -15,12 +15,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IPrintCallbackHandler.h" />
-    <ClInclude Include="IPrintStatusSubject.h" />
+    <ClInclude Include="IPrintResultSubject.h" />
     <ClInclude Include="IPriority.h" />
     <ClInclude Include="IProgress.h" />
     <ClInclude Include="ITimeEstimate.h" />
     <ClInclude Include="IXAFilmingProxy.h" />
-    <ClInclude Include="IPrintStatusObserver.h" />
+    <ClInclude Include="IPrintResultObserver.h" />
     <ClInclude Include="IXAFilmingCommand.h" />
     <ClInclude Include="IXAFilmingCommunicationProxy.h" />
     <ClInclude Include="IXAFilmingJobDispatch.h" />

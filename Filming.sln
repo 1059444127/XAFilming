@@ -21,6 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Locally Run", "Locally Run"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingJobDispatchContainee", "XAFilmingJobDispatchContainee\XAFilmingJobDispatchContainee.vcxproj", "{32990BD2-0916-454A-BF86-C9D5A936E908}"
 	ProjectSection(ProjectDependencies) = postProject
+		{7B25A339-D78C-4AE7-88C6-12BCDD6F18F0} = {7B25A339-D78C-4AE7-88C6-12BCDD6F18F0}
 		{667FEC7E-6112-420B-B488-1A1A068A40FE} = {667FEC7E-6112-420B-B488-1A1A068A40FE}
 		{32AF25BC-6611-4634-AE5F-FA19B8F3AB0B} = {32AF25BC-6611-4634-AE5F-FA19B8F3AB0B}
 	EndProjectSection
@@ -38,6 +39,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingWrapper", "XAFilmi
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingContaineeTemplate", "XAFilmingContaineeTemplate\XAFilmingContaineeTemplate.vcxproj", "{1DAC3D69-A462-45D5-818B-E3175F401C6F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DB4C8DFB-1369-4600-9720-A7F05FBBF877} = {DB4C8DFB-1369-4600-9720-A7F05FBBF877}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingServiceContainee", "XAFilmingServiceContainee\XAFilmingServiceContainee.vcxproj", "{0051C742-2658-4EAB-9134-AA065AA84963}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -70,7 +74,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingJobStatus_UT", "XA
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingJob", "XAFilmingJob\XAFilmingJob.vcxproj", "{D08FCA2E-7E4A-4066-8F01-F282C09C5B99}"
 	ProjectSection(ProjectDependencies) = postProject
-		{FEC9A280-D31E-4BF9-8C8A-0A3150B2F9E4} = {FEC9A280-D31E-4BF9-8C8A-0A3150B2F9E4}
 		{07493DE2-DB22-4766-8D5F-AF93B8916BCF} = {07493DE2-DB22-4766-8D5F-AF93B8916BCF}
 	EndProjectSection
 EndProject
@@ -91,12 +94,19 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingJobDispatcher_UT",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingJobCommand", "XAFilmingJobCommand\XAFilmingJobCommand.vcxproj", "{7B25A339-D78C-4AE7-88C6-12BCDD6F18F0}"
 	ProjectSection(ProjectDependencies) = postProject
-		{FEC9A280-D31E-4BF9-8C8A-0A3150B2F9E4} = {FEC9A280-D31E-4BF9-8C8A-0A3150B2F9E4}
+		{D08FCA2E-7E4A-4066-8F01-F282C09C5B99} = {D08FCA2E-7E4A-4066-8F01-F282C09C5B99}
+		{240E72CF-3DB4-486B-9BB5-317C7FCC1D1E} = {240E72CF-3DB4-486B-9BB5-317C7FCC1D1E}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingJobCommand_UT", "XAFilmingJobCommand_UT\XAFilmingJobCommand_UT.vcxproj", "{367B1B87-4589-4B02-AF1B-93388F66929A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7B25A339-D78C-4AE7-88C6-12BCDD6F18F0} = {7B25A339-D78C-4AE7-88C6-12BCDD6F18F0}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingInterface_UT", "XAFilmingInterface_UT\XAFilmingInterface_UT.vcxproj", "{7D891852-3B74-4B58-B450-CF8E505AE90D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FEC9A280-D31E-4BF9-8C8A-0A3150B2F9E4} = {FEC9A280-D31E-4BF9-8C8A-0A3150B2F9E4}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingJobConsole", "XAFilmingJobConsole\XAFilmingJobConsole.vcxproj", "{061642E0-7D27-4DE0-BAC6-87692A92A73D}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -106,7 +116,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingJobConsole", "XAFi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingCommunicator", "XAFilmingCommunicator\XAFilmingCommunicator.vcxproj", "{32AF25BC-6611-4634-AE5F-FA19B8F3AB0B}"
 	ProjectSection(ProjectDependencies) = postProject
-		{FEC9A280-D31E-4BF9-8C8A-0A3150B2F9E4} = {FEC9A280-D31E-4BF9-8C8A-0A3150B2F9E4}
+		{240E72CF-3DB4-486B-9BB5-317C7FCC1D1E} = {240E72CF-3DB4-486B-9BB5-317C7FCC1D1E}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Filming.ViewMock", "Filming.ViewMock\Filming.ViewMock.csproj", "{97B47257-C9B1-49E2-B067-3A2F78C8396D}"
@@ -118,6 +128,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Filming.JobManagerSimulator", "Filming.JobManagerSimulator\Filming.JobManagerSimulator.csproj", "{AD536770-2392-47DC-A7D9-4BFEE6230A9E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingCommunicatorSimulator", "XAFilmingCommunicatorSimulator\XAFilmingCommunicatorSimulator.vcxproj", "{D1B50E0C-067E-4731-8ECC-FBD2E961D8F6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D08FCA2E-7E4A-4066-8F01-F282C09C5B99} = {D08FCA2E-7E4A-4066-8F01-F282C09C5B99}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FEAB479D-A900-4037-9E9E-F557D6039D0E}"
 	ProjectSection(SolutionItems) = preProject

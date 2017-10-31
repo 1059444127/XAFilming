@@ -4,6 +4,6 @@ void XAFilming::Print(const std::vector<std::string>& filePaths)
 {
 }
 
-void XAFilming::Register(IPrintStatusObserver* pObserver)
+void XAFilming::Register(IPrintResultObserver* pObserver)
 {
 }

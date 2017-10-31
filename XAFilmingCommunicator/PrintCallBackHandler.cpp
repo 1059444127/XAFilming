@@ -13,14 +13,14 @@ int PrintCallbackHandler::HandleReply(const MCSF_NAMESPACE_FOR_XA::IAsyncResult*
 
 	for (auto iter = _printStatusObservers.begin(); iter != _printStatusObservers.end(); iter++)
 	{
-		IPrintStatusObserver* pObserver = *iter;
+		IPrintResultObserver* pObserver = *iter;
 		pObserver->NofifyPrintStatus(printResult);		
 	}
 
 	return 0;
 }
 
-void PrintCallbackHandler::Register(IPrintStatusObserver* pObserver)
+void PrintCallbackHandler::Register(IPrintResultObserver* pObserver)
 {
 	LOG_INFO_XA_FILMING << "Register a print status observer" << LOG_END;
 	_printStatusObservers.push_back(pObserver);

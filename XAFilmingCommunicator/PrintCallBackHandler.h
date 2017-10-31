@@ -12,11 +12,11 @@ public:
 
 	virtual int HandleReply(const MCSF_NAMESPACE_FOR_XA::IAsyncResult* pAsyncResult);
 
-	virtual void Register(IPrintStatusObserver* pObserver);
+	virtual void Register(IPrintResultObserver* pObserver);
 
 	virtual ~PrintCallbackHandler();
 
 private:
-	std::list<IPrintStatusObserver*> _printStatusObservers;
+	std::list<IPrintResultObserver*> _printStatusObservers;
 };
 

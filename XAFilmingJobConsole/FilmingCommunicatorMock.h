@@ -5,7 +5,7 @@ class FilmingCommunicatorMock :
     public IXAFilmingCommunicationProxy
 {
 public:
-	virtual void Register(IPrintStatusObserver* pObserver){}
+	virtual void Register(IPrintResultObserver* pObserver){}
 	virtual void PublishJobProgress(const std::vector<XAFilmingJobBase*>& jobs);
     virtual void Print(const std::vector<std::string>& files);
 };
