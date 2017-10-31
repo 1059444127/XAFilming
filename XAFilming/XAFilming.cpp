@@ -1,10 +1,17 @@
 #include "XAFilming.h"
 #include "XAFilmingLogger.h"
 #include <XAPrint.h>
+#include <cassert>
+#include <XAPrintStatus.h>
 
 void XAFilming::Print(const std::vector<std::string>& filePaths)
 {
-	bool bResult = MCSF_NAMESPACE_FOR_XA::print(filePaths);
+	assert(!IsPrinting());
+
+	SetPrinting(true);
+	bool bResult = MCSF_NAMESPACE_FOR_XA::print(filePaths);	//TODO: Modify as a new thread
+	SetPrinting(false);
+	
 	LOG_INFO_XA_FILMING << "Print Success ? " << bResult << LOG_END;
 
 	PublishPrintResult(bResult);

@@ -14,7 +14,7 @@ bool IsPrinting()
 	return is_printing;
 }
 
-void SetIsPrinting(bool isPrinting)
+void SetPrinting(bool isPrinting)
 {
 	scoped_lock(is_printing_mutex);
 	is_printing = isPrinting;
