@@ -116,7 +116,7 @@ void FilmingJobDispatcher::PushJobsProgress()
     _communicator->PublishJobProgress(jobs);
 }
 
-void FilmingJobDispatcher::NofifyPrintStatus(bool bStatus)
+void FilmingJobDispatcher::NotifyPrintResult(bool bStatus)
 {
 	LOG_INFO_XA_FILMING << "Received Printed Message : Succeed? [" << bStatus << "]" << LOG_END;
 

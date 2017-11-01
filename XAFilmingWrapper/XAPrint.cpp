@@ -76,7 +76,7 @@ namespace MCSF_NAMESPACE_FOR_XA
 		return printResult;
 	}
 
-	bool print(const std::vector<std::string>& dicomFilePaths, ResultNotifier resultNotifier)
+	void print(const std::vector<std::string>& dicomFilePaths, ResultNotifier resultNotifier)
 	{
 		resultNotifier(print(dicomFilePaths));
 	}

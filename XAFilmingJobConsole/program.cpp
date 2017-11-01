@@ -48,12 +48,12 @@ void urgentJobs(const vector<int> IDs)
 
 void printed(const vector<int> IDs)
 {
-    job_dispatcher->NofifyPrintStatus(true);
+    job_dispatcher->NotifyPrintResult(true);
 }
 
 void failed(const vector<int> IDs)
 {
-	job_dispatcher->NofifyPrintStatus(false);
+	job_dispatcher->NotifyPrintResult(false);
 }
 
 

@@ -2,6 +2,6 @@
 class IPrintResultObserver
 {
 public:
-	virtual void NofifyPrintStatus(bool bStatus) = 0;
+	virtual void NotifyPrintResult(bool bStatus) = 0;
 	virtual ~IPrintResultObserver(){}
 };

@@ -14,6 +14,6 @@ namespace MCSF_NAMESPACE_FOR_XA
 
 	bool XA_FilmingWrapper_Export print(const std::vector<std::string>& dicomFilePaths);
 
-	bool XA_FilmingWrapper_Export print(const std::vector<std::string>& dicomFilePaths, ResultNotifier resultNotifier);
+	void XA_FilmingWrapper_Export print(const std::vector<std::string>& dicomFilePaths, ResultNotifier resultNotifier);
 
 }

@@ -4,6 +4,9 @@
 #include <cassert>
 #include <XAPrintStatus.h>
 
+#include <boost/thread/thread.hpp>
+
+
 void XAFilming::Print(const std::vector<std::string>& filePaths)
 {
 	assert(!IsPrinting());
@@ -15,6 +18,8 @@ void XAFilming::Print(const std::vector<std::string>& filePaths)
 	LOG_INFO_XA_FILMING << "Print Success ? " << bResult << LOG_END;
 
 	PublishPrintResult(bResult);
+
+	//boost::thread thrd(boost::bind())
 }
 
 void XAFilming::Register(IPrintResultObserver* pObserver)
@@ -27,6 +32,6 @@ void XAFilming::PublishPrintResult(bool bResult)
 {
 	for(auto iter = _observers.begin(); iter != _observers.end(); ++iter)
 	{
-		(*iter)->NofifyPrintStatus(bResult);
+		(*iter)->NotifyPrintResult(bResult);
 	}
 }

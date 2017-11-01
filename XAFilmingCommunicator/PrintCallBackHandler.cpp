@@ -14,7 +14,7 @@ int PrintCallbackHandler::HandleReply(const MCSF_NAMESPACE_FOR_XA::IAsyncResult*
 	for (auto iter = _printStatusObservers.begin(); iter != _printStatusObservers.end(); iter++)
 	{
 		IPrintResultObserver* pObserver = *iter;
-		pObserver->NofifyPrintStatus(printResult);		
+		pObserver->NotifyPrintResult(printResult);		
 	}
 
 	return 0;
