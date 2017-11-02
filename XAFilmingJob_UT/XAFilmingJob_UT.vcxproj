@@ -50,10 +50,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>..\..\..\..\UIH\include\external\;..\..\..\..\UIH\include\mcs\;..\include\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>CONSOLE_LOG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>gtest.lib;XAFilmingJob.lib</AdditionalDependencies>
+      <AdditionalDependencies>gtest.lib;XAFilmingJob.lib;XAFilmingCommon.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\..\..\UIH\lib_$(configuration)\external;..\..\..\..\UIH\lib_$(configuration)\mcs;..\..\..\..\UIH\lib_$(configuration)\external\gtest;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -64,16 +65,18 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>gtest.lib;XAFilmingJob.lib</AdditionalDependencies>
+      <AdditionalDependencies>gtest.lib;XAFilmingJob.lib;XAFilmingCommon.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\..\..\UIH\lib\external;..\..\..\..\UIH\lib\mcs;..\..\..\..\UIH\lib\external\gtest;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DataPacketHeaderTests.cpp" />
     <ClCompile Include="FilmingJobTests.cpp" />
     <ClCompile Include="XAJobTests.cpp" />
     <ClCompile Include="XAFilmingJobUT.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DataPacketHeaderTests.h" />
     <ClInclude Include="FilmingJobTests.h" />
     <ClInclude Include="XAFilmingMock.h" />
     <ClInclude Include="XAJobTests.h" />

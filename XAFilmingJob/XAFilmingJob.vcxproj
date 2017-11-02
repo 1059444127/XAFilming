@@ -60,7 +60,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\..\..\..\UIH\lib_$(configuration)\external;..\..\..\..\UIH\lib_$(configuration)\mcs;..\..\..\..\UIH\lib_$(configuration)\external\boost;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\..\..\..\UIH\lib_$(Configuration)\mcs\$(ProjectName).lib</ImportLibrary>
-      <AdditionalDependencies>XAFilmingJobStatus.lib;XAFilmingInterface.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>XAFilmingJobStatus.lib;XAFilmingInterface.lib;XAFilmingWrapper.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copyfile.bat</Command>
@@ -78,13 +78,14 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\..\..\..\UIH\lib\external;..\..\..\..\UIH\lib\mcs;..\..\..\..\UIH\lib\external\boost;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\..\..\..\UIH\lib\mcs\$(ProjectName).lib</ImportLibrary>
-      <AdditionalDependencies>XAFilmingJobStatus.lib;XAFilmingInterface.lib;McsfLogger.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>XAFilmingJobStatus.lib;XAFilmingInterface.lib;McsfLogger.lib;XAFilmingWrapper.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copyfile.bat</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="DataPacketHeader.h" />
     <ClInclude Include="FilmingJob.h" />
     <ClInclude Include="XAJob.h" />
     <ClInclude Include="XAFilmingJobExportMacro.h" />

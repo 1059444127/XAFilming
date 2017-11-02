@@ -3,7 +3,7 @@
 #include "gtest/gtest.h"
 
 /// \class XAJobTests
-/// \brief XAFilmingJob Test suite class 
+/// \brief XAJob Test suite class 
 ///
 class XAJobTests : public testing::Test
 {

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="11" failures="0" disabled="0" errors="0" time="0.076" name="AllTests">
+  <testsuite name="DataPacketHeaderTests" tests="3" failures="0" disabled="0" errors="0" time="0.015">
+    <testcase name="Serialize_From_Empty_String" value_param="" type_param="" status="run" time="0.004" classname="DataPacketHeaderTests" />
+    <testcase name="Serialize_From_Single_String" value_param="" type_param="" status="run" time="0.005" classname="DataPacketHeaderTests" />
+    <testcase name="Serialize_From_Two_String" value_param="" type_param="" status="run" time="0.006" classname="DataPacketHeaderTests" />
+  </testsuite>
+  <testsuite name="FilmingJobTests" tests="4" failures="0" disabled="0" errors="0" time="0.011">
+    <testcase name="New_Filming_Job_Is_Waiting" value_param="" type_param="" status="run" time="0" classname="FilmingJobTests" />
+    <testcase name="New_Filming_Job_Finished_is_0" value_param="" type_param="" status="run" time="0" classname="FilmingJobTests" />
+    <testcase name="Printing_A_New_Filming_Job_Finished_is_0" value_param="" type_param="" status="run" time="0.008" classname="FilmingJobTests" />
+    <testcase name="Estimate_Time_Of_A_New_Filming_Job_With_Files_GT_0" value_param="" type_param="" status="run" time="0" classname="FilmingJobTests" />
+  </testsuite>
+  <testsuite name="XAJobTests" tests="4" failures="0" disabled="0" errors="0" time="0.047">
+    <testcase name="XAFilmingJobFactory_Is_Singleton" value_param="" type_param="" status="run" time="0" classname="XAJobTests" />
+    <testcase name="Job_ID_Ascending" value_param="" type_param="" status="run" time="0" classname="XAJobTests" />
+    <testcase name="Urgent_Job_with_High_Priority" value_param="" type_param="" status="run" time="0.013" classname="XAJobTests" />
+    <testcase name="When_Job_Done_Then_Priority_Reset" value_param="" type_param="" status="run" time="0.031" classname="XAJobTests" />
+  </testsuite>
+</testsuites>
