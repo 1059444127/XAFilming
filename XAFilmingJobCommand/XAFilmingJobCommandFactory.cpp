@@ -61,6 +61,5 @@ XAFilmingJobCommandFactory::XAFilmingJobCommandFactory():_filmingCommandDictiona
     _filmingCommandDictionary[Mcsf::JobManager::JobManagerCommunicationID::FromMainFrameUrgentCmd] = new UrgentJobCommand();
 
 	_filmingCommandDictionary[COMMUNICATION_COMMAND_ID::COMMAND_ID_FILMING] = new FilmDicomFileCommand();
-    //TODO: FilmingDataHeaderCommand Register to Factory
 	_filmingCommandDictionary[COMMUNICATION_COMMAND_ID::COMMAND_ID_FILMING_DATAHEADER] = new FilmDicomDataheaderCommand();
 }
