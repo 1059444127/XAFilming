@@ -1,5 +1,9 @@
 #include "PrinterConfig.h"
 
+IXADicomPrinterProperty& PrinterConfig::Instance()
+{	
+}
+
 std::string PrinterConfig::GetAE()
 {
 	throw ;
@@ -18,4 +22,12 @@ unsigned short PrinterConfig::GetPort()
 std::string PrinterConfig::GetFilmSize()
 {
 	throw ;
+}
+
+PrinterConfig::PrinterConfig()
+{
+}
+
+void PrinterConfig::ReadConfig()
+{
 }
