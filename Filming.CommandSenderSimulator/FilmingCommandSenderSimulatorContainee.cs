@@ -47,7 +47,6 @@ namespace UIH.XA.Filming.CommandSenderSimulator
                 Console.ReadKey();
 
                 SendCommand(CommunicationCommandID.COMMAND_ID_FILMING);
-                //SendCommand(CommunicationCommandID.COMMAND_ID_PRINT);
             }
         }
 
