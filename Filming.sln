@@ -143,9 +143,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilming", "XAFilming\XAFi
 		{240E72CF-3DB4-486B-9BB5-317C7FCC1D1E} = {240E72CF-3DB4-486B-9BB5-317C7FCC1D1E}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingWrapper_UT", "XAFilmingWrapper_UT\XAFilmingWrapper_UT.vcxproj", "{5BD35683-A51F-4014-9CE9-31688C3DB735}"
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 31
+		SccNumberOfProjects = 32
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = http://tfs:8080/tfs/defaultcollection
 		SccLocalPath0 = .
@@ -255,6 +257,10 @@ Global
 		SccProjectUniqueName30 = XAFilming\\XAFilming.vcxproj
 		SccProjectName30 = XAFilming
 		SccLocalPath30 = XAFilming
+		SccProjectUniqueName31 = XAFilmingWrapper_UT\\XAFilmingWrapper_UT.vcxproj
+		SccProjectTopLevelParentUniqueName31 = Filming.sln
+		SccProjectName31 = XAFilmingWrapper_UT
+		SccLocalPath31 = XAFilmingWrapper_UT
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -381,6 +387,10 @@ Global
 		{C94D52F9-E910-4049-863C-7B0C765B95FE}.Debug|x64.Build.0 = Debug|x64
 		{C94D52F9-E910-4049-863C-7B0C765B95FE}.Release|x64.ActiveCfg = Release|x64
 		{C94D52F9-E910-4049-863C-7B0C765B95FE}.Release|x64.Build.0 = Release|x64
+		{5BD35683-A51F-4014-9CE9-31688C3DB735}.Debug|x64.ActiveCfg = Debug|x64
+		{5BD35683-A51F-4014-9CE9-31688C3DB735}.Debug|x64.Build.0 = Debug|x64
+		{5BD35683-A51F-4014-9CE9-31688C3DB735}.Release|x64.ActiveCfg = Release|x64
+		{5BD35683-A51F-4014-9CE9-31688C3DB735}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -393,6 +403,7 @@ Global
 		{5712D9E7-A210-4C90-977E-32060E1C6008} = {BD2AAD13-062A-4B66-8966-553136454573}
 		{367B1B87-4589-4B02-AF1B-93388F66929A} = {BD2AAD13-062A-4B66-8966-553136454573}
 		{7D891852-3B74-4B58-B450-CF8E505AE90D} = {BD2AAD13-062A-4B66-8966-553136454573}
+		{5BD35683-A51F-4014-9CE9-31688C3DB735} = {BD2AAD13-062A-4B66-8966-553136454573}
 		{D0513F12-CA67-4024-9874-123A44B59A6C} = {BE0130F4-BFC6-4C27-B54A-7937580D6048}
 		{061642E0-7D27-4DE0-BAC6-87692A92A73D} = {BE0130F4-BFC6-4C27-B54A-7937580D6048}
 		{411BF4C4-787C-42DC-B14A-1FB06D9E8425} = {BE0130F4-BFC6-4C27-B54A-7937580D6048}
