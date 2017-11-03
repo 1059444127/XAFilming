@@ -8,4 +8,6 @@ public:
 	virtual std::string GetIP();
 	virtual unsigned short GetPort();
 	virtual std::string GetFilmSize();
+private:
+	bool _bReadConfigBeforeUsing;
 };
