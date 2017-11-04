@@ -1,7 +1,10 @@
 #include "PrinterConfig.h"
 
+PrinterConfig PrinterConfig::_instance;
+
 IXADicomPrinterProperty& PrinterConfig::Instance()
 {	
+	return _instance;
 }
 
 std::string PrinterConfig::GetAE()

@@ -89,6 +89,7 @@
     <ClInclude Include="PrinterConfig.h" />
     <ClInclude Include="XACommand.h" />
     <ClInclude Include="XACommandID.h" />
+    <ClInclude Include="XAConfig.h" />
     <ClInclude Include="XADicom.h" />
     <ClInclude Include="XAFilmingWrapperExportMacro.h" />
     <ClInclude Include="XAPrint.h" />
@@ -98,6 +99,7 @@
     <ClCompile Include="PrinterConfig.cpp" />
     <ClCompile Include="XACommand.cpp" />
     <ClCompile Include="XACommandID.cpp" />
+    <ClCompile Include="XAConfig.cpp" />
     <ClCompile Include="XADicom.cpp" />
     <ClCompile Include="XAPrint.cpp" />
   </ItemGroup>

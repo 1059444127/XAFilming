@@ -1,3 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="0" failures="0" disabled="0" errors="0" time="0.003" name="AllTests">
+<testsuites tests="1" failures="0" disabled="0" errors="0" time="0.002" name="AllTests">
+  <testsuite name="XAConfigTests" tests="1" failures="0" disabled="0" errors="0" time="0.001">
+    <testcase name="XAConfig_Is_A_Singleton" value_param="" type_param="" status="run" time="0" classname="XAConfigTests" />
+  </testsuite>
 </testsuites>

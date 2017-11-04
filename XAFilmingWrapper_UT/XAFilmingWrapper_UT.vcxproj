@@ -53,7 +53,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>gtest.lib;</AdditionalDependencies>
+      <AdditionalDependencies>gtest.lib;XAFilmingWrapper.lib;</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\..\..\UIH\lib_$(configuration)\external;..\..\..\..\UIH\lib_$(configuration)\mcs;..\..\..\..\UIH\lib_$(configuration)\external\gtest;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -63,16 +63,16 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>gtest.lib</AdditionalDependencies>
+      <AdditionalDependencies>gtest.lib;XAFilmingWrapper.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\..\..\UIH\lib\external;..\..\..\..\UIH\lib\mcs;..\..\..\..\UIH\lib\external\gtest;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="PrinterConfigTests.cpp" />
+    <ClCompile Include="XAConfigTests.cpp" />
     <ClCompile Include="XAFilmingWrapperUT.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="PrinterConfigTests.h" />
+    <ClInclude Include="XAConfigTests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
