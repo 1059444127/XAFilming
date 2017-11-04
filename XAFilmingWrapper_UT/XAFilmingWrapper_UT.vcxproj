@@ -54,7 +54,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>gtest.lib;XAFilmingWrapper.lib;</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\..\..\UIH\lib_$(configuration)\external;..\..\..\..\UIH\lib_$(configuration)\mcs;..\..\..\..\UIH\lib_$(configuration)\external\gtest;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\UIH\lib_$(configuration)\external;..\..\..\..\UIH\lib_$(configuration)\mcs;..\..\..\..\UIH\lib_$(configuration)\external\boost;..\..\..\..\UIH\lib_$(configuration)\external\gtest;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -64,7 +64,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>gtest.lib;XAFilmingWrapper.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\..\..\UIH\lib\external;..\..\..\..\UIH\lib\mcs;..\..\..\..\UIH\lib\external\gtest;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\..\UIH\lib\external;..\..\..\..\UIH\lib\mcs;..\..\..\..\UIH\lib\external\gtest;..\..\..\..\UIH\lib\external\boost;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

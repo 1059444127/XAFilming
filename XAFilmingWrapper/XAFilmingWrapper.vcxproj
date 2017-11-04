@@ -60,7 +60,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\..\..\..\UIH\lib_$(configuration)\external;..\..\..\..\UIH\lib_$(configuration)\mcs;..\..\..\..\UIH\lib_$(configuration)\external\boost;..\..\..\..\UIH\lib_$(configuration)\external\dcmtk;..\..\..\..\UIH\lib_$(configuration)\external\protobuf;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\..\..\..\UIH\lib_$(Configuration)\mcs\$(ProjectName).lib</ImportLibrary>
-      <AdditionalDependencies>McsfNetBase.lib;XAFilmingCommon.lib;libprotobuf.lib;McsfJobManagerInfo.lib;McsfFilming.lib;McsfFilmingDB.lib;oflog.lib;wsock32.lib;ofstd.lib;dcmpstat.lib;dcmimage.lib;dcmimgle.lib;dcmnet.lib;dcmdata.lib;ws2_32.lib;netapi32.lib;dcmtls.lib;McsfLogger.lib;McsfDataHeader.lib;McsfDicomConvertor.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>McsfNetBase.lib;XAFilmingCommon.lib;libprotobuf.lib;McsfJobManagerInfo.lib;McsfFilming.lib;McsfFilmingDB.lib;oflog.lib;wsock32.lib;ofstd.lib;dcmpstat.lib;dcmimage.lib;dcmimgle.lib;dcmnet.lib;dcmdata.lib;ws2_32.lib;netapi32.lib;dcmtls.lib;McsfLogger.lib;McsfDataHeader.lib;McsfDicomConvertor.lib;McsfSystemEnvironmentConfig.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copyfile.bat</Command>
@@ -78,7 +78,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\..\..\..\UIH\lib\external;..\..\..\..\UIH\lib\mcs;..\..\..\..\UIH\lib\external\boost;..\..\..\..\UIH\lib\external\dcmtk;..\..\..\..\UIH\lib\external\protobuf;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>..\..\..\..\UIH\lib\mcs\$(ProjectName).lib</ImportLibrary>
-      <AdditionalDependencies>McsfNetBase.lib;XAFilmingCommon.lib;libprotobuf.lib;McsfJobManagerInfo.lib;McsfFilming.lib;McsfFilmingDB.lib;oflog.lib;wsock32.lib;ofstd.lib;dcmpstat.lib;dcmimage.lib;dcmimgle.lib;dcmnet.lib;dcmdata.lib;ws2_32.lib;netapi32.lib;dcmtls.lib;McsfLogger.lib;McsfDataHeader.lib;McsfDicomConvertor.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>McsfNetBase.lib;XAFilmingCommon.lib;libprotobuf.lib;McsfJobManagerInfo.lib;McsfFilming.lib;McsfFilmingDB.lib;oflog.lib;wsock32.lib;ofstd.lib;dcmpstat.lib;dcmimage.lib;dcmimgle.lib;dcmnet.lib;dcmdata.lib;ws2_32.lib;netapi32.lib;dcmtls.lib;McsfLogger.lib;McsfDataHeader.lib;McsfDicomConvertor.lib;McsfSystemEnvironmentConfig.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>copyfile.bat</Command>

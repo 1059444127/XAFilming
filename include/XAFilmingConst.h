@@ -14,3 +14,6 @@
 #define XA_FILMING_TEMP_DIRECTORY  "E:\\Images\\Temp\\"
 
 #define MINUTES_PER_PRINT (1)
+
+#define XA_FILMING_CONFIG_PATH "XAFilmingConfigPath"
+#define XA_PRINT_CONFIG_FILE_NAME "Printer.xml"
