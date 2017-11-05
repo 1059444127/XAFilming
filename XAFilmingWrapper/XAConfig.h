@@ -13,7 +13,7 @@ public:
 	IXADicomPrinterProperty* GetPrinterConfig();
 	virtual ~XAConfig();
 private:
-	static XAConfig _instance;
+	static XAConfig* _pInstance;
 
 	std::string _printerConfigPath;
 	IXADicomPrinterProperty* _pPrinterConfig;
