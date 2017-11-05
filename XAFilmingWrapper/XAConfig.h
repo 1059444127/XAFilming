@@ -2,8 +2,10 @@
 
 #include "XAFilmingWrapperExportMacro.h"
 #include "XAFilmingMacro.h"
-#include <string>
 #include <IXADicomPrinterProperty.h>
+#include <boost/thread/thread.hpp>
+#include "PrinterConfig.h"
+
 
 class XA_FilmingWrapper_Export XAConfig
 {
@@ -16,7 +18,9 @@ private:
 	static XAConfig* _pInstance;
 
 	std::string _printerConfigPath;
-	IXADicomPrinterProperty* _pPrinterConfig;
+	PrinterConfig* _pPrinterConfig;
+
+	boost::mutex _printerConfigMutex;
 
 	XAConfig();
 	XA_FILMING_DISALLOW_COPY_AND_ASSIGN(XAConfig)

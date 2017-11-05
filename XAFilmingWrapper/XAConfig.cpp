@@ -2,7 +2,7 @@
 #include "Common/McsfSystemEnvironmentConfig/mcsf_systemenvironment_factory.h"
 #include "XAFilmingConst.h"
 #include "XAFilmingMacro.h"
-#include <boost/thread/thread.hpp>
+#include "PrinterConfig.h"
 
 using namespace MCSF_NAMESPACE_FOR_XA;
 
@@ -27,6 +27,17 @@ XAConfig* XAConfig::Instance()
 IXADicomPrinterProperty* XAConfig::GetPrinterConfig()
 {
 	//TODO: lock and create PrintConfig
+	if(nullptr == _pPrinterConfig)
+	{
+		boost::mutex::scoped_lock(_printerConfigMutex);
+		if(nullptr == _pPrinterConfig)
+		{
+			_pPrinterConfig = new PrinterConfig();
+		}
+	}	
+
+	if(_pPrinterConfig->ReadConfigBeforeUsing()) {_pPrinterConfig->ReadConfig();}
+
 	return _pPrinterConfig;
 }
 
