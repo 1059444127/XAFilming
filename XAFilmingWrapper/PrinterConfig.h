@@ -5,15 +5,14 @@
 class PrinterConfig : public IXADicomPrinterProperty
 {
 public:
-	static IXADicomPrinterProperty& Instance();
+	PrinterConfig();
 	virtual std::string GetAE();
 	virtual std::string GetIP();
 	virtual unsigned short GetPort();
 	virtual std::string GetFilmSize();
+	void ReadConfig();
+	bool ReadConfigBeforeUsing();
 private:
 	bool _bReadConfigBeforeUsing;
-	static PrinterConfig _instance;
-	PrinterConfig();
-	void ReadConfig();
 	XA_FILMING_DISALLOW_COPY_AND_ASSIGN(PrinterConfig)
 };

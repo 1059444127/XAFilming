@@ -1,11 +1,5 @@
 #include "PrinterConfig.h"
 
-PrinterConfig PrinterConfig::_instance;
-
-IXADicomPrinterProperty& PrinterConfig::Instance()
-{	
-	return _instance;
-}
 
 std::string PrinterConfig::GetAE()
 {
@@ -27,10 +21,15 @@ std::string PrinterConfig::GetFilmSize()
 	throw ;
 }
 
-PrinterConfig::PrinterConfig()
+PrinterConfig::PrinterConfig(): _bReadConfigBeforeUsing(true)
 {
 }
 
 void PrinterConfig::ReadConfig()
 {
+}
+
+bool PrinterConfig::ReadConfigBeforeUsing()
+{
+	return _bReadConfigBeforeUsing;
 }
