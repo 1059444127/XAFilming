@@ -32,7 +32,7 @@ IXADicomPrinterProperty* XAConfig::GetPrinterConfig()
 		boost::mutex::scoped_lock(_printerConfigMutex);
 		if(nullptr == _pPrinterConfig)
 		{
-			_pPrinterConfig = new PrinterConfig();
+			_pPrinterConfig = new PrinterConfig(GetPrinterConfigPath());
 		}
 	}	
 

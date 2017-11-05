@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Printer>
+  <AE>FooAE</AE>
+  <IP>8.8.8.8</IP>
+  <Port>60001</Port>
+  <FilmSize>8INX10IN</FilmSize>
+  <ReadConfigBeforeUsing>0</ReadConfigBeforeUsing>
+</Printer>

@@ -49,7 +49,8 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\..\..\..\UIH\include\external\;..\..\..\..\UIH\include\mcs\;..\include\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\..\UIH\include\external\;..\..\..\..\UIH\include\mcs\;..\include\;..\XAFilmingWrapper\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>CONSOLE_LOG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -68,11 +69,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="PrinterConfigTests.cpp" />
     <ClCompile Include="XAConfigTests.cpp" />
     <ClCompile Include="XAFilmingWrapperUT.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="PrinterConfigTests.h" />
     <ClInclude Include="XAConfigTests.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PrinterConfigStub.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

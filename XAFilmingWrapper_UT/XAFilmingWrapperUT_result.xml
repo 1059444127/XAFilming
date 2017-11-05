@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites tests="2" failures="0" disabled="0" errors="0" time="0.005" name="AllTests">
-  <testsuite name="XAConfigTests" tests="2" failures="0" disabled="0" errors="0" time="0.003">
-    <testcase name="XAConfig_Is_A_Singleton" value_param="" type_param="" status="run" time="0.002" classname="XAConfigTests" />
-    <testcase name="PrinterConfigPath_Is_Correct" value_param="" type_param="" status="run" time="0" classname="XAConfigTests" />
+<testsuites tests="3" failures="0" disabled="0" errors="0" time="33.398" name="AllTests">
+  <testsuite name="PrinterConfigTests" tests="1" failures="0" disabled="0" errors="0" time="22.207">
+    <testcase name="PrinterConfig_PrinterConfigStub" value_param="" type_param="" status="run" time="22.205" classname="PrinterConfigTests" />
+  </testsuite>
+  <testsuite name="XAConfigTests" tests="2" failures="0" disabled="0" errors="0" time="11.186">
+    <testcase name="XAConfig_Is_A_Singleton" value_param="" type_param="" status="run" time="0.029" classname="XAConfigTests" />
+    <testcase name="PrinterConfigPath_Is_Correct" value_param="" type_param="" status="run" time="11.151" classname="XAConfigTests" />
   </testsuite>
 </testsuites>
