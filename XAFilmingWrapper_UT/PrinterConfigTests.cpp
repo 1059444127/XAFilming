@@ -5,8 +5,7 @@ using namespace std;
 
 TEST_F(PrinterConfigTests, PrinterConfig_PrinterConfigStub)
 {
-	//TODO; post build xcopy *.xml to bin[_$Configuration]
-    std::string printerConfigPath = "PrinterConfigStub.xml";
+    std::string printerConfigPath = "../../../../IAS/MiddleWare/Filming/XAFilmingWrapper_UT/PrinterConfigStub.xml";
 	PrinterConfig printerConfig(printerConfigPath);
 	printerConfig.ReadConfig();
 
