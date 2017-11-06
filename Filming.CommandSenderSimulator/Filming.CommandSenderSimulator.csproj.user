@@ -6,4 +6,10 @@
     <StartArguments>..\..\IAS\MiddleWare\Filming\Filming.CommandSenderSimulator\Config\XAFilmingCommandSenderSimulatorContainee.xml  FilmingCommandSenderSimulator@@</StartArguments>
     <StartWorkingDirectory>D:\X-SW\XA\Trunk\UIH\bin\</StartWorkingDirectory>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartAction>Program</StartAction>
+    <StartProgram>D:\X-SW\XA\Trunk\UIH\bin_debug\UIH.Mcsf.Core.ContainerBase.exe</StartProgram>
+    <StartWorkingDirectory>D:\X-SW\XA\Trunk\UIH\bin_debug\</StartWorkingDirectory>
+    <StartArguments>..\..\IAS\MiddleWare\Filming\Filming.CommandSenderSimulator\Config\XAFilmingCommandSenderSimulatorContainee.xml  FilmingCommandSenderSimulator@@</StartArguments>
+  </PropertyGroup>
 </Project>

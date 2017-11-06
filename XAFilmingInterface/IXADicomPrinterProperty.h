@@ -3,6 +3,7 @@
 
 class IXADicomPrinterProperty
 {
+public:
 	virtual std::string GetAE() = 0;
 	virtual std::string GetIP() = 0;
 	virtual unsigned short GetPort() = 0;

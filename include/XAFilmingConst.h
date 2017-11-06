@@ -18,8 +18,9 @@
 #define XA_FILMING_CONFIG_PATH "XAFilmingConfigPath"
 #define XA_PRINT_CONFIG_FILE_NAME "Printer.xml"
 
-#define XA_AE "local"
+#define XA_AE "XA"
 #define XA_DEFAULT_DICOM_PRINTER_AE "local_printer"
 #define XA_DEFAULT_DICOM_PRINTER_PORT 10006
 #define XA_DEFAULT_DICOM_PRINTER_IP "127.0.0.1"
 #define XA_DEFAULT_FILM_SIZE "8INX10IN"
+#define XA_PRINT_LAYOUT_1_X_1 "STANDARD\\1,1"

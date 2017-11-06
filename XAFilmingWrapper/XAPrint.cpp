@@ -7,6 +7,8 @@
 #include "XAFilmingMacro.h"
 
 #include "XAPrint.h"
+#include "XAFilmingConst.h"
+#include "XAConfig.h"
 
 namespace MCSF_NAMESPACE_FOR_XA
 {
@@ -17,12 +19,16 @@ namespace MCSF_NAMESPACE_FOR_XA
 
 		pPrintJobObject->SetJobID(1);
 		pPrintJobObject->SetCopies(1);
-		pPrintJobObject->SetMyAETitle("local");
-		pPrintJobObject->SetTargetAETitle("PRINT_SCP");
-		pPrintJobObject->SetTargetHostName("127.0.0.1");
-		pPrintJobObject->SetTargetPort(10006);
-		pPrintJobObject->SetLayout("STANDARD\\1,1");
-		pPrintJobObject->SetFilmSize("8INX10IN");
+		pPrintJobObject->SetMyAETitle(XA_AE);
+		pPrintJobObject->SetLayout(XA_PRINT_LAYOUT_1_X_1);		
+
+		auto printerConfig = XAConfig::Instance()->GetPrinterConfig();
+
+		
+		pPrintJobObject->SetTargetAETitle(printerConfig->GetAE());
+		pPrintJobObject->SetTargetHostName(printerConfig->GetIP());
+		pPrintJobObject->SetTargetPort(printerConfig->GetPort());
+		pPrintJobObject->SetFilmSize(printerConfig->GetFilmSize());
 		//vector<string> fileList;
 		//fileList.push_back("e:\\1.dcm");
 		pPrintJobObject->SetFileNameList(dicomFilePaths);
@@ -62,7 +68,7 @@ namespace MCSF_NAMESPACE_FOR_XA
 		auto filmingDb = McsfFilmingDB::GetInstance();
 		McsfPrintJobObject * pPrintJobObject = new McsfPrintJobObject();
 
-		SetPrintJobObject(dicomFilePaths, pPrintJobObject);	//TODO-PRINT: Print Config
+		SetPrintJobObject(dicomFilePaths, pPrintJobObject);	
 
 		IFilmingLibary * pIFilmingLibary = pFilming->CreateFilmingLibary(pPrintJobObject, filmingDb);
 
