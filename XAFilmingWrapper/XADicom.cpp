@@ -3,6 +3,7 @@
 #include <XAFilmingLogger.h>
 #include <McsfDicomConvertor/mcsf_dicom_convertor_factory.h>
 #include "XAFilmingFile.h"
+#include "../XAFilmingCommon/XAFilmingConst.h"
 
 using namespace MCSF_NAMESPACE_FOR_XA;
 using namespace std;
@@ -10,7 +11,7 @@ using namespace std;
 
 typedef boost::shared_ptr<IDataHeaderElementMap> IDataHeaderElementMapPtr;
 
-bool SaveStringToDicomFile(const string& sSerializedDataHeader, string& dicomFilePath)
+bool SaveStringToDicomFile(const string& sSerializedDataHeader, string& dicomFilePath, string& serializedPacketHeader)
 {
 	IDataHeaderElementMapPtr pHeaders(Mcsf::IDataHeaderElementMap::CreateDataHeader());
 	if (!pHeaders)
@@ -38,7 +39,21 @@ bool SaveStringToDicomFile(const string& sSerializedDataHeader, string& dicomFil
 		return false;
 	}
 
+	ConstUInt16Array constUint16Array;
+	int arraySize;
+	if(!pHeaders.get()->GetUInt16ArrayByTag(XA_DICOM_DATAHEADER_PACKET_HEADER_TAG, &constUint16Array, &arraySize))
+	{
+		LOG_WARN_XA_FILMING << "Failed to get serialized packet header from tag [" << XA_DICOM_DATAHEADER_PACKET_HEADER_TAG << "]" << LOG_END;
+	}
+	else
+	{
+		//TODO: deserialzed constUint8Array to string
+	}
+
+
 	LOG_INFO_XA_FILMING << "Succeed to save DataHeader as a Dicom file : " << dicomFilePath<< LOG_END;
 
 	return true;
 }
+
+
