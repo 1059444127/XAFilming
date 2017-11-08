@@ -60,7 +60,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\..\..\UIH\include\external\;..\..\..\..\UIH\include\mcs\;..\include\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\..\UIH\include\external\;..\..\..\..\UIH\include\mcs\;..\include\;..\XAFilmingWrapper\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

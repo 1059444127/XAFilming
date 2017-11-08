@@ -65,7 +65,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>gtest.lib;XAFilmingJob.lib;XAFilmingCommon.lib</AdditionalDependencies>
+      <AdditionalDependencies>gtest.lib;XAFilmingJob.lib;XAFilmingCommon.lib;McsfLogger.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\..\..\UIH\lib\external;..\..\..\..\UIH\lib\mcs;..\..\..\..\UIH\lib\external\gtest;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
