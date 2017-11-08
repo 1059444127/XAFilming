@@ -88,6 +88,7 @@
     <ClInclude Include="ContinueJobCommand.h" />
     <ClInclude Include="DeleteJobCommand.h" />
     <ClInclude Include="FilmDicomDataheaderCommand.h" />
+    <ClInclude Include="FilmDicomDataHeadersCommand.h" />
     <ClInclude Include="FilmDicomFileCommand.h" />
     <ClInclude Include="FilmingJobCommand.h" />
     <ClInclude Include="XAFilmingJobCommandBase.h" />
@@ -106,6 +107,7 @@
     <ClCompile Include="ContinueJobCommand.cpp" />
     <ClCompile Include="DeleteJobCommand.cpp" />
     <ClCompile Include="FilmDicomDataheaderCommand.cpp" />
+    <ClCompile Include="FilmDicomDataHeadersCommand.cpp" />
     <ClCompile Include="FilmDicomFileCommand.cpp" />
     <ClCompile Include="FilmingJobCommand.cpp" />
     <ClCompile Include="PauseJobCommand.cpp" />
