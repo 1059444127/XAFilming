@@ -56,6 +56,10 @@
       <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.DataHeader.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UIH.Mcsf.Database.DicomUIDManager">
+      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Database.DicomUIDManager.dll</HintPath>
+      <Private>False</Private>
+    </Reference>    
     <Reference Include="UIH.Mcsf.Core.ContaineeBase">
       <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.ContaineeBase.dll</HintPath>
       <Private>False</Private>
@@ -84,6 +88,10 @@
     </Reference>
     <Reference Include="UIH.Mcsf.DataHeader">
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.DataHeader.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UIH.Mcsf.Database.DicomUIDManager">
+      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Database.DicomUIDManager.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UIH.Mcsf.Core.ContaineeBase">
