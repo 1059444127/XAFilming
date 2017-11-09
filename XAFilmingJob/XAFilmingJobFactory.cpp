@@ -24,6 +24,20 @@ XAFilmingJobBase* XAFilmingJobFactory::CreateFilmingJob(vector<string> dicomFile
     return new FilmingJob(++_maxJobID, dicomFiles);
 }
 
+XAFilmingJobBase* XAFilmingJobFactory::CreateFilmingJob(std::string serializedDataheader)
+{
+	string dicomFilePath;
+
+	if(!SaveStringToDicomFile(serializedDataheader, dicomFilePath))
+	{
+		LOG_ERROR_XA_FILMING << "Failed to save serialized DataHeader to dicom file , printing failed" << LOG_END;
+		return nullptr;
+	}
+
+	vector<string> filePaths;  filePaths.push_back(dicomFilePath);
+	return CreateFilmingJob(filePaths);
+}
+
 XAFilmingJobBase* XAFilmingJobFactory::BuildFilmingJob(std::string serializedDataheader)
 {
 	string dicomFilePath, serializedPacketHeader;

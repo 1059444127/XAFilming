@@ -10,6 +10,7 @@ public:
     static XAFilmingJobFactory* Instance();
     XAFilmingJobBase* CreateJob();
     XAFilmingJobBase* CreateFilmingJob(std::vector<std::string> dicomFiles);
+	XAFilmingJobBase* CreateFilmingJob(std::string serializedDataheader);
 	XAFilmingJobBase* BuildFilmingJob(std::string serializedDataheader);
     ~XAFilmingJobFactory() {SAFE_DELETE_ELEMENT(_instance);}
 
