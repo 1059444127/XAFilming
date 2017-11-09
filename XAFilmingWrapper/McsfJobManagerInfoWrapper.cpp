@@ -54,6 +54,7 @@ void Translate(XAFilmingJobBase* pJob, McsfJobManagerInfo& job_manager_info)
 	job_manager_info.SetJobitemstatus(ConvertFrom(pJob->GetJobStatus()->GetStatusPriority()));	
 
 	job_manager_info.SetPatientid("SamplePatientID");
+	job_manager_info.SetPatientname("SamplePatientName");
 }
 
 string SerializeFrom(const vector<XAFilmingJobBase*>& jobs)
