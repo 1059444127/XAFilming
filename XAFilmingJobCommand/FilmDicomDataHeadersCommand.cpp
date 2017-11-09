@@ -7,7 +7,7 @@ using namespace std;
 void FilmDicomDataheadersCommand::Excute(const std::string& serializedParameters)
 {
 
-	auto job = XAFilmingJobFactory::Instance()->CreateFilmingJob(serializedParameters);
+	auto job = XAFilmingJobFactory::Instance()->BuildFilmingJob(serializedParameters);
 	if(nullptr == job)
 	{
 		LOG_INFO_XA_FILMING << "Waiting for batch dataHeaders complete" << LOG_END;

@@ -24,7 +24,7 @@ XAFilmingJobBase* XAFilmingJobFactory::CreateFilmingJob(vector<string> dicomFile
     return new FilmingJob(++_maxJobID, dicomFiles);
 }
 
-XAFilmingJobBase* XAFilmingJobFactory::CreateFilmingJob(std::string serializedDataheader)
+XAFilmingJobBase* XAFilmingJobFactory::BuildFilmingJob(std::string serializedDataheader)
 {
 	string dicomFilePath, serializedPacketHeader;
 
