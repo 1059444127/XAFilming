@@ -87,6 +87,7 @@
   <ItemGroup>
     <ClInclude Include="McsfJobManagerInfoWrapper.h" />
     <ClInclude Include="PrinterConfig.h" />
+    <ClInclude Include="XABoost.h" />
     <ClInclude Include="XACommand.h" />
     <ClInclude Include="XACommandID.h" />
     <ClInclude Include="XAConfig.h" />
@@ -97,6 +98,7 @@
   <ItemGroup>
     <ClCompile Include="McsfJobManagerInfoWrapper.cpp" />
     <ClCompile Include="PrinterConfig.cpp" />
+    <ClCompile Include="XABoost.cpp" />
     <ClCompile Include="XACommand.cpp" />
     <ClCompile Include="XACommandID.cpp" />
     <ClCompile Include="XAConfig.cpp" />

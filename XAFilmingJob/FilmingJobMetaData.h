@@ -1,6 +1,7 @@
 #pragma once
 #include "IFilmingJobMetaData.h"
 #include <boost/thread/lock_types.hpp>
+#include "XABoost.h"
 
 class FilmingJobMetaData : public IFilmingJobMetaData
 {
@@ -10,7 +11,7 @@ public:
 		_patientID = study_info.GetPatientID();
 		_patientName = study_info.GetPatientName();
 
-		//TODO: _createTime = Now;
+		_createTime = XANow();
 	}
 
 	virtual std::string GetPatientID() {return _patientID;}
