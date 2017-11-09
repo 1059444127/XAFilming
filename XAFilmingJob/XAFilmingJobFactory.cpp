@@ -1,6 +1,6 @@
 #include "XAFilmingJobFactory.h"
 #include "XAJob.h"
-#include "FilmingJob.h"
+#include "BatchPrintJob.h"
 #include <XAFilmingLogger.h>
 #include "XADicom.h"
 #include <DicomDataHeaderPacketHeader.h>
@@ -22,7 +22,7 @@ XAFilmingJobBase* XAFilmingJobFactory::CreateJob()
 
 XAFilmingJobBase* XAFilmingJobFactory::CreateFilmingJob(vector<string> dicomFiles)
 {
-    return new FilmingJob(++_maxJobID, dicomFiles);
+    return new BatchPrintJob(++_maxJobID, dicomFiles);
 }
 
 XAFilmingJobBase* XAFilmingJobFactory::CreateFilmingJob(std::string serializedDataheader)

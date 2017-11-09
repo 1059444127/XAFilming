@@ -3,11 +3,11 @@
 #include <vector>
 #include <queue>
 
-class FilmingJob :
+class BatchPrintJob :
     public XAJob
 {
 public:
-    FilmingJob(int ID, std::vector<std::string> dicomFiles);
+    BatchPrintJob(int ID, std::vector<std::string> dicomFiles);
     virtual void Complete();
     virtual double GetProgress();
 

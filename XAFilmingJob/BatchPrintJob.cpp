@@ -1,16 +1,16 @@
-#include "FilmingJob.h"
+#include "BatchPrintJob.h"
 #include <sstream>
 #include "XAFilmingLogger.h"
 #include "XAFilmingConst.h"
 using namespace std;
 
 
-FilmingJob::FilmingJob(int ID, vector<string> dicomFiles) : XAJob(ID), _files(dicomFiles), _iProgress(0), _iFinished(0)
+BatchPrintJob::BatchPrintJob(int ID, vector<string> dicomFiles) : XAJob(ID), _files(dicomFiles), _iProgress(0), _iFinished(0)
 {
 
 }
 
-void FilmingJob::Complete()
+void BatchPrintJob::Complete()
 {
     if (_iProgress < GetTotal())
     {
@@ -29,28 +29,28 @@ void FilmingJob::Complete()
 
 }
 
-double FilmingJob::GetProgress()
+double BatchPrintJob::GetProgress()
 {
 	return _iFinished/_files.size();
 }
 
-int FilmingJob::GetTotal()
+int BatchPrintJob::GetTotal()
 {
 	return _files.size();
 }
 
-int FilmingJob::GetFinished()
+int BatchPrintJob::GetFinished()
 {
 	return _iFinished;
 }
 
-int FilmingJob::GetEstimatedTimeToFinish()
+int BatchPrintJob::GetEstimatedTimeToFinish()
 {
 	auto left = GetTotal() - GetFinished();
 	return left * MINUTES_PER_PRINT;
 }
 
-vector<string> FilmingJob::GetDicomFilsToPrint()
+vector<string> BatchPrintJob::GetDicomFilsToPrint()
 {;
 	vector<string> filesToBePrinted;
 	filesToBePrinted.push_back(_files[_iProgress]);
