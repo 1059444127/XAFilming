@@ -3,6 +3,7 @@
 #include "FilmingJob.h"
 #include <XAFilmingLogger.h>
 #include "XADicom.h"
+#include <DicomDataHeaderPacketHeader.h>
 
 using namespace std;
 
@@ -27,8 +28,9 @@ XAFilmingJobBase* XAFilmingJobFactory::CreateFilmingJob(vector<string> dicomFile
 XAFilmingJobBase* XAFilmingJobFactory::CreateFilmingJob(std::string serializedDataheader)
 {
 	string dicomFilePath;
+	DicomDataHeaderPacketHeader dicom_data_header_packet_header;
 
-	if(!SaveStringToDicomFile(serializedDataheader, dicomFilePath))
+	if(!SaveStringToDicomFile(serializedDataheader, dicomFilePath, dicom_data_header_packet_header))
 	{
 		LOG_ERROR_XA_FILMING << "Failed to save serialized DataHeader to dicom file , printing failed" << LOG_END;
 		return nullptr;
@@ -40,9 +42,10 @@ XAFilmingJobBase* XAFilmingJobFactory::CreateFilmingJob(std::string serializedDa
 
 XAFilmingJobBase* XAFilmingJobFactory::BuildFilmingJob(std::string serializedDataheader)
 {
-	string dicomFilePath, serializedPacketHeader;
+	string dicomFilePath;
+	DicomDataHeaderPacketHeader dicom_data_header_packet_header;
 
-	if(!SaveStringToDicomFile(serializedDataheader, dicomFilePath, serializedPacketHeader))
+	if(!SaveStringToDicomFile(serializedDataheader, dicomFilePath, dicom_data_header_packet_header))
 	{
 		LOG_ERROR_XA_FILMING << "Failed to save serialized DataHeader to dicom file , printing failed" << LOG_END;
 	}

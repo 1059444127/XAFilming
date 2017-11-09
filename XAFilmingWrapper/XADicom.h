@@ -2,4 +2,5 @@
 #include <vector>
 #include "XAFilmingWrapperExportMacro.h"
 
-bool XA_FilmingWrapper_Export SaveStringToDicomFile(const std::string& serializedDataheader, std::string& filePaths, std::string& serializedPacketHeader = std::string());
+class DicomDataHeaderPacketHeader;
+bool XA_FilmingWrapper_Export SaveStringToDicomFile(const std::string& serializedDataheader, std::string& filePaths, DicomDataHeaderPacketHeader& dicomDataHeaderPacketHeader);
