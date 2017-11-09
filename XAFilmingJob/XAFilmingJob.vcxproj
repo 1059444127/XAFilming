@@ -87,6 +87,7 @@
   <ItemGroup>
     <ClInclude Include="DataPacketHeader.h" />
     <ClInclude Include="BatchPrintJob.h" />
+    <ClInclude Include="FilmingJob.h" />
     <ClInclude Include="XAJob.h" />
     <ClInclude Include="XAFilmingJobExportMacro.h" />
     <ClInclude Include="XAFilmingJobFactory.h" />
