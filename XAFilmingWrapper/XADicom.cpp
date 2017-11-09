@@ -3,7 +3,7 @@
 #include <XAFilmingLogger.h>
 #include <McsfDicomConvertor/mcsf_dicom_convertor_factory.h>
 #include "XAFilmingFile.h"
-#include "../XAFilmingCommon/XAFilmingConst.h"
+#include "XAFilmingConst.h"
 
 using namespace MCSF_NAMESPACE_FOR_XA;
 using namespace std;

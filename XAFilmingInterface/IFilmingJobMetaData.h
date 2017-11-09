@@ -1,14 +1,14 @@
 #pragma once
 #include <string>
+#include "IStudyInfo.h"
 
-class IFilmingJobMetaData
+class IFilmingJobMetaData : public IStudyInfo
 {
 public:
 	virtual ~IFilmingJobMetaData()	{}
 
 	virtual std::string GetJobCreateTime() = 0;
-	virtual std::string GetPatientID() = 0;
-	virtual std::string GetPatientName() = 0;
+
 };
 
 class NullFilmingJobMetaData : public IFilmingJobMetaData

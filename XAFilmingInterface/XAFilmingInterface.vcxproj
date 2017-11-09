@@ -19,6 +19,7 @@
     <ClInclude Include="IPrintResultSubject.h" />
     <ClInclude Include="IPriority.h" />
     <ClInclude Include="IProgress.h" />
+    <ClInclude Include="IStudyInfo.h" />
     <ClInclude Include="ITimeEstimate.h" />
     <ClInclude Include="IXADicomPrinterProperty.h" />
     <ClInclude Include="IXAFilmingProxy.h" />
