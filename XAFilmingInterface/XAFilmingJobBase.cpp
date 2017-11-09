@@ -4,11 +4,17 @@
 
 XAFilmingJobBase::XAFilmingJobBase(XAFilmingJobStatusBase* status) : _status(status)
 {
+	_metaData = new NullFilmingJobMetaData();
 }
 
 XAFilmingJobStatusBase* XAFilmingJobBase::GetJobStatus()
 {
     return _status;
+}
+
+IFilmingJobMetaData* XAFilmingJobBase::GetMetaData()
+{
+	return _metaData;
 }
 
 void XAFilmingJobBase::SetJobStatus(XAFilmingJobStatusBase* jobStatus)
@@ -23,6 +29,7 @@ void XAFilmingJobBase::SetJobStatus(XAFilmingJobStatusBase* jobStatus)
 XAFilmingJobBase::~XAFilmingJobBase()
 {
     SAFE_DELETE_ELEMENT(_status);
+	SAFE_DELETE_ELEMENT(_metaData);
 }
 
 void XAFilmingJobBase::Complete()

@@ -5,6 +5,7 @@
 #include "IProgress.h"
 #include "IPriority.h"
 #include "ITimeEstimate.h"
+#include "IFilmingJobMetaData.h"
 
 class XA_FilmingInterface_Export XAFilmingJobBase : public IXAFilmingProxy, public IProgress, public IPriority, public ITimeEstimate
 {
@@ -12,6 +13,7 @@ public:
     XAFilmingJobBase(XAFilmingJobStatusBase* status);
     virtual int GetJobID() = 0;
     virtual XAFilmingJobStatusBase* GetJobStatus();
+	virtual IFilmingJobMetaData* GetMetaData();
     virtual void SetJobStatus(XAFilmingJobStatusBase* jobStatus);
     virtual ~XAFilmingJobBase();
 
@@ -30,4 +32,5 @@ public:
 
 private:
     XAFilmingJobStatusBase* _status;
+	IFilmingJobMetaData* _metaData;
 };
