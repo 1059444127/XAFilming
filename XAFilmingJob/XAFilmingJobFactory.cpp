@@ -4,6 +4,8 @@
 #include <XAFilmingLogger.h>
 #include "XADicom.h"
 #include <DicomDataHeaderPacketHeader.h>
+#include "FilmingJob.h"
+#include "FilmingJobMetaData.h"
 
 using namespace std;
 
@@ -37,7 +39,7 @@ XAFilmingJobBase* XAFilmingJobFactory::CreateFilmingJob(std::string serializedDa
 	}
 
 	vector<string> filePaths;  filePaths.push_back(dicomFilePath);
-	return CreateFilmingJob(filePaths);
+	return new FilmingJob(++_maxJobID, filePaths, new FilmingJobMetaData(dicom_data_header_packet_header));
 }
 
 XAFilmingJobBase* XAFilmingJobFactory::BuildFilmingJob(std::string serializedDataheader)
