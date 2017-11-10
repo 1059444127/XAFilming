@@ -53,8 +53,12 @@ void Translate(XAFilmingJobBase* pJob, McsfJobManagerInfo& job_manager_info)
 	job_manager_info.SetFinishedFiles(pJob->GetFinished());
 	job_manager_info.SetJobitemstatus(ConvertFrom(pJob->GetJobStatus()->GetStatusPriority()));	
 
-	job_manager_info.SetPatientid("SamplePatientID");
-	job_manager_info.SetPatientname("SamplePatientName");
+	auto jobMetaData = pJob->GetMetaData();
+	job_manager_info.SetPatientid(jobMetaData->GetPatientID());
+	job_manager_info.SetPatientname(jobMetaData->GetPatientName());
+	job_manager_info.SetDatetime(jobMetaData->GetJobCreateTime());
+	
+	job_manager_info.SetDestinationname(XA_DICOM_PRINTER_NAME);
 }
 
 string SerializeFrom(const vector<XAFilmingJobBase*>& jobs)
