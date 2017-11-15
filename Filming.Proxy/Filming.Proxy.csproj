@@ -35,19 +35,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ReachFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FilmingProxy.cs" />
+    <Compile Include="PrintProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <Reference Include="UIH.XA.XBoot">
-      <Private>False</Private>
-      <HintPath>..\..\..\..\UIH\bin\UIH.XA.XBoot.dll</HintPath>
-    </Reference>
     <Reference Include="UIH.XA.Core">
       <Private>False</Private>
       <HintPath>..\..\..\..\UIH\bin\UIH.XA.Core.dll</HintPath>
@@ -59,18 +62,6 @@
     <Reference Include="UIH.Mcsf.Database.DicomUIDManager">
       <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Database.DicomUIDManager.dll</HintPath>
       <Private>False</Private>
-    </Reference>    
-    <Reference Include="UIH.Mcsf.Core.ContaineeBase">
-      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.ContaineeBase.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UIH.Mcsf.Core.NetBase">
-      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.NetBase.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UIH.Mcsf.Core.SystemEnvironmentConfig">
-      <HintPath>..\..\..\..\UIH\bin\UIH.Mcsf.Core.SystemEnvironmentConfig.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="UIH.XA.GlobalParameter">
       <Private>False</Private>
@@ -78,10 +69,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <Reference Include="UIH.XA.XBoot">
-      <Private>False</Private>
-      <HintPath>..\..\..\..\UIH\bin_debug\UIH.XA.XBoot.dll</HintPath>
-    </Reference>
     <Reference Include="UIH.XA.Core">
       <Private>False</Private>
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.XA.Core.dll</HintPath>
@@ -92,18 +79,6 @@
     </Reference>
     <Reference Include="UIH.Mcsf.Database.DicomUIDManager">
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Database.DicomUIDManager.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UIH.Mcsf.Core.ContaineeBase">
-      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.ContaineeBase.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UIH.Mcsf.Core.NetBase">
-      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.NetBase.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UIH.Mcsf.Core.SystemEnvironmentConfig">
-      <HintPath>..\..\..\..\UIH\bin_debug\UIH.Mcsf.Core.SystemEnvironmentConfig.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UIH.XA.GlobalParameter">
