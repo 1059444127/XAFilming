@@ -3,7 +3,6 @@
 
 std::string XANow()
 {
-	//TODO: Get Now using boost
     std::string strTime = boost::posix_time::to_iso_string(boost::posix_time::second_clock::local_time());    
         
     // 这时候strTime里存放时间的格式是YYYYMMDDTHHMMSS，日期和时间用大写字母T隔开了    

@@ -6,5 +6,6 @@ namespace UIH.XA.Filming.Interface
     {
         void Print(params string[] paths);
         void Print(params DicomAttributeCollection[] dataHeaders);
+        void Print(DicomAttributeCollection dataHeader);
     }
 }

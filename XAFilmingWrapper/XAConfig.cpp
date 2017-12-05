@@ -26,7 +26,6 @@ XAConfig* XAConfig::Instance()
 
 IXADicomPrinterProperty* XAConfig::GetPrinterConfig()
 {
-	//TODO: lock and create PrintConfig
 	if(nullptr == _pPrinterConfig)
 	{
 		boost::mutex::scoped_lock(_printerConfigMutex);

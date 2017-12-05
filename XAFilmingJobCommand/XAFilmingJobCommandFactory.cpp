@@ -13,6 +13,7 @@
 #include "../../../XParameters/Contract/CommunicationCommandID.h"
 #include "FilmDicomFileCommand.h"
 #include "FilmDicomDataheaderCommand.h"
+#include "FilmDicomDataheadersCommand.h"
 
 XAFilmingJobCommandFactory* XAFilmingJobCommandFactory::_pInstance = new XAFilmingJobCommandFactory();
 
@@ -62,4 +63,5 @@ XAFilmingJobCommandFactory::XAFilmingJobCommandFactory():_filmingCommandDictiona
 
 	_filmingCommandDictionary[COMMUNICATION_COMMAND_ID::COMMAND_ID_FILMING] = new FilmDicomFileCommand();
 	_filmingCommandDictionary[COMMUNICATION_COMMAND_ID::COMMAND_ID_FILMING_DATAHEADER] = new FilmDicomDataheaderCommand();
+	_filmingCommandDictionary[COMMUNICATION_COMMAND_ID::COMMAND_ID_FILMING_DATAHEADERS] = new FilmDicomDataheadersCommand();
 }

@@ -18,6 +18,7 @@ std::vector<int> GetXACommandIDs()
 
 	commandIDs.push_back(COMMAND_ID_FILMING);
 	commandIDs.push_back(COMMAND_ID_FILMING_DATAHEADER);
+	commandIDs.push_back(COMMAND_ID_FILMING_DATAHEADERS);
 
 	return commandIDs;
 }

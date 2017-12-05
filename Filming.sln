@@ -145,6 +145,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilming", "XAFilming\XAFi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XAFilmingWrapper_UT", "XAFilmingWrapper_UT\XAFilmingWrapper_UT.vcxproj", "{5BD35683-A51F-4014-9CE9-31688C3DB735}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Design", "Design", "{A2928A97-D51C-4201-8C52-EF9A2CD0037D}"
+	ProjectSection(SolutionItems) = preProject
+		XAFilmingService.eap = XAFilmingService.eap
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 32

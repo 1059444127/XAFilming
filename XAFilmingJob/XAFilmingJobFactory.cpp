@@ -6,6 +6,8 @@
 #include <DicomDataHeaderPacketHeader.h>
 #include "FilmingJob.h"
 #include "FilmingJobMetaData.h"
+#include "../../../XParameters/Contract/CommunicationCommandID.h"
+#include "DataPacketHeader.h"
 
 using namespace std;
 
@@ -42,20 +44,44 @@ XAFilmingJobBase* XAFilmingJobFactory::CreateFilmingJob(std::string serializedDa
 	return new FilmingJob(++_maxJobID, filePaths, new FilmingJobMetaData(dicom_data_header_packet_header));
 }
 
-XAFilmingJobBase* XAFilmingJobFactory::BuildFilmingJob(std::string serializedDataheader)
+bool XAFilmingJobFactory::SplitSerializedDataheaderPacket(const string serializedParameter, string& packetHeader, string& serializedDataheader)
 {
-	string dicomFilePath;
-	DicomDataHeaderPacketHeader dicom_data_header_packet_header;
-
-	if(!SaveStringToDicomFile(serializedDataheader, dicomFilePath, dicom_data_header_packet_header))
+	auto packetHeaderIndex = serializedParameter.find(";");
+	if(packetHeaderIndex == serializedParameter.npos)
 	{
-		LOG_ERROR_XA_FILMING << "Failed to save serialized DataHeader to dicom file , printing failed" << LOG_END;
+		LOG_ERROR_XA_FILMING << "No packet header in serialziedParameter to build filming job" << LOG_END;
+		return false;
 	}
 
+	packetHeader = serializedParameter.substr(0, packetHeaderIndex);
+	serializedDataheader = serializedParameter.substr(packetHeaderIndex+1);
+	return true;
+}
 
-	//vector<string> filePaths;  filePaths.push_back(dicomFilePath);
-	//auto job = CreateFilmingJob(filePaths);
 
-	//return job;
+//TODO: change const string to const string&
+XAFilmingJobBase* XAFilmingJobFactory::BuildFilmingJob(const string serializedParameter)
+{
+	string packetHeader ;
+	string serializedDataheader;
+	if(SplitSerializedDataheaderPacket(serializedParameter, packetHeader, serializedDataheader))
+	{
+		LOG_ERROR_XA_FILMING << "Fail to split serialziedParameter to build filming job" << LOG_END;
+		return nullptr;
+	}
+
+	//DataPacketHeader data_packet_header;
+	//data_packet_header.DeserializeFrom(packetHeader);
+
+	DicomDataHeaderPacketHeader dicom_data_header_packet_header;
+	//dicom_data_header_packet_header.SetIndex(data_packet_header.index);
+	//dicom_data_header_packet_header.SetTotal(data_packet_header.total);
+
+	string dicomFilePath;
+	if(!SaveStringToDicomFile(serializedDataheader, dicomFilePath, dicom_data_header_packet_header))
+	{
+		LOG_ERROR_XA_FILMING << "Failed to save serialized DataHeader to dicom file" << LOG_END;
+	}
+
 	return nullptr;
 }

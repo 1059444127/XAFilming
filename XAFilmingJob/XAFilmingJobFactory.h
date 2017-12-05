@@ -18,6 +18,9 @@ private:
     static XAFilmingJobFactory* _instance;
     static int _maxJobID;
     XAFilmingJobFactory() {};
+
+	bool SplitSerializedDataheaderPacket(const std::string serializedParameter, std::string& packetHeader, std::string& serializedDataheader);
+
     XA_FILMING_DISALLOW_COPY_AND_ASSIGN(XAFilmingJobFactory)
 };
 

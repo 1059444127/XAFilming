@@ -21,15 +21,35 @@ namespace UIH.XA.Filming.Proxy
 
             try
             {
-                var printRect = GetPrintRect(new Size(visual.ActualWidth, visual.ActualHeight));
+                double margin = 80;
+                var printRect = GetPrintRect(new Size(visual.ActualWidth, visual.ActualHeight), margin);
+
+                var panel = visual as Panel;
+                Brush originalBackground = null;
+                if (null != panel)
+                {
+                    originalBackground = panel.Background;
+                    panel.Background = new SolidColorBrush(Color.FromRgb(28,41,48));
+                }
+                
                 var visualBrush = new VisualBrush(visual);
+
                 var drawingVisual = new DrawingVisual();
                 using (DrawingContext context = drawingVisual.RenderOpen())
                 {
-                    context.DrawRectangle(visualBrush, new Pen(visualBrush, 0), printRect); 
+                    context.DrawRectangle(visualBrush, null, printRect); 
                 }
 
-                _printDialog.PrintVisual(drawingVisual, DateTime.Now.ToLongTimeString());
+                double scale = GetScale(printRect.Size, margin);
+                drawingVisual.Transform = new ScaleTransform(scale, scale);
+
+;                _printDialog.PrintVisual(drawingVisual, DateTime.Now.ToLongTimeString());
+
+                if (null != panel)
+                {
+                    panel.Background = originalBackground;
+                }
+
                 this.LogDevInfo("End to Print");
             }
             catch (Exception e)
@@ -39,13 +59,19 @@ namespace UIH.XA.Filming.Proxy
         }
 
 
-        private Rect GetPrintRect(Size printObjectSize)
+        private Rect GetPrintRect(Size printObjectSize, double margin)
         {
             var printDestinationSize = new Size(_printDialog.PrintableAreaWidth, _printDialog.PrintableAreaHeight);
             var printSize = CalculatePrintSize(printObjectSize, printDestinationSize);
-            var printPoint = new Point((printDestinationSize.Width - printSize.Width) / 2,
-                (printDestinationSize.Height - printSize.Height) / 2);
+
+            var printPoint = new Point(margin, margin);
             return new Rect(printPoint, printSize);
+        }
+
+        private double GetScale(Size printSize,double margin)
+        {
+            return Math.Min(_printDialog.PrintableAreaWidth / (printSize.Width + margin * 2),
+                _printDialog.PrintableAreaHeight / (printSize.Height + margin * 2));
         }
 
 

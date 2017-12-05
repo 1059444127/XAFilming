@@ -19,6 +19,7 @@ char * rand_str(char *str, const int len)
 
 string CreateDicomFilePath()
 {
-	char fileName[20];
+	char fileName[21];
+	fileName[20] = 0;
 	return string(XA_FILMING_TEMP_DIRECTORY) + rand_str(fileName, 20);
 }
