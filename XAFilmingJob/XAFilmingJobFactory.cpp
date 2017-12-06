@@ -46,7 +46,7 @@ XAFilmingJobBase* XAFilmingJobFactory::CreateFilmingJob(std::string serializedDa
 
 bool XAFilmingJobFactory::SplitSerializedDataheaderPacket(const string serializedParameter, string& packetHeader, string& serializedDataheader)
 {
-	auto packetHeaderIndex = serializedParameter.find(";");
+	auto packetHeaderIndex = serializedParameter.find(PARAMETER_LIST_SEPARATOR+PARAMETER_LIST_SEPARATOR);
 	if(packetHeaderIndex == serializedParameter.npos)
 	{
 		LOG_ERROR_XA_FILMING << "No packet header in serialziedParameter to build filming job" << LOG_END;
@@ -64,18 +64,18 @@ XAFilmingJobBase* XAFilmingJobFactory::BuildFilmingJob(const string serializedPa
 {
 	string packetHeader ;
 	string serializedDataheader;
-	if(SplitSerializedDataheaderPacket(serializedParameter, packetHeader, serializedDataheader))
+	if(!SplitSerializedDataheaderPacket(serializedParameter, packetHeader, serializedDataheader))
 	{
 		LOG_ERROR_XA_FILMING << "Fail to split serialziedParameter to build filming job" << LOG_END;
 		return nullptr;
 	}
 
-	//DataPacketHeader data_packet_header;
-	//data_packet_header.DeserializeFrom(packetHeader);
+	DataPacketHeader data_packet_header;
+	data_packet_header.DeserializeFrom(packetHeader);
 
 	DicomDataHeaderPacketHeader dicom_data_header_packet_header;
-	//dicom_data_header_packet_header.SetIndex(data_packet_header.index);
-	//dicom_data_header_packet_header.SetTotal(data_packet_header.total);
+	dicom_data_header_packet_header.SetIndex(data_packet_header.index);
+	dicom_data_header_packet_header.SetTotal(data_packet_header.total);
 
 	string dicomFilePath;
 	if(!SaveStringToDicomFile(serializedDataheader, dicomFilePath, dicom_data_header_packet_header))
