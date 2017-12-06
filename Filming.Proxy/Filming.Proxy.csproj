@@ -90,6 +90,7 @@
     <ProjectReference Include="..\Filming.Interface\Filming.Interface.csproj">
       <Project>{56934071-E7D5-4208-BBDA-83A9B03A76FD}</Project>
       <Name>Filming.Interface</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

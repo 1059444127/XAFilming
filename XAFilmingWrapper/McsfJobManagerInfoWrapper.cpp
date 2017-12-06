@@ -6,7 +6,7 @@
 #include <McsfNetBase/mcsf_netbase_command_context.h>
 #include <McsfNetBase/mcsf_netbase_icommunication_proxy.h>
 #include <XAFilmingConst.h>
-#include <XAConfig.h>
+#include "XAConfig.h"
 
 using namespace Mcsf::JobManager;
 using namespace MCSF_NAMESPACE_FOR_XA;
@@ -62,6 +62,7 @@ void Translate(XAFilmingJobBase* pJob, McsfJobManagerInfo& job_manager_info)
 	auto printer = XAConfig::Instance()->GetPrinterConfig();
 	job_manager_info.SetDestinationname(printer->GetAE());
 	//TODO: Ê§°ÜÐÅÏ¢
+	//job_manager_info.SetDetailInfo(jobMetaData->GetJobCreateTime());
 }
 
 string SerializeFrom(const vector<XAFilmingJobBase*>& jobs)

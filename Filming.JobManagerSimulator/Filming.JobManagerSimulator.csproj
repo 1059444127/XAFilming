@@ -118,6 +118,7 @@
     <ProjectReference Include="..\Filming.ViewMock\Filming.ViewMock.csproj">
       <Project>{97B47257-C9B1-49E2-B067-3A2F78C8396D}</Project>
       <Name>Filming.ViewMock</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

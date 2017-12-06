@@ -125,12 +125,6 @@
       <HintPath>..\..\..\..\UIH\bin_debug\UIH.XA.GlobalParameter.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Filming.Interface\Filming.Interface.csproj">
-      <Project>{56934071-E7D5-4208-BBDA-83A9B03A76FD}</Project>
-      <Name>Filming.Interface</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
