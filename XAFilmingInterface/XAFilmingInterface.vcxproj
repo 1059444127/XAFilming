@@ -15,6 +15,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DicomDataHeaderPacketHeader.h" />
+    <ClInclude Include="IFilmingJobBuilder.h" />
     <ClInclude Include="IFilmingJobMetaData.h" />
     <ClInclude Include="IPacketHeader.h" />
     <ClInclude Include="IPrintCallbackHandler.h" />

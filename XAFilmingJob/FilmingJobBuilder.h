@@ -1,17 +1,27 @@
 #pragma once
-#include "FilmingJobMetaData.h"
 #include <vector>
 #include <XAFilmingLogger.h>
+#include "IFilmingJobBuilder.h"
+#include "XABoost.h"
 
-class FilmingJobBuilder : public FilmingJobMetaData
+class FilmingJobBuilder : public IFilmingJobBuilder
 {
 public:
 	FilmingJobBuilder(const IStudyInfo& study_info, int expectedFileCount)
-		: FilmingJobMetaData(study_info), _dicomFiles(), _expectedFileCount(expectedFileCount), _currentFileCount(0), _isComplete(false)
+		: _dicomFiles(), _expectedFileCount(expectedFileCount), _currentFileCount(0), _isComplete(false)
 	{
+		_patientID = study_info.GetPatientID();
+		_patientName = study_info.GetPatientName();
+		_createTime = XANow();
 	}
 
-	void AddDicomFile(const std::string dicomFilePath)
+	virtual std::string GetPatientID() const {return _patientID;}
+
+	virtual std::string GetPatientName() const  {return _patientName;}
+
+	virtual std::string GetJobCreateTime() const {return _createTime;}
+
+	virtual void AddDicomFile(const std::string dicomFilePath)
 	{
 		LOG_INFO_XA_FILMING << "Add dicom File " << dicomFilePath << LOG_END;
 		_dicomFiles.push_back(dicomFilePath);
@@ -25,12 +35,12 @@ public:
 		
 	}
 
-	bool IsComplete() const
+	virtual bool IsComplete() const
 	{
 		return _isComplete;
 	}
 
-	std::vector<std::string> GetDicomFiles()
+	virtual std::vector<std::string> GetDicomFiles()
 	{
 		return _dicomFiles;
 	}
@@ -40,4 +50,7 @@ private:
 	int _currentFileCount;
 	bool _isComplete;
 	const int _expectedFileCount;
+	std::string _patientID;
+	std::string _patientName;
+	std::string _createTime;
 };

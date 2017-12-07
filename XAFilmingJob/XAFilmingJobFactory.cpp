@@ -8,6 +8,7 @@
 #include "FilmingJobMetaData.h"
 #include "../../../XParameters/Contract/CommunicationCommandID.h"
 #include "DataPacketHeader.h"
+#include "FilmingJobBuilder.h"
 
 using namespace std;
 

@@ -4,7 +4,7 @@
 #include "XAFilmingMacro.h"
 #include <vector>
 #include <map>
-#include "FilmingJobBuilder.h"
+#include "IFilmingJobBuilder.h"
 
 class XA_FilmingJob_Export XAFilmingJobFactory
 {
@@ -20,7 +20,7 @@ private:
     static XAFilmingJobFactory* _instance;
     static int _maxJobID;
 
-	std::map<std::string, FilmingJobBuilder*> _jobBuilders;
+	std::map<std::string, IFilmingJobBuilder*> _jobBuilders;
 
     XAFilmingJobFactory() {};
 
