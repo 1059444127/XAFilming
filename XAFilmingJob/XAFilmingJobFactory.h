@@ -3,6 +3,7 @@
 #include "XAFilmingJobBase.h"
 #include "XAFilmingMacro.h"
 #include <vector>
+#include <map>
 
 class XA_FilmingJob_Export XAFilmingJobFactory
 {
@@ -17,6 +18,9 @@ public:
 private:
     static XAFilmingJobFactory* _instance;
     static int _maxJobID;
+
+	std::map<std::string, std::vector<IFilmingJobMetaData>> _pipeLineJobs;
+
     XAFilmingJobFactory() {};
 
 	bool SplitSerializedDataheaderPacket(const std::string& serializedParameter, std::string& packetHeader, std::string& serializedDataheader);
