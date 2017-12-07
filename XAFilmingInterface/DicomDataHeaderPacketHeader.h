@@ -5,10 +5,10 @@
 class DicomDataHeaderPacketHeader : public IStudyInfo, public IPacketHeader
 {
 public:
-	virtual std::string GetPatientID() {return _patientID;}
-	virtual std::string GetPatientName() {return _patientName;}
-	virtual int GetIndex() {return _index;}
-	virtual int GetTotal() {return _total;}
+	virtual std::string GetPatientID() const {return _patientID;}
+	virtual std::string GetPatientName() const {return _patientName;}
+	virtual int GetIndex() const {return _index;}
+	virtual int GetTotal() const {return _total;}
 
 	void SetPatientID(const std::string& patientID) {_patientID=patientID;}
 	void SetPatientName(const std::string patientName) {_patientName=patientName;}

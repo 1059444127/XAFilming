@@ -4,6 +4,7 @@
 #include "XAFilmingMacro.h"
 #include <vector>
 #include <map>
+#include "FilmingJobBuilder.h"
 
 class XA_FilmingJob_Export XAFilmingJobFactory
 {
@@ -13,13 +14,13 @@ public:
     XAFilmingJobBase* CreateFilmingJob(const std::vector<std::string>& dicomFiles);
 	XAFilmingJobBase* CreateFilmingJob(const std::string& serializedDataheader);
 	XAFilmingJobBase* BuildFilmingJob(const std::string& serializedDataheader);
-    ~XAFilmingJobFactory() {SAFE_DELETE_ELEMENT(_instance);}
+	~XAFilmingJobFactory();
 
 private:
     static XAFilmingJobFactory* _instance;
     static int _maxJobID;
 
-	std::map<std::string, std::vector<IFilmingJobMetaData>> _pipeLineJobs;
+	std::map<std::string, FilmingJobBuilder*> _jobBuilders;
 
     XAFilmingJobFactory() {};
 

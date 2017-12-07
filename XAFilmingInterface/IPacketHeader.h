@@ -4,6 +4,6 @@ class IPacketHeader
 public:
 	virtual ~IPacketHeader(){}
 
-	virtual int GetIndex() = 0;
-	virtual int GetTotal() = 0;
+	virtual int GetIndex() const = 0;
+	virtual int GetTotal() const = 0;
 };

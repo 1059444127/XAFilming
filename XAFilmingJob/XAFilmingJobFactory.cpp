@@ -59,7 +59,6 @@ bool XAFilmingJobFactory::SplitSerializedDataheaderPacket(const string& serializ
 }
 
 
-//TODO: change const string to const string&
 XAFilmingJobBase* XAFilmingJobFactory::BuildFilmingJob(const string& serializedParameter)
 {
 	string packetHeader ;
@@ -81,7 +80,30 @@ XAFilmingJobBase* XAFilmingJobFactory::BuildFilmingJob(const string& serializedP
 	if(!SaveStringToDicomFile(serializedDataheader, dicomFilePath, dicom_data_header_packet_header))
 	{
 		LOG_ERROR_XA_FILMING << "Failed to save serialized DataHeader to dicom file" << LOG_END;
+		return nullptr;
+	}
+
+	auto packageUid = data_packet_header.uid;
+	if(_jobBuilders.find(packageUid) == _jobBuilders.end())
+	{
+		_jobBuilders[packageUid] = new FilmingJobBuilder(dicom_data_header_packet_header, data_packet_header.total);
+	}
+	auto jobBuilder = _jobBuilders[packageUid];
+	jobBuilder->AddDicomFile(dicomFilePath);
+
+	if(jobBuilder->IsComplete())
+	{
+		return new FilmingJob(++_maxJobID, jobBuilder->GetDicomFiles(), jobBuilder);
 	}
 
 	return nullptr;
+}
+
+XAFilmingJobFactory::~XAFilmingJobFactory()
+{
+	for(auto iter = _jobBuilders.begin(); iter!= _jobBuilders.end(); iter++)
+	{
+		SAFE_DELETE_ELEMENT(iter->second);
+	}
+	SAFE_DELETE_ELEMENT(_instance);
 }

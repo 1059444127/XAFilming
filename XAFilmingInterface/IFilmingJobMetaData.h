@@ -7,7 +7,7 @@ class IFilmingJobMetaData : public IStudyInfo
 public:
 	virtual ~IFilmingJobMetaData()	{}
 
-	virtual std::string GetJobCreateTime() = 0;
+	virtual std::string GetJobCreateTime() const = 0;
 
 };
 
@@ -15,7 +15,7 @@ class NullFilmingJobMetaData : public IFilmingJobMetaData
 {
 public:
 	virtual ~NullFilmingJobMetaData(){}
-	virtual std::string GetJobCreateTime() {return std::string();}
-	virtual std::string GetPatientID() {return std::string();};
-	virtual std::string GetPatientName() {return std::string();}
+	virtual std::string GetJobCreateTime() const {return std::string();}
+	virtual std::string GetPatientID() const {return std::string();};
+	virtual std::string GetPatientName() const {return std::string();}
 };

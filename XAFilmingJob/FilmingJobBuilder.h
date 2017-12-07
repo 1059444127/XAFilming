@@ -3,10 +3,10 @@
 #include <vector>
 #include <XAFilmingLogger.h>
 
-class BuildingFilmingJob : FilmingJobMetaData
+class FilmingJobBuilder : public FilmingJobMetaData
 {
 public:
-	BuildingFilmingJob(IStudyInfo& study_info, int expectedFileCount)
+	FilmingJobBuilder(const IStudyInfo& study_info, int expectedFileCount)
 		: FilmingJobMetaData(study_info), _dicomFiles(), _expectedFileCount(expectedFileCount), _currentFileCount(0), _isComplete(false)
 	{
 	}

@@ -85,7 +85,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="BuildingFilmingJob.h" />
+    <ClInclude Include="FilmingJobBuilder.h" />
     <ClInclude Include="DataPacketHeader.h" />
     <ClInclude Include="BatchPrintJob.h" />
     <ClInclude Include="FilmingJob.h" />
