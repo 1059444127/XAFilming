@@ -112,7 +112,7 @@ void serializeStrings(const vector<string>& stringVector, string& serializedStri
 	join(stringVector, PARAMETER_LIST_SEPARATOR, serializedString);
 }
 
-void deserializeStrings(const string serializedString, vector<string>& splitStringVector)
+void deserializeStrings(const string& serializedString, vector<string>& splitStringVector)
 {
 	LOG_INFO_XA_FILMING << "Deserializing [" << serializedString << "]" <<  LOG_END;
 	split(serializedString, PARAMETER_LIST_SEPARATOR, splitStringVector);

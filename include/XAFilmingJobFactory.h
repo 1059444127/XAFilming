@@ -9,9 +9,9 @@ class XA_FilmingJob_Export XAFilmingJobFactory
 public:
     static XAFilmingJobFactory* Instance();
     XAFilmingJobBase* CreateJob();
-    XAFilmingJobBase* CreateFilmingJob(std::vector<std::string> dicomFiles);
-	XAFilmingJobBase* CreateFilmingJob(std::string serializedDataheader);
-	XAFilmingJobBase* BuildFilmingJob(std::string serializedDataheader);
+    XAFilmingJobBase* CreateFilmingJob(const std::vector<std::string>& dicomFiles);
+	XAFilmingJobBase* CreateFilmingJob(const std::string& serializedDataheader);
+	XAFilmingJobBase* BuildFilmingJob(const std::string& serializedDataheader);
     ~XAFilmingJobFactory() {SAFE_DELETE_ELEMENT(_instance);}
 
 private:
@@ -19,7 +19,7 @@ private:
     static int _maxJobID;
     XAFilmingJobFactory() {};
 
-	bool SplitSerializedDataheaderPacket(const std::string serializedParameter, std::string& packetHeader, std::string& serializedDataheader);
+	bool SplitSerializedDataheaderPacket(const std::string& serializedParameter, std::string& packetHeader, std::string& serializedDataheader);
 
     XA_FILMING_DISALLOW_COPY_AND_ASSIGN(XAFilmingJobFactory)
 };

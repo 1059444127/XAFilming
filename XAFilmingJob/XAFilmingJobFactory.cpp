@@ -24,12 +24,12 @@ XAFilmingJobBase* XAFilmingJobFactory::CreateJob()
     return new XAJob(++_maxJobID);
 }
 
-XAFilmingJobBase* XAFilmingJobFactory::CreateFilmingJob(vector<string> dicomFiles)
+XAFilmingJobBase* XAFilmingJobFactory::CreateFilmingJob(const vector<string>& dicomFiles)
 {
     return new BatchPrintJob(++_maxJobID, dicomFiles);
 }
 
-XAFilmingJobBase* XAFilmingJobFactory::CreateFilmingJob(std::string serializedDataheader)
+XAFilmingJobBase* XAFilmingJobFactory::CreateFilmingJob(const std::string& serializedDataheader)
 {
 	string dicomFilePath;
 	DicomDataHeaderPacketHeader dicom_data_header_packet_header;
@@ -44,7 +44,7 @@ XAFilmingJobBase* XAFilmingJobFactory::CreateFilmingJob(std::string serializedDa
 	return new FilmingJob(++_maxJobID, filePaths, new FilmingJobMetaData(dicom_data_header_packet_header));
 }
 
-bool XAFilmingJobFactory::SplitSerializedDataheaderPacket(const string serializedParameter, string& packetHeader, string& serializedDataheader)
+bool XAFilmingJobFactory::SplitSerializedDataheaderPacket(const string& serializedParameter, string& packetHeader, string& serializedDataheader)
 {
 	auto packetHeaderIndex = serializedParameter.find(PARAMETER_LIST_SEPARATOR+PARAMETER_LIST_SEPARATOR);
 	if(packetHeaderIndex == serializedParameter.npos)
@@ -60,7 +60,7 @@ bool XAFilmingJobFactory::SplitSerializedDataheaderPacket(const string serialize
 
 
 //TODO: change const string to const string&
-XAFilmingJobBase* XAFilmingJobFactory::BuildFilmingJob(const string serializedParameter)
+XAFilmingJobBase* XAFilmingJobFactory::BuildFilmingJob(const string& serializedParameter)
 {
 	string packetHeader ;
 	string serializedDataheader;
