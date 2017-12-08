@@ -47,7 +47,8 @@ XAFilmingJobBase* XAFilmingJobFactory::CreateFilmingJob(const std::string& seria
 
 bool XAFilmingJobFactory::SplitSerializedDataheaderPacket(const string& serializedParameter, string& packetHeader, string& serializedDataheader)
 {
-	auto packetHeaderIndex = serializedParameter.find(PARAMETER_LIST_SEPARATOR+PARAMETER_LIST_SEPARATOR);
+	string separator = PARAMETER_LIST_SEPARATOR+PARAMETER_LIST_SEPARATOR;
+	auto packetHeaderIndex = serializedParameter.find(separator);
 	if(packetHeaderIndex == serializedParameter.npos)
 	{
 		LOG_ERROR_XA_FILMING << "No packet header in serialziedParameter to build filming job" << LOG_END;
@@ -55,7 +56,7 @@ bool XAFilmingJobFactory::SplitSerializedDataheaderPacket(const string& serializ
 	}
 
 	packetHeader = serializedParameter.substr(0, packetHeaderIndex);
-	serializedDataheader = serializedParameter.substr(packetHeaderIndex+1);
+	serializedDataheader = serializedParameter.substr(packetHeaderIndex+separator.size());
 	return true;
 }
 

@@ -73,7 +73,7 @@ namespace UIH.XA.Filming.Proxy
                         dataHeaderIndex.ToString(), dataHeaderCount.ToString());
                     var packetHeaderBytes = Encoding.UTF8.GetBytes(string.Format("{0}{1}{2}", packetHeader, CommunicationCommandID.ParameterListSeparator, CommunicationCommandID.ParameterListSeparator));
 
-                    dataHeader.InsertElement(PacketHeaderTag, packetHeaderBytes);
+                    //dataHeader.InsertElement(PacketHeaderTag, packetHeaderBytes);
                     //dataHeader.InsertElement((uint)Tag.SeriesInstanceUid, jobID);
                     //dataHeader.InsertElement((uint)Tag.InstanceNumber, dataHeaderIndex.ToString());
                     //dataHeader.InsertElement(PacketHeaderTag, dataHeaderCount.ToString());
