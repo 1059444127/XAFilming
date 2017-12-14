@@ -15,6 +15,7 @@ public:
     virtual void Print(const std::vector<std::string>& files);
 
 	virtual void Register(IPrintResultObserver* pObserver);
+	virtual void UpdatePrintStatus(const IFilmingJobMetaData* filmingJobMetaData);
 private:
 	IPrintCallbackHandler* _pCallbackHandler;
 	MCSF_NAMESPACE_FOR_XA::ICommunicationProxy* _pProxy;

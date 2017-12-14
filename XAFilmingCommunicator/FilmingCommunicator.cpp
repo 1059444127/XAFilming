@@ -32,3 +32,8 @@ void FilmingCommunicator::Register(IPrintResultObserver* pObserver)
 {
 	_pCallbackHandler->Register(pObserver);
 }
+
+void FilmingCommunicator::UpdatePrintStatus(const IFilmingJobMetaData* filmingJobMetaData)
+{
+	
+}

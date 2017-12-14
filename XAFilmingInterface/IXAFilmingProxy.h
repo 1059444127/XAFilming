@@ -14,6 +14,11 @@ public:
 		assert(nullptr != _pFilming);
 		_pFilming->Print(filePaths);
 	}
+
+	virtual void UpdatePrintStatus(const IFilmingJobMetaData* filmingJobMetaData)
+	{
+		_pFilming->UpdatePrintStatus(filmingJobMetaData);
+	}
 private:
 	IXAFilming* _pFilming;
 };

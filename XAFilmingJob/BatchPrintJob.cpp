@@ -24,6 +24,9 @@ void BatchPrintJob::Complete()
     else 
 	{
 		_iFinished = GetTotal();
+
+		UpdatePrintStatus(GetMetaData());
+
 		XAJob::Complete();
 	}
 
