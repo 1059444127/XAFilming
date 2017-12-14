@@ -41,6 +41,11 @@ void Convert(IDataHeaderElementMap* data_header_element_map, DicomDataHeaderPack
 	auto total = GetStringByTagFromDataHeader(data_header_element_map, XA_DICOM_DATAHEADER_PACKET_HEADER_TAG);
 	dicom_data_header_packet_header.SetTotal(string_to_int(total));
 	
+	auto studyInstanceUid = GetStringByTagFromDataHeader(data_header_element_map, kTagDcm_StudyInstanceUID);
+	dicom_data_header_packet_header.SetStudyInstanceUid(studyInstanceUid);
+
+	auto sopInstanceUid = GetStringByTagFromDataHeader(data_header_element_map, kTagDcm_SOPInstanceUID);
+	dicom_data_header_packet_header.SetSopInstanceUid(sopInstanceUid);
 
 	ConstUInt16Array constUint16Array;
 	ConstInt16Array constint16Array;

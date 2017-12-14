@@ -8,10 +8,11 @@ class FilmingJobBuilder : public IFilmingJobBuilder
 {
 public:
 	FilmingJobBuilder(const IStudyInfo& study_info, int expectedFileCount)
-		: _dicomFiles(), _expectedFileCount(expectedFileCount), _currentFileCount(0), _isComplete(false)
+		: _dicomFiles(), _expectedFileCount(expectedFileCount), _currentFileCount(0), _isComplete(false), _sopInstanceUids()
 	{
 		_patientID = study_info.GetPatientID();
 		_patientName = study_info.GetPatientName();
+		_studyInstanceUid = study_info.GetStudyInstanceUid();
 		_createTime = XANow();
 	}
 
@@ -40,11 +41,15 @@ public:
 		return _isComplete;
 	}
 
+	//TODO: const && * for GetDicomFiles
 	virtual std::vector<std::string> GetDicomFiles()
 	{
 		return _dicomFiles;
 	}
 
+	virtual std::string GetStudyInstanceUid() const {return _studyInstanceUid;}
+	virtual const std::set<const std::string>& GetSopInstanceUids() const {return _sopInstanceUids;}
+	virtual void AddSopInstanceUid(const std::string& sopInstanceUid) {_sopInstanceUids.insert(sopInstanceUid);}
 private:
 	std::vector<std::string> _dicomFiles;
 	int _currentFileCount;
@@ -53,4 +58,7 @@ private:
 	std::string _patientID;
 	std::string _patientName;
 	std::string _createTime;
+	std::set<const std::string> _sopInstanceUids;
+	std::string _studyInstanceUid;
+	
 };

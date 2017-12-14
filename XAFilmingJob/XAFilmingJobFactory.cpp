@@ -92,6 +92,7 @@ XAFilmingJobBase* XAFilmingJobFactory::BuildFilmingJob(const string& serializedP
 	}
 	auto jobBuilder = _jobBuilders[packageUid];
 	jobBuilder->AddDicomFile(dicomFilePath);
+	jobBuilder->AddSopInstanceUid(dicom_data_header_packet_header.GetSopInstanceUid());
 
 	if(jobBuilder->IsComplete())
 	{

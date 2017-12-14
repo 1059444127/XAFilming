@@ -6,4 +6,5 @@ class IStudyInfo
 public:
 	virtual std::string GetPatientID() const = 0;
 	virtual std::string GetPatientName() const = 0;
+	virtual std::string GetStudyInstanceUid() const = 0;
 };
