@@ -24,3 +24,7 @@ void FilmingCommunicatorMock::Print(const std::vector<std::string>& files)
 {
     files;
 }
+
+void FilmingCommunicatorMock::UpdatePrintStatus(const IFilmingJobMetaData* filmingJobMetaData)
+{
+}

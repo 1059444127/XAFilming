@@ -15,6 +15,7 @@ public:
 		_pFilming->Print(filePaths);
 	}
 
+	//TODO: Print set<sopInstanceUid>
 	virtual void UpdatePrintStatus(const IFilmingJobMetaData* filmingJobMetaData)
 	{
 		_pFilming->UpdatePrintStatus(filmingJobMetaData);

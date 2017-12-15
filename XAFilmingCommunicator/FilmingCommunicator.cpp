@@ -3,6 +3,7 @@
 #include "XAFilmingSerializer.h"
 #include <McsfJobManagerInfoWrapper.h>
 #include "XACommand.h"
+#include "XADB.h"
 #include "IPrintCallbackHandler.h"
 
 using namespace std;
@@ -35,5 +36,6 @@ void FilmingCommunicator::Register(IPrintResultObserver* pObserver)
 
 void FilmingCommunicator::UpdatePrintStatus(const IFilmingJobMetaData* filmingJobMetaData)
 {
-	
+	auto db = XADB::GetInstance(_pProxy);
+	db->UpdateImagesPrintStatus(filmingJobMetaData);
 }
