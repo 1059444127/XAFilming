@@ -30,7 +30,10 @@ public:
 
 	virtual int GetEstimatedTimeToFinish() {return 0;}
 
+	virtual const std::string& GetLastResult() {return _lastResult;}
+	virtual void SetLastResult(const std::string& result) {_lastResult = result;}
 private:
     XAFilmingJobStatusBase* _status;
 	IFilmingJobMetaData* _metaData;
+	std::string _lastResult;
 };
