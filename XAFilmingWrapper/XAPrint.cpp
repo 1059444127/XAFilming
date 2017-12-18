@@ -9,6 +9,7 @@
 #include "XAPrint.h"
 #include "XAFilmingConst.h"
 #include "XAConfig.h"
+#include "../XAFilmingCommon/XAFilmingSerializer.h"
 
 namespace MCSF_NAMESPACE_FOR_XA
 {
@@ -34,32 +35,42 @@ namespace MCSF_NAMESPACE_FOR_XA
 		pPrintJobObject->SetFileNameList(dicomFilePaths);
 	}
 
-	bool printBy(IFilmingLibary* pIFilmingLibary)
+	std::string printBy(IFilmingLibary* pIFilmingLibary)
 	{
 		try
 		{
-			LOG_INFO_XA_FILMING << (!pIFilmingLibary->ConnectPrinter() ? "Connect printer succeed" : "Connect printer failed") << LOG_END;
+			//TODO: Print Last Result MultiLanguage
+			if(!pIFilmingLibary->ConnectPrinter()) 
+			{
+				LOG_WARN_XA_FILMING << "Connect printer failed" << LOG_END;
+				return "UID_XACommon_Filming_Failed_Connect_Printer";
+			}
+
+			LOG_INFO_XA_FILMING << "Connect printer succeed" << LOG_END;
 
 			if(-1 == pIFilmingLibary->CreatePrintObject())
 			{
 				LOG_WARN_XA_FILMING<< "CreatePrintObject failure" << LOG_END;
+				return "UID_XACommon_Filming_Failed_Create_Print_Object";
 			}
 
 			if(!pIFilmingLibary->DoPrint())
 			{
 				LOG_INFO_XA_FILMING << "Print succeed" << LOG_END;
-				return true;
+				return bool_to_string(true);
 			}
-			LOG_INFO_XA_FILMING << "Print failed" << LOG_END;
+
+			LOG_ERROR_XA_FILMING<< "Print failed" << LOG_END;			
 		}
 		catch (...)
 		{
 			LOG_ERROR_XA_FILMING << "Exception" << LOG_END;
+			return "UID_XACommon_Filming_Exception";
 		}
-		return false;
+		return "UID_XACommon_Filming_Failed";
 	}
 
-	bool print(const vector<string>& dicomFilePaths)
+	std::string print(const vector<string>& dicomFilePaths)
 	{
 		LOG_INFO_XA_FILMING << "Begin to print" << LOG_END;
 		LOG_COLLECTION_XA_FILMING(dicomFilePaths)
