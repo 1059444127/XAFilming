@@ -61,8 +61,8 @@ void Translate(XAFilmingJobBase* pJob, McsfJobManagerInfo& job_manager_info)
 
 	auto printer = XAConfig::Instance()->GetPrinterConfig();
 	job_manager_info.SetDestinationname(printer->GetAE());
-	//TODO: Ê§°ÜÐÅÏ¢
-	//job_manager_info.SetDetailInfo(jobMetaData->GetJobCreateTime());
+
+	job_manager_info.SetDetailInfo(pJob->GetLastResult());
 }
 
 string SerializeFrom(const vector<XAFilmingJobBase*>& jobs)
