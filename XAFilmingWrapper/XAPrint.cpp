@@ -39,8 +39,7 @@ namespace MCSF_NAMESPACE_FOR_XA
 	{
 		try
 		{
-			//TODO: Print Last Result MultiLanguage
-			if(!pIFilmingLibary->ConnectPrinter()) 
+			if(pIFilmingLibary->ConnectPrinter()) 
 			{
 				LOG_WARN_XA_FILMING << "Connect printer failed" << LOG_END;
 				return "UID_XACommon_Filming_Failed_Connect_Printer";
