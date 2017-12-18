@@ -4,7 +4,6 @@
 #include "XAPrint.h"
 
 #include "XAFilmingServiceCommandHandler.h"
-#include <sstream>
 
 using namespace std;
 
@@ -21,10 +20,10 @@ int XAFilmingServiceCommandHandler::HandleCommand(const MCSF_NAMESPACE_FOR_XA::C
 	vector<string> stringVector;
 	deserializeStrings(serializedPaths, stringVector);
 	
-	bool printResult = MCSF_NAMESPACE_FOR_XA::print(stringVector);
+	string printResult = MCSF_NAMESPACE_FOR_XA::print(stringVector);
 	LOG_INFO_XA_FILMING << "Print Result is [" << printResult << "]" << LOG_END;
 
-	*pReplyObject = bool_to_string(printResult);
+	*pReplyObject = printResult;
 
 	return 0;
 }

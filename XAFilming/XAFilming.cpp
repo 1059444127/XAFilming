@@ -5,6 +5,7 @@
 #include <XAPrintStatus.h>
 
 #include <boost/thread/thread.hpp>
+#include "XAFilmingSerializer.h"
 
 
 void XAFilming::Print(const std::vector<std::string>& filePaths)
@@ -12,7 +13,8 @@ void XAFilming::Print(const std::vector<std::string>& filePaths)
 	assert(!IsPrinting());
 
 	SetPrinting(true);
-	bool bResult = MCSF_NAMESPACE_FOR_XA::print(filePaths);	//TODO: Modify as a new thread
+	std::string sResult = MCSF_NAMESPACE_FOR_XA::print(filePaths);	//TODO: Modify as a new thread
+	bool bResult = string_to_bool(sResult);
 	SetPrinting(false);
 	
 	LOG_INFO_XA_FILMING << "Print Success ? " << bResult << LOG_END;
