@@ -10,5 +10,5 @@ public:
 	virtual void Register(IPrintResultObserver* pObserver);
 private:
 	std::vector<IPrintResultObserver*> _observers;
-	void PublishPrintResult(bool bResult);
+	void PublishPrintResult(std::string result);
 };

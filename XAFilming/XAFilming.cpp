@@ -19,7 +19,7 @@ void XAFilming::Print(const std::vector<std::string>& filePaths)
 	
 	LOG_INFO_XA_FILMING << "Print Success ? " << bResult << LOG_END;
 
-	PublishPrintResult(bResult);
+	PublishPrintResult(sResult);
 
 	//boost::thread thrd(boost::bind())
 }
@@ -30,10 +30,10 @@ void XAFilming::Register(IPrintResultObserver* pObserver)
 	_observers.push_back(pObserver);
 }
 
-void XAFilming::PublishPrintResult(bool bResult)
+void XAFilming::PublishPrintResult(std::string result)
 {
 	for(auto iter = _observers.begin(); iter != _observers.end(); ++iter)
 	{
-		(*iter)->NotifyPrintResult(bResult);
+		(*iter)->NotifyPrintResult(result);
 	}
 }

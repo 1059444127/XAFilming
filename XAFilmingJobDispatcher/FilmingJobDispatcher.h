@@ -19,7 +19,7 @@ public:
     virtual void RestartJobs(const std::vector<int>& IDs);
     virtual void UrgentJobs(const std::vector<int>& IDs);
     virtual void PushJobsProgress();
-	virtual void NotifyPrintResult(bool bStatus);
+	virtual void NotifyPrintResult(std::string result);
 	virtual int GetEstimatedTimeToFinish();
 private:
     std::map<int, XAFilmingJobBase*> _jobMap;

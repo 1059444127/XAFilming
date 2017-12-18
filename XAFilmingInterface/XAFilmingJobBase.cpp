@@ -1,6 +1,7 @@
 #include "XAFilmingJobBase.h"
 #include "XAFilmingLogger.h"
 #include "XAFilmingMacro.h"
+#include "XAFilmingSerializer.h"
 
 XAFilmingJobBase::XAFilmingJobBase(XAFilmingJobStatusBase* status) : _status(status)
 {
@@ -77,4 +78,13 @@ void XAFilmingJobBase::Urgent()
 bool XAFilmingJobBase::CanCancel()
 {
     return !_status->IsAtomic();
+}
+
+void XAFilmingJobBase::SetLastResult(const std::string& result)
+{
+	LOG_INFO_XA_FILMING << "Last Result: " << result << LOG_END;
+	_lastResult = result;
+
+	bool bStatus = string_to_bool(result);
+	bStatus ? Complete() : Fail();
 }

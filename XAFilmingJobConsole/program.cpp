@@ -48,7 +48,7 @@ void urgentJobs(const vector<int> IDs)
 
 void printed(const vector<int> IDs)
 {
-    job_dispatcher->NotifyPrintResult(true);
+    job_dispatcher->NotifyPrintResult("");
 }
 
 void failed(const vector<int> IDs)

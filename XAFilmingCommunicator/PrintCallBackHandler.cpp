@@ -9,12 +9,10 @@ int PrintCallbackHandler::HandleReply(const MCSF_NAMESPACE_FOR_XA::IAsyncResult*
 	string result = pAsyncResult->GetMarshalObject();
 	LOG_INFO_XA_FILMING << "Print Command Result : [" << result << "],  Call Result: [" << pAsyncResult->GetCallResult() << "]" << LOG_END;
 
-	bool printResult = string_to_bool(result);
-
 	for (auto iter = _printStatusObservers.begin(); iter != _printStatusObservers.end(); iter++)
 	{
 		IPrintResultObserver* pObserver = *iter;
-		pObserver->NotifyPrintResult(printResult);		
+		pObserver->NotifyPrintResult(result);		
 	}
 
 	return 0;
