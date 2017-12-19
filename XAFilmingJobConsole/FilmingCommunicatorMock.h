@@ -9,5 +9,6 @@ public:
 	virtual void PublishJobProgress(const std::vector<XAFilmingJobBase*>& jobs);
     virtual void Print(const std::vector<std::string>& files);
 	virtual void UpdatePrintStatus(const IFilmingJobMetaData* filmingJobMetaData);
+	virtual void SendEHCMessage(const std::string& message) {}
 };
 

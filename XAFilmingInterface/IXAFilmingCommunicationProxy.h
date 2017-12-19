@@ -9,5 +9,5 @@ class IXAFilmingCommunicationProxy : public IXAFilming, public IPrintResultSubje
 {
 public:
     virtual void PublishJobProgress(const std::vector<XAFilmingJobBase*>& jobs) = 0;
-	virtual void Register(IPrintResultObserver* pObserver) = 0;
+	virtual void SendEHCMessage(const std::string& message) = 0;
 };

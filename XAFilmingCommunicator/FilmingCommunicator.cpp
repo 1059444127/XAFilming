@@ -39,3 +39,13 @@ void FilmingCommunicator::UpdatePrintStatus(const IFilmingJobMetaData* filmingJo
 	auto db = XADB::GetInstance(_pProxy);
 	db->UpdateImagesPrintStatus(filmingJobMetaData);
 }
+
+void FilmingCommunicator::SendEHCMessage(const std::string& message)
+{
+	LOG_INFO_XA_FILMING << "SendEHCMessage [" << message << "]" << LOG_END;
+	bool bResult = string_to_bool(message);
+	if(bResult) {return;}
+
+	//TODO: send EHC Message
+
+}
