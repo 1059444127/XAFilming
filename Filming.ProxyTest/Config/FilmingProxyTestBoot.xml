@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XAppConfig>
+  <Assemblies>
+    <Assembly>UIH.XA.Core</Assembly>
+    <Assembly>UIH.XA.Region</Assembly>
+    <Assembly>UIH.XA.Core.XApp</Assembly>
+    <Assembly>UIH.XA.Shells.X</Assembly>
+    <Assembly>UIH.XA.Core.DefaultMissing</Assembly>
+
+
+
+    <Assembly>UIH.XA.Filming.Proxy</Assembly>
+    <Assembly>UIH.XA.Filming.ProxyTest</Assembly>
+
+  </Assemblies>
+  <Regions>
+    <Region Name="FilmingProxyTestRegion" View="FilmingProxyTestView" DataContext="FilmingProxyTestViewModel"/>
+  </Regions>
+  <Shells>
+    <Shell ShowOnStartup="true" Name="FilmingProxyTestShell" />
+  </Shells>
+</XAppConfig>
