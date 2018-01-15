@@ -31,6 +31,7 @@
     <ClInclude Include="IXAFilmingCommunicationProxy.h" />
     <ClInclude Include="IXAFilmingJobDispatch.h" />
     <ClInclude Include="IXAFilming.h" />
+    <ClInclude Include="IXAFilmingTestConfig.h" />
     <ClInclude Include="XAFilmingJobBase.h" />
     <ClInclude Include="XAFilmingInterfaceExportMacro.h" />
     <ClInclude Include="XAFilmingJobComparer.h" />
