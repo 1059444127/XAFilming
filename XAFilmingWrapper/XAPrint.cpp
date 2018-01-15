@@ -56,6 +56,9 @@ namespace MCSF_NAMESPACE_FOR_XA
 			if(!pIFilmingLibary->DoPrint())
 			{
 				LOG_INFO_XA_FILMING << "Print succeed" << LOG_END;
+
+				auto testConfig = XAConfig::Instance().GetTestConfig();
+
 				return bool_to_string(true);
 			}
 
