@@ -14,7 +14,7 @@
 
   </Assemblies>
   <Regions>
-    <Region Name="FilmingProxyTestRegion" View="FilmingProxyTestView" DataContext="FilmingProxyTestViewModel"/>
+    <Region Name="FilmingProxyTestRegion" View="DoseReportView" DataContext="FilmingProxyTestViewModel"/>
   </Regions>
   <Shells>
     <Shell ShowOnStartup="true" Name="FilmingProxyTestShell" />

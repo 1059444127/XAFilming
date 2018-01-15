@@ -8,6 +8,6 @@
              xmlns:region="clr-namespace:UIH.XA.Region;assembly=UIH.XA.Region"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-            
+        <ContentControl region:XARegion.RegionName="FilmingProxyTestRegion"></ContentControl>
     </Grid>
 </shell:XShellBase>

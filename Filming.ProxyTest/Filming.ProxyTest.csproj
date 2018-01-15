@@ -104,7 +104,7 @@
     <Reference Include="UIH.XA.Region">
       <Private>False</Private>
       <HintPath>..\..\..\..\UIH\bin\UIH.XA.Region.dll</HintPath>
-    </Reference>    
+    </Reference>
   </ItemGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <Reference Include="Google.ProtocolBuffers">
@@ -174,7 +174,15 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Config\FilmingProxyTestBoot.xml" />
+    <Content Include="..\..\..\..\UIH\appdata\XA\Filming\config\Printer.xml">
+      <Link>Config\Printer.xml</Link>
+    </Content>
+    <Content Include="..\..\..\..\UIH\appdata\XA\Filming\config\XAFilmingJobManagerTest.xml">
+      <Link>Config\XAFilmingJobManagerTest.xml</Link>
+    </Content>
+    <Content Include="Config\FilmingProxyTestBoot.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Config\FilmingProxyTestContainee.xml" />
     <Content Include="Config\FilmingProxyTestLogger.xml" />
   </ItemGroup>

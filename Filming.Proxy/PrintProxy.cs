@@ -5,6 +5,7 @@ using System.Printing;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using UIH.XA.Core;
 using UIH.XA.Filming.Interface;
 
@@ -21,34 +22,32 @@ namespace UIH.XA.Filming.Proxy
 
             try
             {
-                double margin = 80;
-                var printRect = GetPrintRect(new Size(visual.ActualWidth, visual.ActualHeight), margin);
+                var rtb = RenderTargetBitmap(visual);
 
-                var panel = visual as Panel;
-                Brush originalBackground = null;
-                if (null != panel)
+
+                var label = new Label
                 {
-                    originalBackground = panel.Background;
-                    panel.Background = new SolidColorBrush(Color.FromRgb(28,41,48));
-                }
-                
-                var visualBrush = new VisualBrush(visual);
+                    Background = new SolidColorBrush(Color.FromRgb(28, 41, 48)),
+                    Content = new Image() {Source = rtb, Stretch = Stretch.UniformToFill}
+                };
+
+
+
+                double margin = 20;
+                var printRect = GetPrintRect(new Size(rtb.Width, rtb.Height), margin);
+                var visualBrush = new VisualBrush(label);
 
                 var drawingVisual = new DrawingVisual();
                 using (DrawingContext context = drawingVisual.RenderOpen())
                 {
-                    context.DrawRectangle(visualBrush, null, printRect); 
+                    context.DrawRectangle(visualBrush, null, printRect);
                 }
 
                 double scale = GetScale(printRect.Size, margin);
                 drawingVisual.Transform = new ScaleTransform(scale, scale);
 
-;                _printDialog.PrintVisual(drawingVisual, DateTime.Now.ToLongTimeString());
+                _printDialog.PrintVisual(drawingVisual, DateTime.Now.ToLongTimeString());
 
-                if (null != panel)
-                {
-                    panel.Background = originalBackground;
-                }
 
                 this.LogDevInfo("End to Print");
             }
@@ -57,6 +56,22 @@ namespace UIH.XA.Filming.Proxy
                 this.LogException(e, "Failed to print");
             }
         }
+
+        private RenderTargetBitmap RenderTargetBitmap(FrameworkElement visual)
+        {
+            var rtb = new RenderTargetBitmap((int) Math.Round(visual.ActualWidth), (int) Math.Round(visual.ActualHeight),
+                96, 96, PixelFormats.Pbgra32);
+            var dv = new DrawingVisual();
+            using (DrawingContext context = dv.RenderOpen())
+            {
+                var vb = new VisualBrush(visual);
+                context.DrawRectangle(vb, null, new Rect(new Point(0, 0), new Size(visual.ActualWidth, visual.ActualHeight)));
+            }
+            rtb.Render(dv);
+            return rtb;
+        }
+
+
 
 
         private Rect GetPrintRect(Size printObjectSize, double margin)
