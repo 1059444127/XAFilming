@@ -17,6 +17,7 @@
 
 #define XA_FILMING_CONFIG_PATH "XAFilmingConfigPath"
 #define XA_PRINT_CONFIG_FILE_NAME "Printer.xml"
+#define XA_TEST_CONFIG_FILE_NAME "XAFilmingJobManagerTest.xml"
 
 #define XA_AE "XA"
 #define XA_DEFAULT_DICOM_PRINTER_AE "local_printer"

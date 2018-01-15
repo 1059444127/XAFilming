@@ -3,6 +3,6 @@
 class IXAFilmingTestConfig
 {
 public:
-	virtual bool ToDelayJob() = 0;
-	virtual int DelaySeconds() = 0;
+	virtual bool GetToDelayJob() = 0;
+	virtual int GetDelaySeconds() = 0;
 };

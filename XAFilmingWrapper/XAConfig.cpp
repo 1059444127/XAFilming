@@ -43,13 +43,31 @@ IXADicomPrinterProperty* XAConfig::GetPrinterConfig()
 XAConfig::~XAConfig()
 {
 	SAFE_DELETE_ELEMENT(_pPrinterConfig);
+	SAFE_DELETE_ELEMENT(_pTestConfig);
 	SAFE_DELETE_ELEMENT(_pInstance);
 }
 
-XAConfig::XAConfig(): _pPrinterConfig(nullptr)
+IXAFilmingTestConfig* XAConfig::GetTestConfig()
+{
+	if(nullptr == _pTestConfig)
+	{
+		boost::mutex::scoped_lock(_printerConfigMutex);
+		if(nullptr == _pTestConfig)
+		{
+			_pTestConfig = new TestConfig(GetPrinterConfigPath());
+		}
+	}	
+
+	if(_pTestConfig->ReadConfigBeforeUsing()) {_pTestConfig->ReadConfig();}
+
+	return _pTestConfig;
+}
+
+XAConfig::XAConfig(): _pPrinterConfig(nullptr), _pTestConfig(nullptr)
 {
 	ISystemEnvironmentConfig* pSysConfig =
 		ConfigSystemEnvironmentFactory::Instance()->GetSystemEnvironment();
 	auto sFilmingPath = pSysConfig->GetApplicationPath(XA_FILMING_CONFIG_PATH);
 	_printerConfigPath = sFilmingPath + XA_PRINT_CONFIG_FILE_NAME;
+	_testConfigPath = sFilmingPath + XA_TEST_CONFIG_FILE_NAME;
 }
