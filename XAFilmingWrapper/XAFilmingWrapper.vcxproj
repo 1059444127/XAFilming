@@ -85,6 +85,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractConfig.h" />
     <ClInclude Include="McsfJobManagerInfoWrapper.h" />
     <ClInclude Include="PrinterConfig.h" />
     <ClInclude Include="TestConfig.h" />
@@ -98,6 +99,7 @@
     <ClInclude Include="XAPrint.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AbstractConfig.cpp" />
     <ClCompile Include="McsfJobManagerInfoWrapper.cpp" />
     <ClCompile Include="PrinterConfig.cpp" />
     <ClCompile Include="TestConfig.cpp" />

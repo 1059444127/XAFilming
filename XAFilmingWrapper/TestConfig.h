@@ -1,6 +1,6 @@
 #pragma once
-#include <string>
 #include "IXAFilmingTestConfig.h"
+#include <McsfFileParser/mcsf_file_parser_factory.h>
 
 class TestConfig : public IXAFilmingTestConfig
 {
@@ -16,4 +16,5 @@ private:
 	bool _toDelayJob;
 	int _delaySeconds;
 	bool _readConfigBeforeUsing;
+	Mcsf::IFileParser* _pFileParser;
 };
