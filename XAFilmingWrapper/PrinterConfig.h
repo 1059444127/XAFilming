@@ -15,17 +15,13 @@ public:
 	virtual std::string GetIP();
 	virtual unsigned short GetPort();
 	virtual std::string GetFilmSize();
-	void ReadConfig();
-	bool ReadConfigBeforeUsing();
 private:
-	bool _bReadConfigBeforeUsing;
 	std::string _ae;
 	std::string _ip;
 	unsigned short _port;
 	std::string _filmSize;
 
 
-	std::string GetStringByTag(const std::string& tag);
-	void ReadConfigFromFile();
+	virtual void ReadConfigFromFile();
 	XA_FILMING_DISALLOW_COPY_AND_ASSIGN(PrinterConfig)
 };
