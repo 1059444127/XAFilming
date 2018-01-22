@@ -1,5 +1,4 @@
 #include "AbstractConfig.h"
-#include <XAConfig.h>
 #include "XAFilmingLogger.h"
 #include <boost/lexical_cast.hpp>
 #include <McsfFileParser/mcsf_file_parser_factory.h>
