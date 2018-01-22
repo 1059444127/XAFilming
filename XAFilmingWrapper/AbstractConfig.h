@@ -6,7 +6,8 @@
 class AbstractConfig
 {
 public:
-	AbstractConfig(const std::string& configFilePath) { _configFilePath = configFilePath; }
+	AbstractConfig(const std::string& configFilePath);
+	virtual ~AbstractConfig();
 
 protected:
 	MCSF_NAMESPACE_FOR_XA::IFileParser* _pFileParser;

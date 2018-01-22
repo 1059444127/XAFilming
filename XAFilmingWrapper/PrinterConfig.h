@@ -10,7 +10,6 @@ class XA_FilmingWrapper_Export PrinterConfig : public AbstractConfig, public IXA
 {
 public:
 	PrinterConfig(const std::string& configFilePath);
-	virtual ~PrinterConfig();
 
 	virtual std::string GetAE();
 	virtual std::string GetIP();
