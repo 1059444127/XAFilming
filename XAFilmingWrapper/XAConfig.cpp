@@ -51,10 +51,10 @@ IXAFilmingTestConfig* XAConfig::GetTestConfig()
 {
 	if(nullptr == _pTestConfig)
 	{
-		boost::mutex::scoped_lock(_printerConfigMutex);
+		boost::mutex::scoped_lock(_pTestConfigMutex);
 		if(nullptr == _pTestConfig)
 		{
-			_pTestConfig = new TestConfig(GetPrinterConfigPath());
+			_pTestConfig = new TestConfig(_testConfigPath);
 		}
 	}	
 

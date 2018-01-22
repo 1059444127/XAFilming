@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Test>
+  <ToDelayJob>1</ToDelayJob>
+  <DelaySeconds>10</DelaySeconds>
+  <ReadConfigBeforeUsing>1</ReadConfigBeforeUsing>
+</Test>

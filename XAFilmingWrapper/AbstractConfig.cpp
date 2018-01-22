@@ -2,6 +2,7 @@
 #include <XAConfig.h>
 #include "XAFilmingLogger.h"
 #include <boost/lexical_cast.hpp>
+#include <McsfFileParser/mcsf_file_parser_factory.h>
 
 AbstractConfig::AbstractConfig(const std::string& configFilePath) : _configFilePath(configFilePath), _bReadConfigBeforeUsing(true)
 {
@@ -44,7 +45,7 @@ void AbstractConfig::ReadConfigFromFile()
 	if(!_pFileParser->ParseByURI(_configFilePath))
 	{
 		LOG_ERROR_XA_FILMING << "Failed to Parse Config" << LOG_END;
-		throw new exception("Fail to Parse Config");
+		throw exception("Fail to Parse Config");
 	}
 
 	auto readConfigBeforeUsingString = GetStringByTag("ReadConfigBeforeUsing");

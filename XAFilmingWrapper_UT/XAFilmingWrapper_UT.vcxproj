@@ -71,15 +71,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="PrinterConfigTests.cpp" />
+    <ClCompile Include="TestConfigTests.cpp" />
     <ClCompile Include="XAConfigTests.cpp" />
     <ClCompile Include="XAFilmingWrapperUT.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PrinterConfigTests.h" />
+    <ClInclude Include="TestConfigTests.h" />
     <ClInclude Include="XAConfigTests.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PrinterConfigStub.xml" />
+    <None Include="TestConfigStub.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

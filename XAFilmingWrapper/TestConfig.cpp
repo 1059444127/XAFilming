@@ -1,27 +1,21 @@
 #include "TestConfig.h"
-#include <McsfFileParser/mcsf_file_parser_factory.h>
+#include "XAFilmingLogger.h"
+#include <boost/lexical_cast.hpp>
 
-TestConfig::TestConfig(std::string configPath) : _toDelayJob(false), _delaySeconds(0), _readConfigBeforeUsing(true)
+void TestConfig::ReadConfigFromFile()
 {
-	_pFileParser = Mcsf::ConfigParserFactory::Instance()->GetXmlFileParser();
-	_pFileParser->Initialize();
-}
+	try
+	{
+		AbstractConfig::ReadConfigFromFile();
+		
+		std::string toDelayJobString = GetStringByTag("ToDelayJob");
+		_toDelayJob = boost::lexical_cast<bool>(toDelayJobString);
+		std::string delaySecondsString = GetStringByTag("DelaySeconds");
+		_delaySeconds = boost::lexical_cast<int>(delaySecondsString);
 
-bool TestConfig::GetToDelayJob()
-{
-	return _toDelayJob;
-}
-
-int TestConfig::GetDelaySeconds()
-{
-	return _delaySeconds;
-}
-
-bool TestConfig::ReadConfigBeforeUsing()
-{
-	return _readConfigBeforeUsing;
-}
-
-void TestConfig::ReadConfig()
-{
+	}
+	catch (std::exception& e)
+	{
+		LOG_ERROR_XA_FILMING << "Exception: " << e.what() << LOG_END;
+	}
 }
