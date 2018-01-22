@@ -27,7 +27,7 @@ std::string PrinterConfig::GetFilmSize()
 	return _filmSize;
 }
 
-PrinterConfig::PrinterConfig(const std::string& configFilePath): _bReadConfigBeforeUsing(true), _port(XA_DEFAULT_DICOM_PRINTER_PORT), _configFilePath(configFilePath)
+PrinterConfig::PrinterConfig(const std::string& configFilePath): AbstractConfig(configFilePath), _bReadConfigBeforeUsing(true), _port(XA_DEFAULT_DICOM_PRINTER_PORT)
 {
 	_pFileParser = ConfigParserFactory::Instance()->GetXmlFileParser();
 	_pFileParser->Initialize();

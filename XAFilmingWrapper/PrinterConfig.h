@@ -4,8 +4,9 @@
 #include "boost/thread/thread.hpp"
 #include <McsfFileParser/mcsf_ifile_parser.h>
 #include "XAFilmingWrapperExportMacro.h"
+#include "AbstractConfig.h"
 
-class XA_FilmingWrapper_Export PrinterConfig : public IXADicomPrinterProperty
+class XA_FilmingWrapper_Export PrinterConfig : public AbstractConfig, public IXADicomPrinterProperty
 {
 public:
 	PrinterConfig(const std::string& configFilePath);
@@ -24,10 +25,6 @@ private:
 	unsigned short _port;
 	std::string _filmSize;
 
-	std::string _configFilePath;
-	MCSF_NAMESPACE_FOR_XA::IFileParser* _pFileParser;
-
-	boost::mutex _configReadMutex;
 
 	std::string GetStringByTag(const std::string& tag);
 	void ReadConfigFromFile();

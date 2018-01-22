@@ -61,6 +61,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>..\..\..\..\UIH\include\external\;..\..\..\..\UIH\include\mcs\;..\include\;..\XAFilmingWrapper\</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ULIB;_UNICODE;UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
