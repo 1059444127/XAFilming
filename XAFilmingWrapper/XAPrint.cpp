@@ -35,6 +35,18 @@ namespace MCSF_NAMESPACE_FOR_XA
 		pPrintJobObject->SetFileNameList(dicomFilePaths);
 	}
 
+	void DelayInjectionForTester()
+	{
+		auto testConfig = XAConfig::Instance()->GetTestConfig();
+		if(testConfig->GetToDelayJob())
+		{
+			int delaySeconds = testConfig->GetDelaySeconds();
+			LOG_INFO_XA_FILMING << "Printing will be delay For " << delaySeconds << " seconds" << LOG_END;
+			boost::thread::sleep(boost::get_system_time() + boost::posix_time::seconds(delaySeconds));  
+			LOG_INFO_XA_FILMING << "Printing Delay is over" << LOG_END;
+		}
+	}
+
 	std::string printBy(IFilmingLibary* pIFilmingLibary)
 	{
 		try
@@ -57,7 +69,7 @@ namespace MCSF_NAMESPACE_FOR_XA
 			{
 				LOG_INFO_XA_FILMING << "Print succeed" << LOG_END;
 
-				auto testConfig = XAConfig::Instance()->GetTestConfig();
+				DelayInjectionForTester();
 
 				return bool_to_string(true);
 			}
